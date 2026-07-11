@@ -1,0 +1,21 @@
+# Secrets — never commit
+workflow/db/secrets/
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.docker.example
+**/secrets/
+*.pem
+*.key
+credentials.json
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# Local scratch
+*.log
+*.tmp

@@ -1,0 +1,14 @@
+---
+description: Mandatory Postgres schema-per-env — dev/preprod/prod isolation
+alwaysApply: true
+---
+
+# DB schema per environment (mandatory)
+
+- Shared Postgres on **5432** only; do not invent a second server without user approval.
+- Each app DB: `app_<appid>` with schemas **`dev`**, **`preprod`**, **`prod`**.
+- Roles: `app_<appid>_dev` / `_preprod` / `_prod` with `search_path` locked to that schema.
+- E: → `dev` only · F: → `preprod` only · G: → `prod` only.
+- Reserve in `workflow/db/SCHEMA-REGISTRY.md` + `registry.json` before DDL or datasource config.
+- Never point a lower env at a higher schema. Drops require user confirmation.
+- Details: `workflow/db/README.md` and `workflow/db/conventions.md`

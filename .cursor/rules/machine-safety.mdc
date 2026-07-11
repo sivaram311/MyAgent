@@ -1,0 +1,14 @@
+---
+description: Strict machine safety — never delete or partition without explicit user confirmation
+alwaysApply: true
+---
+
+# Machine safety (strict)
+
+- **Never** delete files, folders, volumes, partitions, or disks unless the user explicitly confirms that exact action in the current conversation.
+- **Never** create, shrink, extend, format, wipe, or repartition disks/volumes without explicit user confirmation of the exact plan.
+- **Never** run destructive disk commands (`Remove-*`, `Clear-Disk`, `Format-Volume`, `Remove-Partition`, `diskpart` clean/delete, `rm -rf`, `Remove-Item -Recurse` on system/env roots, etc.) without prior confirmation.
+- Read-only inspection (list disks, sizes, free space) is allowed.
+- Proposals and plans are allowed; execution of destructive steps waits for a clear yes.
+- If unsure whether an action is destructive, ask first and do not proceed.
+- Standing orders live in `workflow/CONSCIOUS.md` — read and honor them.

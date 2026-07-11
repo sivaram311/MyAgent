@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "updated": "2026-07-11",
+  "policy": "mandatory-reservation-before-bind",
+  "ranges": {
+    "dev": { "drive": "E", "min": 3000, "max": 3999 },
+    "preprod": { "drive": "F", "min": 4000, "max": 4999 },
+    "prod": { "drive": "G", "min": 5000, "max": 5999 }
+  },
+  "shared": [
+    { "port": 80, "appId": "nginx", "env": "shared", "role": "http", "status": "active", "notes": "Reverse proxy" },
+    { "port": 443, "appId": "nginx", "env": "shared", "role": "http", "status": "reserved", "notes": "TLS when enabled" },
+    { "port": 5432, "appId": "postgres", "env": "shared", "role": "db", "status": "active", "notes": "Shared PostgreSQL" },
+    { "port": 9000, "appId": "css", "env": "shared", "role": "http", "status": "active", "notes": "Centralized Security System E:\\MyWorkspace\\centralized-security-system" },
+    { "port": 3389, "appId": "rdp", "env": "shared", "role": "other", "status": "active", "notes": "Remote desktop" }
+  ],
+  "reservations": [
+    { "port": 3080, "appId": "agent-portal", "env": "dev", "role": "http", "status": "reserved", "notes": "Preferred DEV API offset; legacy :8080 still live" },
+    { "port": 4080, "appId": "agent-portal", "env": "preprod", "role": "http", "status": "active", "notes": "F:\\apps\\agent-portal; agent-portal-staging.delena.buzz" },
+    { "port": 5080, "appId": "agent-portal", "env": "prod", "role": "http", "status": "active", "notes": "G:\\apps\\agent-portal; agent-portal.delena.buzz; CSS via :5900" },
+    { "port": 5900, "appId": "css", "env": "prod", "role": "http", "status": "active", "notes": "G:\\apps\\css; https://css.delena.buzz; triple-run with :4900 and :9000" },
+    { "port": 4900, "appId": "css", "env": "preprod", "role": "http", "status": "active", "notes": "F:\\apps\\css preprod IdP; shared DEV remains :9000; css-staging.delena.buzz planned" },
+    { "port": 4200, "appId": "agent-portal", "env": "dev", "role": "http", "status": "legacy", "notes": "DEV UI ng serve; delena.buzz /" },
+    { "port": 8080, "appId": "agent-portal", "env": "dev", "role": "http", "status": "legacy", "notes": "DEV API" },
+    { "port": 8081, "appId": "legacy-java-8081", "env": "unknown", "role": "http", "status": "legacy", "notes": "Discovered java" },
+    { "port": 8082, "appId": "legacy-java-8082", "env": "unknown", "role": "http", "status": "legacy", "notes": "Discovered java" },
+    { "port": 8091, "appId": "legacy-java-8091", "env": "unknown", "role": "http", "status": "legacy", "notes": "Discovered java / Stack Pilot" }
+  ]
+}

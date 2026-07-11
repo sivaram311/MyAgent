@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "appId": "",
+  "appVersion": "",
+  "gate": "q1",
+  "sourceEnv": "dev",
+  "targetEnv": "preprod",
+  "decision": "PENDING",
+  "sessionId": "",
+  "updated": "",
+  "required": {
+    "qa_smoke_pass": false,
+    "qa_regression_pass": null,
+    "security_pass": false,
+    "review_pass": false,
+    "ports_compliant": false,
+    "db_schema_compliant": false,
+    "css_client_registered": false,
+    "evidence_complete": false
+  },
+  "notes": ""
+}

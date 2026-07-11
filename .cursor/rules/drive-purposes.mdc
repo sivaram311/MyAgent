@@ -1,0 +1,20 @@
+---
+description: Strict drive purpose map — DEV E, PREPROD F, PROD G, RELEASES H
+alwaysApply: true
+---
+
+# Drive purposes (strict)
+
+| Drive | Purpose |
+|-------|---------|
+| `C:` | OS and tools only — not an app env |
+| `E:` | **DEV** — default agent/development work |
+| `F:` | **PREPROD** — staging runtime only |
+| `G:` | **PROD** — production-like runtime only |
+| `H:` | **RELEASES** — last 3 release packages only |
+
+- Do not mix roles across drives.
+- Default all coding work to `E:`.
+- Touch `F:` / `G:` / `H:` only when the user names that environment.
+- Release retention on `H:\releases\`: keep maximum 3; deleting older releases still requires user confirmation.
+- Full standing orders: `workflow/CONSCIOUS.md`

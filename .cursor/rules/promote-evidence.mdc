@@ -1,0 +1,11 @@
+---
+description: Promote DEV→PREPROD→PROD requires evidence pack and EM GO
+alwaysApply: true
+---
+
+# Environment promote (mandatory)
+
+- Promotes **DEV→PREPROD (Q1)** and **PREPROD→PROD (Q2)** require an evidence pack under `H:\releases\<app>-<version>\evidence\<q1|q2>\`.
+- Use skills: `promote-em` (orchestrate), `promote-qa`, `promote-security`, `promote-review`, `promote-ops`.
+- **Ops must not deploy** unless `CHECKLIST.json` decision is **GO** and required flags are true.
+- Details: `workflow/promote/README.md`

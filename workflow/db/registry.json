@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "updated": "2026-07-11",
+  "policy": "mandatory-schema-per-env",
+  "instance": {
+    "host": "127.0.0.1",
+    "port": 5432,
+    "notes": "Shared PostgreSQL; superuser password in secrets/postgres.env (gitignored)"
+  },
+  "conventions": {
+    "database": "app_<appid_underscored>",
+    "schemas": ["dev", "preprod", "prod"],
+    "role": "app_<appid_underscored>_<env>"
+  },
+  "applications": [
+    {
+      "appId": "css",
+      "database": "app_css",
+      "schemas": ["dev", "preprod", "prod"],
+      "roles": ["app_css_dev", "app_css_preprod", "app_css_prod"],
+      "status": "active",
+      "notes": "DDL applied 2026-07-11; CSS preprod/prod on Postgres"
+    },
+    {
+      "appId": "agent-portal",
+      "database": "app_agent_portal",
+      "schemas": ["dev", "preprod", "prod"],
+      "roles": ["app_agent_portal_dev", "app_agent_portal_preprod", "app_agent_portal_prod"],
+      "status": "active",
+      "notes": "DDL applied 2026-07-11; preprod/prod use prod CSS IdP (css.delena.buzz / :5900)"
+    }
+  ]
+}

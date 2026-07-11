@@ -1,0 +1,14 @@
+---
+description: Mandatory port reservation before binding any app port
+alwaysApply: true
+---
+
+# Port reservation (mandatory)
+
+- Before any web app binds a TCP port, reserve it in `workflow/ports/REGISTRY.md` and `workflow/ports/registry.json`.
+- Use env ranges only: **DEV 3000–3999**, **PREPROD 4000–4999**, **PROD 5000–5999**.
+- Shared: **80/443** nginx, **5432** postgres — do not steal.
+- Prefer same app offset across envs (e.g. dev 3010 / preprod 4010 / prod 5010).
+- If conflict, propose next free in-range port — never override an active reservation.
+- Removing or reassigning a reservation requires user confirmation.
+- Full process: `workflow/ports/README.md`
