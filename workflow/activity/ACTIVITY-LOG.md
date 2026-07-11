@@ -6,6 +6,7 @@ Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
 |-----------------|---------|----------|------|--------|--------|--------|------------------|
+| 2026-07-11 23:40 | `stack-pilot-0.1.2-realme-2026-07-11` | cursor | ops | Docs update + git push stack-pilot/MyAgent/agent-portal | github sivaram311 | ok | b065906 / 5526135 / 25b3525 |
 | 2026-07-11 23:32 | `stack-pilot-0.1.2-realme-2026-07-11` | cursor | em | Q1+Q2 GO stack-pilot 0.1.2 Realme OLED polish | F::4091 G::5091 | ok | H:\releases\stack-pilot-0.1.2\evidence\ |
 | 2026-07-11 23:31 | `stack-pilot-0.1.2-realme-2026-07-11` | cursor | qa | Q2 HTTPS+OLED markers | control.delena.buzz | ok | theme/sp-oled/skeleton/48px touch |
 | 2026-07-11 23:30 | `stack-pilot-0.1.2-realme-2026-07-11` | cursor | ops | Deploy 0.1.2 PREPROD+PROD | F:/G stack-pilot | ok | sibling apps kept UP |
