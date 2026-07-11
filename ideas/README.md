@@ -25,6 +25,13 @@ Use this template for each idea:
 
 ## Backlog
 
+### Dual-CLI subagent workflow (Cursor + Antigravity)
+- **Status:** backlog
+- **Priority:** high
+- **Summary:** Job pipeline that runs promote/ops/docs roles via Cursor CLI + Antigravity CLI; later configure with Agent Portal predefined pipelines/tasks.
+- **Why:** Encode CONSCIOUS + promote skills as reproducible automation; provider-agnostic (#11) and docs-after-action (#12).
+- **Notes:** Full sketch: [dual-cli-subagent-workflow.md](./dual-cli-subagent-workflow.md). Do not auto Q2/prod without human GO.
+
 ### Identify legacy listeners
 - **Status:** backlog
 - **Priority:** medium

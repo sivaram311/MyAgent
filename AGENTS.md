@@ -29,3 +29,10 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 ## Antigravity
 
 When Agent Portal prefixes rules/skills into the Antigravity prompt, still treat this file and `CONSCIOUS.md` as binding. Write the same evidence packs and activity log entries as Cursor agents. Do not skip documentation because the provider differs.
+
+Also load **`GEMINI.md`** in this folder (Antigravity/Gemini entry). Global copies:
+
+- Cursor user rule: `C:\Users\Administrator\.cursor\rules\myagent-machine.mdc` (`alwaysApply`)
+- Antigravity knowledge: `C:\Users\Administrator\.gemini\antigravity-cli\knowledge\myagent-standing-orders.md`
+- Antigravity `settings.json` → `toolPermission: always-proceed` + trusted workspaces include MyAgent / MyWorkspace / portal apps
+

@@ -9,7 +9,7 @@ Track Cursor agent session IDs for this machine and workspace (`E:\MyAgent`).
 | **Session ID** | `93d977cc-7c3b-4a37-b889-09d2e6676ed5` |
 | **Started** | 2026-07-11 |
 | **Status** | `in_progress` |
-| **Focus** | Apply env partitions + enforce drive purposes; promote agent-portal |
+| **Focus** | Env partitions + promotes; stack-pilot 0.1.0 Q1+Q2 GO |
 | **Transcript** | `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\93d977cc-7c3b-4a37-b889-09d2e6676ed5\` |
 
 ### Outcomes (update as work proceeds)
@@ -36,14 +36,18 @@ Track Cursor agent session IDs for this machine and workspace (`E:\MyAgent`).
 - [x] Activity + subagent rollup documented (`workflow/activity/CSS-PROGRAM-ROLLUP.md`)
 - [x] Agent-Portal 0.1.0 Q1+Q2 GO — F::4080 / G::5080; auth→prod CSS :5900; staging+prod DNS
 - [x] Agent-Portal LOB/@Lob→TEXT + oid migrate; product docs updated (OPS/README/platform)
+- [x] Stack-Pilot 0.1.0 Q1+Q2 GO — F::4091 / G::5091; https://control.delena.buzz → :5091; evidence `H:\releases\stack-pilot-0.1.0\evidence\`
+- [x] Stack-Pilot sole cutover — stopped DEV `:8091` + PREPROD `:4091`; only prod `:5091` listening
+- [x] Stack-Pilot DNS fix 2026-07-11 — created missing Cloudflare A `control.delena.buzz`; HTTPS 200; NIC DNS → 1.1.1.1
+- [x] Stack-Pilot 0.1.1 Q1+Q2 GO — Task Manager UI; prod-apps (css/agent-portal/hdrive); https://control.delena.buzz
+- [x] Stack-Pilot 0.1.2 Q1+Q2 GO — Realme P2 Pro plan (OLED dark, safe-area, 48px+ touch, unlock sheet)
 
 ### Next
 
-- Optional: point DEV CSS (:9000) at `app_css.dev` later
-- Flush local DNS if needed for css.delena.buzz on this host
-- Optional: restart DEV agent-portal on :8080/:4200 after JAR rebuild
-- Optional: Playwright Realme e2e against https://agent-portal.delena.buzz
-- Optional: widen varchar(128) columns that overflow on ACP tool names
+- **Confirm:** which H: release folders to prune (retention max 3) — name exact folders before delete
+- Optional: real-device screenshot pass on Realme P2 Pro portrait + keyboard open
+- Optional: “Take Control” on prod-apps to run under Stack Pilot PID tree (currently RUNNING_EXTERNAL)
+- **Roadmap:** Dual-CLI subagent job runner + Agent Portal predefined pipelines (`ideas/dual-cli-subagent-workflow.md`)
 ---
 
 ## How to add a session

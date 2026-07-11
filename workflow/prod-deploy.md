@@ -44,6 +44,9 @@ cd E:\Source\Deployment\scripts
 
 - No overwrite of existing `G:\apps\<AppId>` without your confirmation
 - Reserved names blocked: `www`, `control`, `auth`
+- **Exception — Stack Pilot:** public host is `control.delena.buzz` → `:5091`. Because the wrapper blocks `control`, create/repair DNS manually:  
+  `E:\MyWorkspace\agent-portal\scripts\cloudflare-dns.ps1 -Upsert -Name control -Proxied`  
+  (Missing CF A caused NXDOMAIN outage 2026-07-11; nginx was already correct.)
 - DNS delete is **not** in this wrapper (use cloudflare-dns.ps1 `-Delete` only when you confirm)
 - Always dry-run first
 - If the app uses Postgres: prod datasource must use schema **`prod`** in `app_<appId>` only — see `workflow/db/conventions.md`
