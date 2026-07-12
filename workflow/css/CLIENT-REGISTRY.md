@@ -24,6 +24,7 @@ Status: `planned` | `registered` | `active` | `retired`
 |----------|--------|--------|-------------|-------|
 | h-drive-server | h-drive-server | waived-public-read | G:\apps\h-drive-server / https://hdrive.delena.buzz | No login; open CORS file expose by user design 2026-07-11 |
 | stack-pilot | stack-pilot | waived-public-read | G:\apps\stack-pilot / https://control.delena.buzz | Auth disabled (`stackpilot.auth.enabled: false`); optional API key path remains in code; CSS IdP not used by design 2026-07-11 |
+| agent-portal | agentverse | active | E:\MyWorkspace\agentverse-project | Intentional reuse: AgentVerse uses agent-portal clientId |
 
 ### Template
 

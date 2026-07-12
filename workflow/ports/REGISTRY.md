@@ -27,6 +27,8 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 3080 | agent-portal | http | reserved | E:\MyWorkspace\agent-portal | Preferred DEV API offset (migrate from legacy :8080) |
 | 3091 | stack-pilot | http | reserved | E:\Source\stack-pilot | Preferred DEV offset (migrate from legacy :8091) |
 
+| 3310 | agentverse | http | active | E:\MyWorkspace\agentverse-project | Next.js DEV UI (R3F); npm run dev -p 3310 |
+
 <!-- Add new DEV rows below -->
 
 ---
@@ -37,6 +39,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 |------|--------|------|--------|----------------|-------|
 | 4010 | h-drive-server | http | active | F:\apps\h-drive-server | Staging expose of H:\; open CORS |
 | 4080 | agent-portal | http | active | F:\apps\agent-portal | API; UI static via nginx; https://agent-portal-staging.delena.buzz |
+| 4310 | agentverse | http | active | F:\apps\agentverse | AgentVerse 0.1.0 PREPROD; https://agentverse-staging.delena.buzz |
 | 4900 | css | http | active | F:\apps\css | Preprod CSS IdP (Q1 GO 2026-07-11); DEV shared remains :9000; host plan css-staging.delena.buzz |
 | 4091 | stack-pilot | http | active | F:\apps\stack-pilot | Installed; process stopped 2026-07-11 sole cutover → prod :5091 |
 
@@ -71,5 +74,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 ```md
 | 3010 | my-app-web | http | reserved | E:\Source\my-app | block 3010â€“3014 |
 ```
+
+
 
 
