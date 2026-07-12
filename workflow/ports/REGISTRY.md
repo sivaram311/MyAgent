@@ -39,7 +39,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 |------|--------|------|--------|----------------|-------|
 | 4010 | h-drive-server | http | active | F:\apps\h-drive-server | Staging expose of H:\; open CORS |
 | 4080 | agent-portal | http | active | F:\apps\agent-portal | API; UI static via nginx; https://agent-portal-staging.delena.buzz |
-| 4310 | agentverse | http | active | F:\apps\agentverse | AgentVerse 0.1.0 PREPROD; https://agentverse-staging.delena.buzz |
+| 4310 | agentverse | http | active | F:\apps\agentverse | AgentVerse 0.2.0 PREPROD; https://agentverse-staging.delena.buzz |
 | 4900 | css | http | active | F:\apps\css | Preprod CSS IdP (Q1 GO 2026-07-11); DEV shared remains :9000; host plan css-staging.delena.buzz |
 | 4091 | stack-pilot | http | active | F:\apps\stack-pilot | Installed; process stopped 2026-07-11 sole cutover → prod :5091 |
 
@@ -56,6 +56,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 
 ---
 
+| 5310 | agentverse | http | active | G:\apps\agentverse | AgentVerse 0.2.0 PROD; https://agentverse.delena.buzz |
 ## Legacy outside scheme (migrate later)
 
 | Port | App ID | Env | Role | Status | Process | Notes |

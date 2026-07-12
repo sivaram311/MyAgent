@@ -6,6 +6,15 @@ Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
 |-----------------|---------|----------|------|--------|--------|--------|------------------|
+| 2026-07-12 20:15 | `agentverse-0.2.0-promote-2026-07-12` | cursor | docs | Docs sync + hired agentverse-office/promote skills; commit push | agentverse + MyAgent | ok | roles + .cursor/skills |
+| 2026-07-12 20:10 | `agentverse-0.2.0-promote-2026-07-12` | cursor | em | Q2 CLOSED PROD LIVE agentverse 0.2.0 | https://agentverse.delena.buzz :5310 | ok | H:\releases\agentverse-0.2.0\evidence\q2\ |
+| 2026-07-12 20:08 | `agentverse-0.2.0-promote-2026-07-12` | cursor | qa | Q2 prod smoke Q2_PROD_OK_020 | agentverse.delena.buzz | ok | evidence\q2\qa\destination-smoke.md |
+| 2026-07-12 20:06 | `agentverse-0.2.0-promote-2026-07-12` | cursor | ops | deploy-prod-app Execute :5310 DNS+nginx+start | G:\apps\agentverse | ok | evidence\q2\ops\deploy-log.md |
+| 2026-07-12 20:05 | `agentverse-0.2.0-promote-2026-07-12` | cursor | em | Q2 GO agentverse 0.2.0 → PROD | E→H→G | ok | CHECKLIST all true; human prod intent |
+| 2026-07-12 19:58 | `agentverse-0.2.0-promote-2026-07-12` | cursor | em | Q1 CLOSED PREPROD LIVE agentverse 0.2.0 | https://agentverse-staging.delena.buzz :4310 | ok | H:\releases\agentverse-0.2.0\evidence\q1\ |
+| 2026-07-12 19:56 | `agentverse-0.2.0-promote-2026-07-12` | cursor | qa | Q1 dest smoke Q1_PREPROD_OK_020 | staging.delena.buzz | ok | evidence\q1\qa\destination-smoke.md |
+| 2026-07-12 19:54 | `agentverse-0.2.0-promote-2026-07-12` | cursor | ops | Deploy 0.2.0 to PREPROD restart :4310 | F:\apps\agentverse | ok | evidence\q1\ops\deploy-log.md |
+| 2026-07-12 19:52 | `agentverse-0.2.0-promote-2026-07-12` | cursor | em | Q1 GO agentverse 0.2.0 TN office | E→H→F :4310 | ok | CHECKLIST all true |
 | 2026-07-12 19:09 | `agentverse-0.1.0-promote-2026-07-12` | cursor | ops | CF DNS A agentverse-staging.delena.buzz proxied; public /health 200; token MyProductionApps saved | delena.buzz | ok | expires 2026-08-12 |
 | 2026-07-12 18:53 | `agentverse-0.1.0-promote-2026-07-12` | cursor | ops | Deploy 0.1.0 to PREPROD; npm install, start :4310, nginx, destination smoke | F:\apps\agentverse | ok | health/config/login/session/prompt PASS; nginx Host 200; DNS pending after Cloudflare auth error; evidence\q1\ops\deploy-log.md |
 | 2026-07-12 18:35 | `agentverse-0.1.0-promote-2026-07-12` | cursor | qa | Q1 DEV smoke | agentverse 0.1.0 @ :3310 | fail | health/config/login/noauth returned HTTP 500; session prompt blocked; H:\releases\agentverse-0.1.0\evidence\q1\qa\results.md; not deployed |
