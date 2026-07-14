@@ -5,6 +5,7 @@ Append-only. Newest entries at the **top** (below this header block).
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
+| 2026-07-15 02:50 | docs-library-idea-2026-07-15 | cursor | qa+crew | Hire e2e crew + Playwright Realme/tablet/desktop | sandbox/library agents/ + e2e/ | ok | 12 passed; hire 2026-07-15-e2e-playwright; GO then implement |
 |-----------------|---------|----------|------|--------|--------|--------|------------------|
 | 2026-07-15 02:42 | `agentverse-feature-branch-2026-07-15` | cursor | lead+qa | Operator confirmed latest; close Dispatch loop check | AV upgrade 0.3.1 + PD 0.8.0 F/G Dispatch→upgrade | ok | roadmap P0/P1 DONE; tag v0.3.1; evidence dispatch-upgrade-wire |
 | 2026-07-15 02:42 | `proddeck-keepers-quay-2026-07-14` | cursor | qa | Readonly+smoke Dispatch ? AV upgrade SoT | F/G `dispatch/config.ts` + live packs + `/health` | GO | Evidence `H:\releases\proddeck-0.8.0\evidence\dispatch-upgrade-wire.md`; hosts upgrade-staging/upgrade |
