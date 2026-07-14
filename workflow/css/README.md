@@ -10,6 +10,7 @@ New and migrated web applications on this machine **must authenticate via CSS**,
 |------|------|
 | [integration.md](./integration.md) | How apps plug in (clientId, JWKS, starter) |
 | [CLIENT-REGISTRY.md](./CLIENT-REGISTRY.md) | Reserved CSS `clientId` values |
+| [MIGRATE-PENDING.md](./MIGRATE-PENDING.md) | **PENDING** consumer migrate tracker (Portal / AV / Phase 6) |
 | [../deps/](../deps/) | **CSS version + git tag** matrix (mandatory on promote) |
 
 Upstream docs (source of truth for CSS internals):
