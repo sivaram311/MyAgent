@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "updated": "2026-07-15",
+  "sourceOfTruth": "E:/MyAgent/workflow/devices/REALME-P2-PRO.md",
+  "primaryDeviceId": "realme-p2-pro-5g",
+  "devices": {
+    "realme-p2-pro-5g": {
+      "brand": "realme",
+      "model": "P2 Pro 5G",
+      "role": "primary-phone",
+      "osFamily": "Android",
+      "display": {
+        "diagonalInches": 6.7,
+        "resolutionPx": { "width": 1080, "height": 2412 },
+        "aspectRatio": "20:9",
+        "ppi": 394,
+        "panel": "curved-AMOLED",
+        "refreshHz": 120,
+        "touchSamplingHz": 240,
+        "peakNits": 2000,
+        "notch": "punch-hole-center"
+      },
+      "chipset": {
+        "soc": "Qualcomm Snapdragon 7s Gen 2",
+        "gpu": "Adreno 710"
+      },
+      "playwright": {
+        "preset": "realme-p2-pro",
+        "viewport": { "width": 360, "height": 780 },
+        "deviceScaleFactor": 3,
+        "isMobile": true,
+        "hasTouch": true,
+        "userAgentHint": "Android Chrome mobile"
+      },
+      "cssSafeArea": {
+        "useEnvSafeAreaInsets": true,
+        "avoidTopCenterChrome": true,
+        "sideInsetMinPx": 16,
+        "fabEdgeInsetPx": 24
+      },
+      "uxDefaults": {
+        "minTapTargetPx": 44,
+        "bodyFontPx": 17,
+        "lineHeight": 1.65,
+        "readerSideMarginPx": 18,
+        "preferTransformMotion": true,
+        "defaultTheme": "light-soft",
+        "avoidPureBlackOnWhite": true
+      }
+    }
+  },
+  "secondaryPresets": {
+    "tablet-pad2-approx": {
+      "viewport": { "width": 800, "height": 1280 },
+      "notes": "Pad 2 class tablet smoke; not primary"
+    },
+    "desktop-1280": {
+      "viewport": { "width": 1280, "height": 800 },
+      "notes": "Desktop smoke only after Realme pass"
+    }
+  }
+}

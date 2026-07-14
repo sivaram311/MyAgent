@@ -28,6 +28,10 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 3091 | stack-pilot | http | reserved | E:\Source\stack-pilot | Preferred DEV offset (migrate from legacy :8091) |
 
 | 3310 | agentverse | http | active | E:\MyWorkspace\agentverse-project | Next.js DEV UI (R3F); npm run dev -p 3310 |
+| 3311 | agentverse-v2 | http | active | E:\MyWorkspace\agentverse-project | stable-v2 side deploy; feature/stable-v2; npm run next -p 3311; side-by-side — primary DEV may stay 3310 on other branches |
+| 3312 | agentverse-upgrade | http | active | E:\MyWorkspace\agentverse-project | upgradation functionality side fleet; feature/upgradation-functionality; npm -p 3312; must NOT use 3310/3311 |
+| 3320 | proddeck | http | reserved | E:\MyWorkspace\sandbox\proddeck | ProdDeck Next.js DEV; home.delena.buzz; npm run dev -p 3320 |
+| 3330 | library | http | reserved | E:\MyWorkspace\sandbox\library | Library phone-first docs PWA; npm run dev -p 3330 (Phase 0 docs only) |
 
 <!-- Add new DEV rows below -->
 
@@ -39,9 +43,13 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 |------|--------|------|--------|----------------|-------|
 | 4010 | h-drive-server | http | active | F:\apps\h-drive-server | Staging expose of H:\; open CORS |
 | 4080 | agent-portal | http | active | F:\apps\agent-portal | API; UI static via nginx; https://agent-portal-staging.delena.buzz |
-| 4310 | agentverse | http | active | F:\apps\agentverse | AgentVerse 0.2.0 PREPROD; https://agentverse-staging.delena.buzz |
+| 4310 | agentverse | http | active | F:\apps\agentverse | AgentVerse 0.2.2 PREPROD; https://agentverse-staging.delena.buzz |
+| 4311 | agentverse-v2 | http | active | F:\apps\agentverse-v2 | stable-v2 side PREPROD; https://agentverse-v2-staging.delena.buzz (must NOT use 4310) |
+| 4312 | agentverse-upgrade | http | active | F:\apps\agentverse-upgrade | upgradation side PREPROD; https://agentverse-upgrade-staging.delena.buzz (must NOT use 4310/4311) |
+| 4320 | proddeck | http | active | F:\apps\proddeck | ProdDeck PREPROD; https://home-staging.delena.buzz â†’ :4320; Q1 0.1.0 2026-07-13 |
+| 4330 | library | http | reserved | F:\apps\library | Library PREPROD (not deployed yet) |
 | 4900 | css | http | active | F:\apps\css | Preprod CSS IdP (Q1 GO 2026-07-11); DEV shared remains :9000; host plan css-staging.delena.buzz |
-| 4091 | stack-pilot | http | active | F:\apps\stack-pilot | Installed; process stopped 2026-07-11 sole cutover → prod :5091 |
+| 4091 | stack-pilot | http | active | F:\apps\stack-pilot | PREPROD; https://control-staging.delena.buzz ? :4091 |
 
 ---
 
@@ -52,11 +60,16 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 5080 | agent-portal | http | active | G:\apps\agent-portal | API; UI static via nginx; https://agent-portal.delena.buzz; authâ†’prod CSS :5900 |
 | 5010 | h-drive-server | http | active | G:\apps\h-drive-server | https://hdrive.delena.buzz â†’ 127.0.0.1:5010 |
 | 5900 | css | http | active | G:\apps\css | Prod CSS IdP Q2 GO 2026-07-11; https://css.delena.buzz; keep :4900 and :9000 live |
-| 5091 | stack-pilot | http | active | G:\apps\stack-pilot | Prod control plane; https://control.delena.buzz → :5091; CF A created 2026-07-11 (wrapper blocks `control` — DNS via cloudflare-dns.ps1) |
+| 5091 | stack-pilot | http | active | G:\apps\stack-pilot | PROD; https://control.delena.buzz ? :5091; CF via cloudflare-dns.ps1 (wrapper blocks `control`) |
 
 ---
 
-| 5310 | agentverse | http | active | G:\apps\agentverse | AgentVerse 0.2.0 PROD; https://agentverse.delena.buzz |
+| 5310 | agentverse | http | active | G:\apps\agentverse | AgentVerse 0.2.2 PROD; https://agentverse.delena.buzz |
+| 5311 | agentverse-v2 | http | active | G:\apps\agentverse-v2 | stable-v2 side PROD; https://agentverse-v2.delena.buzz (must NOT use 5310) |
+| 5312 | agentverse-upgrade | http | active | G:\apps\agentverse-upgrade | upgradation side PROD; https://agentverse-upgrade.delena.buzz (must NOT use 5310/5311) |
+| 5320 | proddeck | http | active | G:\apps\proddeck | ProdDeck PROD; https://home.delena.buzz |
+| 5330 | library | http | reserved | G:\apps\library | Library PROD (not deployed yet) |
+
 ## Legacy outside scheme (migrate later)
 
 | Port | App ID | Env | Role | Status | Process | Notes |

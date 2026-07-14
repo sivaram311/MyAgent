@@ -15,7 +15,10 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 | [`workflow/ports/`](workflow/ports/) | Port reservation |
 | [`workflow/db/`](workflow/db/) | Postgres schema-per-env |
 | [`workflow/css/`](workflow/css/) | Centralized Security System |
+| [`workflow/deps/`](workflow/deps/) | Inter-app dependency versions + git tags (SoT matrix) |
+| [`workflow/devices/`](workflow/devices/) | **Primary phone SoT (Realme P2 Pro)** — do not web-search |
 | [`workflow/promote/`](workflow/promote/) | DEV→PREPROD→PROD evidence gates |
+| [`workflow/promote/field-lessons.md`](workflow/promote/field-lessons.md) | Promote crew field lessons (bind race, CF cache, PS traps) |
 | [`workflow/prod-deploy.md`](workflow/prod-deploy.md) | Prod DNS + nginx wrapper |
 
 ## Before any work
@@ -24,7 +27,10 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 2. Log meaningful actions to `workflow/activity/ACTIVITY-LOG.md` (session id, role, action, result).
 3. Honor drive purposes: **E:** DEV · **F:** PREPROD · **G:** PROD · **H:** RELEASES.
 4. Do not delete or partition without explicit user confirmation.
-5. After meaningful changes: **update docs** (app OPS/README, registries, DEPLOY.md) — CONSCIOUS rule **12**. Chat + activity log alone are not enough.
+5. Phone UI/UX: use **`workflow/devices/`** (Realme P2 Pro SoT + `PRIMARY.json`). Do **not** web-search device specs.
+6. After meaningful changes: **update docs** (app OPS/README, registries, DEPLOY.md) — CONSCIOUS rule **12**. Chat + activity log alone are not enough.
+7. On promotes: hire **`promote-field-ops`** with em/qa/ops (`workflow/promote/field-lessons.md`).
+8. On promotes: record **app git tag** + **dependency versions/tags** (`workflow/deps/`) — CONSCIOUS rule **13**; missing → NO-GO.
 
 ## Antigravity
 

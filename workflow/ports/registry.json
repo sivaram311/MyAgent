@@ -1,222 +1,338 @@
-﻿{
-    "version":  1,
-    "updated":  "2026-07-12",
-    "policy":  "mandatory-reservation-before-bind",
-    "ranges":  {
-                   "dev":  {
-                               "drive":  "E",
-                               "min":  3000,
-                               "max":  3999
-                           },
-                   "preprod":  {
-                                   "drive":  "F",
-                                   "min":  4000,
-                                   "max":  4999
-                               },
-                   "prod":  {
-                                "drive":  "G",
-                                "min":  5000,
-                                "max":  5999
-                            }
-               },
-    "shared":  [
-                   {
-                       "port":  80,
-                       "appId":  "nginx",
-                       "env":  "shared",
-                       "role":  "http",
-                       "status":  "active",
-                       "notes":  "Reverse proxy"
-                   },
-                   {
-                       "port":  443,
-                       "appId":  "nginx",
-                       "env":  "shared",
-                       "role":  "http",
-                       "status":  "reserved",
-                       "notes":  "TLS when enabled"
-                   },
-                   {
-                       "port":  5432,
-                       "appId":  "postgres",
-                       "env":  "shared",
-                       "role":  "db",
-                       "status":  "active",
-                       "notes":  "Shared PostgreSQL"
-                   },
-                   {
-                       "port":  9000,
-                       "appId":  "css",
-                       "env":  "shared",
-                       "role":  "http",
-                       "status":  "active",
-                       "notes":  "Centralized Security System E:\\MyWorkspace\\centralized-security-system"
-                   },
-                   {
-                       "port":  3389,
-                       "appId":  "rdp",
-                       "env":  "shared",
-                       "role":  "other",
-                       "status":  "active",
-                       "notes":  "Remote desktop"
-                   }
-               ],
-    "reservations":  [
-                         {
-                             "port":  3010,
-                             "appId":  "h-drive-server",
-                             "env":  "dev",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "E:\\MyWorkspace\\h-drive-server; exposes H:\\; open CORS"
-                         },
-                         {
-                             "port":  4010,
-                             "appId":  "h-drive-server",
-                             "env":  "preprod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "F:\\apps\\h-drive-server; staging H:\\ expose"
-                         },
-                         {
-                             "port":  5010,
-                             "appId":  "h-drive-server",
-                             "env":  "prod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "https://hdrive.delena.buzz -\u003e 127.0.0.1:5010"
-                         },
-                         {
-                             "port":  3080,
-                             "appId":  "agent-portal",
-                             "env":  "dev",
-                             "role":  "http",
-                             "status":  "reserved",
-                             "notes":  "Preferred DEV API offset; legacy :8080 still live"
-                         },
-                         {
-                             "port":  4080,
-                             "appId":  "agent-portal",
-                             "env":  "preprod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "F:\\apps\\agent-portal; agent-portal-staging.delena.buzz"
-                         },
-                         {
-                             "port":  5080,
-                             "appId":  "agent-portal",
-                             "env":  "prod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "G:\\apps\\agent-portal; agent-portal.delena.buzz; CSS via :5900"
-                         },
-                         {
-                             "port":  5900,
-                             "appId":  "css",
-                             "env":  "prod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "G:\\apps\\css; https://css.delena.buzz; triple-run with :4900 and :9000"
-                         },
-                         {
-                             "port":  4900,
-                             "appId":  "css",
-                             "env":  "preprod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "F:\\apps\\css preprod IdP; shared DEV remains :9000; css-staging.delena.buzz planned"
-                         },
-                         {
-                             "port":  4200,
-                             "appId":  "agent-portal",
-                             "env":  "dev",
-                             "role":  "http",
-                             "status":  "legacy",
-                             "notes":  "DEV UI ng serve; delena.buzz /"
-                         },
-                         {
-                             "port":  8080,
-                             "appId":  "agent-portal",
-                             "env":  "dev",
-                             "role":  "http",
-                             "status":  "legacy",
-                             "notes":  "DEV API"
-                         },
-                         {
-                             "port":  8081,
-                             "appId":  "legacy-java-8081",
-                             "env":  "unknown",
-                             "role":  "http",
-                             "status":  "legacy",
-                             "notes":  "Discovered java"
-                         },
-                         {
-                             "port":  8082,
-                             "appId":  "legacy-java-8082",
-                             "env":  "unknown",
-                             "role":  "http",
-                             "status":  "legacy",
-                             "notes":  "Discovered java"
-                         },
-                         {
-                             "port":  8091,
-                             "appId":  "stack-pilot",
-                             "env":  "dev",
-                             "role":  "http",
-                             "status":  "legacy",
-                             "notes":  "Stack Pilot DEV live; migrate to :3091 when cut over"
-                         },
-                         {
-                             "port":  3091,
-                             "appId":  "stack-pilot",
-                             "env":  "dev",
-                             "role":  "http",
-                             "status":  "reserved",
-                             "notes":  "E:\\Source\\stack-pilot preferred DEV offset"
-                         },
-                         {
-                             "port":  4091,
-                             "appId":  "stack-pilot",
-                             "env":  "preprod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "F:\\apps\\stack-pilot; stack-pilot-staging.delena.buzz planned"
-                         },
-                         {
-                             "port":  5091,
-                             "appId":  "stack-pilot",
-                             "env":  "prod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "https://control.delena.buzz -\u003e 127.0.0.1:5091; CF A created 2026-07-11; DNS via cloudflare-dns.ps1 (wrapper blocks control)"
-                         },
-                         {
-                             "port":  5310,
-                             "appId":  "agentverse",
-                             "env":  "prod",
-                             "role":  "http",
-                             "status":  "active",
-                             "notes":  "AgentVerse 0.2.0 PROD; https://agentverse.delena.buzz"
-                         }
-                     ],
-    "ports":  [
-                  {
-                      "port":  3310,
-                      "appId":  "agentverse",
-                      "env":  "dev",
-                      "role":  "http",
-                      "status":  "active",
-                      "path":  "E:\\\\MyWorkspace\\\\agentverse-project",
-                      "notes":  "Next.js DEV UI R3F npm run dev -p 3310"
-                  },
-                  {
-                      "port":  4310,
-                      "appId":  "agentverse",
-                      "env":  "preprod",
-                      "role":  "http",
-                      "status":  "active",
-                      "path":  "F:\\\\apps\\\\agentverse",
-                      "notes":  "AgentVerse 0.2.0 PREPROD; https://agentverse-staging.delena.buzz"
-                  }
-              ]
+{
+    "version": 1,
+    "updated": "2026-07-15",
+    "policy": "mandatory-reservation-before-bind",
+    "ranges": {
+        "dev": {
+            "drive": "E",
+            "min": 3000,
+            "max": 3999
+        },
+        "preprod": {
+            "drive": "F",
+            "min": 4000,
+            "max": 4999
+        },
+        "prod": {
+            "drive": "G",
+            "min": 5000,
+            "max": 5999
+        }
+    },
+    "shared": [
+        {
+            "port": 80,
+            "appId": "nginx",
+            "env": "shared",
+            "role": "http",
+            "status": "active",
+            "notes": "Reverse proxy"
+        },
+        {
+            "port": 443,
+            "appId": "nginx",
+            "env": "shared",
+            "role": "http",
+            "status": "reserved",
+            "notes": "TLS when enabled"
+        },
+        {
+            "port": 5432,
+            "appId": "postgres",
+            "env": "shared",
+            "role": "db",
+            "status": "active",
+            "notes": "Shared PostgreSQL"
+        },
+        {
+            "port": 9000,
+            "appId": "css",
+            "env": "shared",
+            "role": "http",
+            "status": "active",
+            "notes": "Centralized Security System E:\\MyWorkspace\\centralized-security-system"
+        },
+        {
+            "port": 3389,
+            "appId": "rdp",
+            "env": "shared",
+            "role": "other",
+            "status": "active",
+            "notes": "Remote desktop"
+        }
+    ],
+    "reservations": [
+        {
+            "port": 3010,
+            "appId": "h-drive-server",
+            "env": "dev",
+            "role": "http",
+            "status": "active",
+            "notes": "E:\\MyWorkspace\\h-drive-server; exposes H:\\; open CORS"
+        },
+        {
+            "port": 4010,
+            "appId": "h-drive-server",
+            "env": "preprod",
+            "role": "http",
+            "status": "active",
+            "notes": "F:\\apps\\h-drive-server; staging H:\\ expose"
+        },
+        {
+            "port": 5010,
+            "appId": "h-drive-server",
+            "env": "prod",
+            "role": "http",
+            "status": "active",
+            "notes": "https://hdrive.delena.buzz -> 127.0.0.1:5010"
+        },
+        {
+            "port": 3080,
+            "appId": "agent-portal",
+            "env": "dev",
+            "role": "http",
+            "status": "reserved",
+            "notes": "Preferred DEV API offset; legacy :8080 still live"
+        },
+        {
+            "port": 4080,
+            "appId": "agent-portal",
+            "env": "preprod",
+            "role": "http",
+            "status": "active",
+            "notes": "F:\\apps\\agent-portal; agent-portal-staging.delena.buzz"
+        },
+        {
+            "port": 5080,
+            "appId": "agent-portal",
+            "env": "prod",
+            "role": "http",
+            "status": "active",
+            "notes": "G:\\apps\\agent-portal; agent-portal.delena.buzz; CSS via :5900"
+        },
+        {
+            "port": 5900,
+            "appId": "css",
+            "env": "prod",
+            "role": "http",
+            "status": "active",
+            "notes": "G:\\apps\\css; https://css.delena.buzz; triple-run with :4900 and :9000"
+        },
+        {
+            "port": 4900,
+            "appId": "css",
+            "env": "preprod",
+            "role": "http",
+            "status": "active",
+            "notes": "F:\\apps\\css preprod IdP; shared DEV remains :9000; css-staging.delena.buzz planned"
+        },
+        {
+            "port": 4200,
+            "appId": "agent-portal",
+            "env": "dev",
+            "role": "http",
+            "status": "legacy",
+            "notes": "DEV UI ng serve; delena.buzz /"
+        },
+        {
+            "port": 8080,
+            "appId": "agent-portal",
+            "env": "dev",
+            "role": "http",
+            "status": "legacy",
+            "notes": "DEV API"
+        },
+        {
+            "port": 8081,
+            "appId": "legacy-java-8081",
+            "env": "unknown",
+            "role": "http",
+            "status": "legacy",
+            "notes": "Discovered java"
+        },
+        {
+            "port": 8082,
+            "appId": "legacy-java-8082",
+            "env": "unknown",
+            "role": "http",
+            "status": "legacy",
+            "notes": "Discovered java"
+        },
+        {
+            "port": 8091,
+            "appId": "stack-pilot",
+            "env": "dev",
+            "role": "http",
+            "status": "legacy",
+            "notes": "Stack Pilot DEV live; migrate to :3091 when cut over"
+        },
+        {
+            "port": 3091,
+            "appId": "stack-pilot",
+            "env": "dev",
+            "role": "http",
+            "status": "reserved",
+            "notes": "E:\\Source\\stack-pilot preferred DEV offset"
+        },
+        {
+            "port": 4091,
+            "appId": "stack-pilot",
+            "env": "preprod",
+            "role": "http",
+            "status": "active",
+            "notes": "F:\\apps\\stack-pilot; stack-pilot-staging.delena.buzz planned"
+        },
+        {
+            "port": 5091,
+            "appId": "stack-pilot",
+            "env": "prod",
+            "role": "http",
+            "status": "active",
+            "notes": "https://control.delena.buzz -> 127.0.0.1:5091; CF A created 2026-07-11; DNS via cloudflare-dns.ps1 (wrapper blocks control)"
+        },
+        {
+            "port": 5310,
+            "appId": "agentverse",
+            "env": "prod",
+            "role": "http",
+            "status": "active",
+            "notes": "AgentVerse 0.2.2 PROD; https://agentverse.delena.buzz"
+        },
+        {
+            "port": 5311,
+            "appId": "agentverse-v2",
+            "env": "prod",
+            "role": "http",
+            "status": "active",
+            "notes": "stable-v2 side PROD; https://agentverse-v2.delena.buzz (must NOT use 5310)"
+        }
+    ],
+    "ports": [
+        {
+            "port": 3310,
+            "appId": "agentverse",
+            "env": "dev",
+            "role": "http",
+            "status": "active",
+            "path": "E:\\\\MyWorkspace\\\\agentverse-project",
+            "notes": "Next.js DEV UI R3F npm run dev -p 3310"
+        },
+        {
+            "port": 3311,
+            "appId": "agentverse-v2",
+            "env": "dev",
+            "role": "http",
+            "status": "active",
+            "path": "E:\\\\MyWorkspace\\\\agentverse-project",
+            "notes": "stable-v2 side deploy; feature/stable-v2; npm run next -p 3311; side-by-side — primary DEV may stay 3310 on other branches"
+        },
+        {
+            "port": 4310,
+            "appId": "agentverse",
+            "env": "preprod",
+            "role": "http",
+            "status": "active",
+            "path": "F:\\\\apps\\\\agentverse",
+            "notes": "AgentVerse 0.2.2 PREPROD; https://agentverse-staging.delena.buzz"
+        },
+        {
+            "port": 4311,
+            "appId": "agentverse-v2",
+            "env": "preprod",
+            "role": "http",
+            "status": "active",
+            "path": "F:\\\\apps\\\\agentverse-v2",
+            "notes": "stable-v2 side PREPROD; https://agentverse-v2-staging.delena.buzz (must NOT use 4310)"
+        },
+        {
+            "port": 5311,
+            "appId": "agentverse-v2",
+            "env": "prod",
+            "role": "http",
+            "status": "active",
+            "path": "G:\\\\apps\\\\agentverse-v2",
+            "notes": "stable-v2 side PROD; https://agentverse-v2.delena.buzz (must NOT use 5310)"
+        },
+        {
+            "port": 3320,
+            "appId": "proddeck",
+            "env": "dev",
+            "role": "http",
+            "status": "reserved",
+            "path": "E:\\\\MyWorkspace\\\\sandbox\\\\proddeck",
+            "notes": "ProdDeck Next.js DEV; home.delena.buzz; npm run dev -p 3320"
+        },
+        {
+            "port": 4320,
+            "appId": "proddeck",
+            "env": "preprod",
+            "role": "http",
+            "status": "reserved",
+            "path": "F:\\\\apps\\\\proddeck",
+            "notes": "ProdDeck PREPROD; home-staging.delena.buzz planned"
+        },
+        {
+            "port": 5320,
+            "appId": "proddeck",
+            "env": "prod",
+            "role": "http",
+            "status": "reserved",
+            "path": "G:\\\\apps\\\\proddeck",
+            "notes": "ProdDeck PROD; https://home.delena.buzz"
+        },
+        {
+            "port": 3312,
+            "role": "http",
+            "path": "E:\\\\MyWorkspace\\\\agentverse-project",
+            "notes": "upgradation side fleet; feature/upgradation-functionality; npm -p 3312; must NOT use 3310/3311",
+            "appId": "agentverse-upgrade",
+            "status": "active",
+            "env": "dev"
+        },
+        {
+            "port": 4312,
+            "role": "http",
+            "path": "F:\\\\apps\\\\agentverse-upgrade",
+            "notes": "upgradation side PREPROD; https://agentverse-upgrade-staging.delena.buzz (must NOT use 4310/4311)",
+            "appId": "agentverse-upgrade",
+            "status": "active",
+            "env": "preprod"
+        },
+        {
+            "port": 5312,
+            "role": "http",
+            "path": "G:\\\\apps\\\\agentverse-upgrade",
+            "notes": "upgradation side PROD; https://agentverse-upgrade.delena.buzz (must NOT use 5310/5311)",
+            "appId": "agentverse-upgrade",
+            "status": "active",
+            "env": "prod"
+        },
+        {
+            "port": 3330,
+            "appId": "library",
+            "env": "dev",
+            "role": "http",
+            "status": "reserved",
+            "path": "E:\\\\MyWorkspace\\\\sandbox\\\\library",
+            "notes": "Library phone-first docs PWA Phase 0"
+        },
+        {
+            "port": 4330,
+            "appId": "library",
+            "env": "preprod",
+            "role": "http",
+            "status": "reserved",
+            "path": "F:\\\\apps\\\\library",
+            "notes": "Library PREPROD not deployed"
+        },
+        {
+            "port": 5330,
+            "appId": "library",
+            "env": "prod",
+            "role": "http",
+            "status": "reserved",
+            "path": "G:\\\\apps\\\\library",
+            "notes": "Library PROD not deployed"
+        }
+    ]
 }
