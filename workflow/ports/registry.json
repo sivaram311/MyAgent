@@ -274,9 +274,9 @@
             "appId": "proddeck",
             "env": "dev",
             "role": "http",
-            "status": "reserved",
-            "path": "E:\\\\MyWorkspace\\\\sandbox\\\\proddeck",
-            "notes": "ProdDeck Next.js DEV; home.delena.buzz; npm run dev -p 3320"
+            "status": "active",
+            "path": "E:\\\\wt\\\\proddeck-integrate",
+            "notes": "ProdDeck DEV; https://home-dev.delena.buzz → :3320"
         },
         {
             "port": 4320,

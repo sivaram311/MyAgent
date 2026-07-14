@@ -30,7 +30,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 3310 | agentverse | http | active | E:\MyWorkspace\agentverse-project | Next.js DEV UI (R3F); npm run dev -p 3310 |
 | 3311 | agentverse-v2 | http | active | E:\MyWorkspace\agentverse-project | stable-v2 side deploy; feature/stable-v2; npm run next -p 3311; side-by-side — primary DEV may stay 3310 on other branches |
 | 3312 | agentverse-upgrade | http | active | E:\MyWorkspace\agentverse-project | upgradation functionality side fleet; feature/upgradation-functionality; npm -p 3312; must NOT use 3310/3311 |
-| 3320 | proddeck | http | reserved | E:\MyWorkspace\sandbox\proddeck | ProdDeck Next.js DEV; home.delena.buzz; npm run dev -p 3320 |
+| 3320 | proddeck | http | active | E:\wt\proddeck-integrate | ProdDeck DEV; https://home-dev.delena.buzz → :3320 |
 | 3330 | library | http | reserved | E:\MyWorkspace\sandbox\library | Library DEV; https://library-dev.delena.buzz → :3330 |
 
 <!-- Add new DEV rows below -->
