@@ -1,7 +1,7 @@
 # Dependency matrix — live pins (source of truth)
 
 **Last updated:** 2026-07-15  
-**Session:** `proddeck-keepers-quay-2026-07-14`  
+**Session:** `css-next-0.2.0-promote-2026-07-15`  
 **Policy:** `workflow/deps/README.md` · Machine-readable: `DEPENDENCIES.json`
 
 Update this file **in the same turn** as any F:/G: cutover or CSS (shared) release.  
@@ -13,7 +13,8 @@ Columns: what is **live**, what **git tag** backs it, and which **upstream versi
 
 | Service | Live PROD version | Git tag | Commit | Release pack | Public / port | Notes |
 |---------|-------------------|---------|--------|--------------|---------------|-------|
-| css | 0.1.0 | `v0.1.0` | `b754f0b` | `H:\releases\css-0.1.0` | https://css.delena.buzz `:5900` | Also PREPROD `:4900`, DEV `:9000`. Repo: `centralized-security-system` |
+| css | 0.1.0 | `v0.1.0` | `b754f0b` | `H:\releases\css-0.1.0` | https://css.delena.buzz `:5900` | **Classic IdP — keep.** PREPROD `:4900`. Consumers still pin here unless migrated. |
+| css-next | 0.2.0 | `v0.2.0` | `180ac13` | `H:\releases\css-next-0.2.0` | https://css-next.delena.buzz `:5910` | **Side-fleet** OAuth SSO. PREPROD https://css-next-staging.delena.buzz `:4910`. Does **not** replace classic. |
 
 ---
 

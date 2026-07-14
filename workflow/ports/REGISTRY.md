@@ -48,7 +48,8 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 4312 | agentverse-upgrade | http | active | F:\apps\agentverse-upgrade | upgradation side PREPROD; https://agentverse-upgrade-staging.delena.buzz (must NOT use 4310/4311) |
 | 4320 | proddeck | http | active | F:\apps\proddeck | ProdDeck PREPROD; https://home-staging.delena.buzz â†’ :4320; Q1 0.1.0 2026-07-13 |
 | 4330 | library | http | reserved | F:\apps\library | Library PREPROD (not deployed yet) |
-| 4900 | css | http | active | F:\apps\css | Preprod CSS IdP (Q1 GO 2026-07-11); DEV shared remains :9000; host plan css-staging.delena.buzz |
+| 4900 | css | http | active | F:\apps\css | Preprod classic CSS IdP; keep live; do not replace with css-next |
+| 4910 | css-next | http | active | F:\apps\css-next | Side-fleet PREPROD OAuth SSO 0.2.0; https://css-next-staging.delena.buzz → :4910; must NOT use 4900 |
 | 4091 | stack-pilot | http | active | F:\apps\stack-pilot | PREPROD; https://control-staging.delena.buzz ? :4091 |
 
 ---
@@ -59,7 +60,8 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 |------|--------|------|--------|----------------|-------|
 | 5080 | agent-portal | http | active | G:\apps\agent-portal | API; UI static via nginx; https://agent-portal.delena.buzz; authâ†’prod CSS :5900 |
 | 5010 | h-drive-server | http | active | G:\apps\h-drive-server | https://hdrive.delena.buzz â†’ 127.0.0.1:5010 |
-| 5900 | css | http | active | G:\apps\css | Prod CSS IdP Q2 GO 2026-07-11; https://css.delena.buzz; keep :4900 and :9000 live |
+| 5900 | css | http | active | G:\apps\css | Prod classic CSS IdP; https://css.delena.buzz; keep live; do not replace with css-next |
+| 5910 | css-next | http | active | G:\apps\css-next | Side-fleet PROD OAuth SSO 0.2.0; https://css-next.delena.buzz → :5910; must NOT use 5900 |
 | 5091 | stack-pilot | http | active | G:\apps\stack-pilot | PROD; https://control.delena.buzz ? :5091; CF via cloudflare-dns.ps1 (wrapper blocks `control`) |
 
 ---

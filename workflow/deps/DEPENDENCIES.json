@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-07-15",
-  "sessionId": "proddeck-keepers-quay-2026-07-14",
+  "sessionId": "css-next-0.2.0-promote-2026-07-15",
   "policy": "E:/MyAgent/workflow/deps/README.md",
   "shared": {
     "css": {
@@ -15,7 +15,22 @@
       "prodUrl": "https://css.delena.buzz",
       "prodPort": 5900,
       "preprodPort": 4900,
-      "devPort": 9000
+      "devPort": 9000,
+      "notes": "Classic IdP — keep live; consumers still pin here"
+    },
+    "css-next": {
+      "appId": "css-next",
+      "liveProdVersion": "0.2.0",
+      "gitTag": "v0.2.0",
+      "gitCommit": "180ac132919592c3d5eae73405014d4614e7a95e",
+      "releaseId": "css-next-0.2.0",
+      "releasePath": "H:/releases/css-next-0.2.0",
+      "repo": "E:/MyWorkspace/centralized-security-system",
+      "prodUrl": "https://css-next.delena.buzz",
+      "prodPort": 5910,
+      "preprodPort": 4910,
+      "preprodUrl": "https://css-next-staging.delena.buzz",
+      "notes": "Side-fleet OAuth SSO; does not replace classic css"
     }
   },
   "consumers": [

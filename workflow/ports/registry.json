@@ -116,7 +116,15 @@
             "env": "prod",
             "role": "http",
             "status": "active",
-            "notes": "G:\\apps\\css; https://css.delena.buzz; triple-run with :4900 and :9000"
+            "notes": "G:\\apps\\css; https://css.delena.buzz; classic IdP — keep live; do not replace with css-next"
+        },
+        {
+            "port": 5910,
+            "appId": "css-next",
+            "env": "prod",
+            "role": "http",
+            "status": "active",
+            "notes": "G:\\apps\\css-next; https://css-next.delena.buzz; OAuth SSO side-fleet 0.2.0; must NOT use 5900"
         },
         {
             "port": 4900,
@@ -124,7 +132,15 @@
             "env": "preprod",
             "role": "http",
             "status": "active",
-            "notes": "F:\\apps\\css preprod IdP; shared DEV remains :9000; css-staging.delena.buzz planned"
+            "notes": "F:\\apps\\css classic preprod IdP; keep live; do not replace with css-next"
+        },
+        {
+            "port": 4910,
+            "appId": "css-next",
+            "env": "preprod",
+            "role": "http",
+            "status": "active",
+            "notes": "F:\\apps\\css-next; https://css-next-staging.delena.buzz; OAuth SSO side-fleet 0.2.0; must NOT use 4900"
         },
         {
             "port": 4200,

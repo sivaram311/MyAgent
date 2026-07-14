@@ -5,8 +5,10 @@ Append-only. Newest entries at the **top** (below this header block).
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
+| 2026-07-15 02:53 | `agentverse-feature-branch-2026-07-15` | cursor | Aravind+integrate | Lane E2E-SCAFFOLD Playwright infra | AV `feature/upgradation-functionality` � `@playwright/test@1.61.1` | ok | config+helpers+docs/E2E.md+smoke; chromium installed; no deploy |
 | 2026-07-15 02:50 | docs-library-idea-2026-07-15 | cursor | qa+crew | Hire e2e crew + Playwright Realme/tablet/desktop | sandbox/library agents/ + e2e/ | ok | 12 passed; hire 2026-07-15-e2e-playwright; GO then implement |
 |-----------------|---------|----------|------|--------|--------|--------|------------------|
+| 2026-07-15 02:55 | `css-next-0.2.0-promote-2026-07-15` | cursor | promote-em+ops+qa+security+review+field-ops | Q1+Q2 css-next 0.2.0 side fleet (OAuth SSO) | F:4910 + G:5910 · css-next[-staging].delena.buzz · tag v0.2.0 | ok | Classic css :4900/:5900 + css.delena.buzz undisturbed; H:\releases\css-next-0.2.0 |
 | 2026-07-15 02:42 | `agentverse-feature-branch-2026-07-15` | cursor | lead+qa | Operator confirmed latest; close Dispatch loop check | AV upgrade 0.3.1 + PD 0.8.0 F/G Dispatch→upgrade | ok | roadmap P0/P1 DONE; tag v0.3.1; evidence dispatch-upgrade-wire |
 | 2026-07-15 02:42 | `proddeck-keepers-quay-2026-07-14` | cursor | qa | Readonly+smoke Dispatch ? AV upgrade SoT | F/G `dispatch/config.ts` + live packs + `/health` | GO | Evidence `H:\releases\proddeck-0.8.0\evidence\dispatch-upgrade-wire.md`; hosts upgrade-staging/upgrade |
 | 2026-07-15 02:45 | `proddeck-keepers-quay-2026-07-14` | cursor | promote-em+ops+qa+field-ops | Q1+Q2 ProdDeck 0.8.0 Wave A to F/G | tag `v0.8.0` @6882ea46 + CSS `v0.1.0` + Portal 0.1.8 + AV 0.3.17 + `H:\releases\proddeck-0.8.0` | ok | SMOKE_PASS staging+prod; JWT 5 apps; stop-dry-run+drain preview public |

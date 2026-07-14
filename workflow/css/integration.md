@@ -5,10 +5,14 @@
 | Env | Profile | Port | Database | Issuer |
 |-----|---------|------|----------|--------|
 | DEV | `dev` | **9000** | Postgres `app_css.dev` (`app_css_dev`) | `http://127.0.0.1:9000` |
-| PREPROD | `preprod` | **4900** | Postgres `app_css.preprod` | `http://127.0.0.1:4900` |
-| PROD | `prod` | **5900** | Postgres `app_css.prod` | `https://css.delena.buzz` |
+| PREPROD classic | `preprod` | **4900** | Postgres `app_css.preprod` | (classic IdP — keep) |
+| PROD classic | `prod` | **5900** | Postgres `app_css.prod` | `https://css.delena.buzz` |
+| PREPROD side-fleet | `preprod` + `CSS_PORT=4910` | **4910** | same `app_css.preprod` | `https://css-next-staging.delena.buzz` |
+| PROD side-fleet | `prod` + `CSS_PORT=5910` | **5910** | same `app_css.prod` | `https://css-next.delena.buzz` |
 | Tests / CI | `test` | random | H2 in-memory | fixed test issuer |
 | Optional demo | `h2` | 9000 | H2 in-memory | local |
+
+**Classic vs next:** Existing apps keep using **css.delena.buzz** (`css` 0.1.0 / `v0.1.0`). New OAuth SSO fleet is **css-next** (`v0.2.0`) on css-next*.delena.buzz — opt-in only.
 
 **DEV start (aligned with F/G Postgres):** `scripts/start-dev.ps1` (loads `E:\MyAgent\workflow\db\secrets\postgres.env`).
 
