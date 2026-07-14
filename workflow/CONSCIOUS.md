@@ -3,7 +3,7 @@
 Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) — including **Cursor**, **Antigravity**, and any other provider (Agent Portal or local).
 
 **Last updated:** 2026-07-15  
-**Session that recorded this:** `proddeck-keepers-quay-2026-07-14` / E2E-hire mandate (#14)
+**Session that recorded this:** `proddeck-keepers-quay-2026-07-14` / E2E (#14) · Playwright slot (#15) · DEV-E2E-before-tag (#16) · Reviewer-before-push (#17)
 
 **Provider note:** `.cursor/rules` and `.cursor/skills` help Cursor discover policy. Antigravity and others must still follow this file and `AGENTS.md`. Activity logging and promote evidence are **provider-agnostic**.
 
@@ -80,6 +80,26 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
     - **Tablet** (`tablet-pad2-approx` · **800×1280**)  
     API-only surfaces may hire API E2E without the three visual projects, but must still hire a testing subagent and write evidence.  
     Missing hired E2E for a UI ship → treat as incomplete; do not call “done” / promote-ready without evidence under the app `e2e/` (or `H:\releases\...\evidence\e2e\`).
+
+15. **Playwright run slot — register before run, confirm after** (user-directed 2026-07-15 — **keep**)  
+    Concurrent Playwright browsers degrade this machine. **At most one** Playwright (or equivalent browser E2E) runner may execute at a time.  
+    SoT: `workflow/testing/PLAYWRIGHT-SLOT.md` + `workflow/testing/playwright-slot.json`.  
+    **Before** any `npx playwright` / `npm run test:e2e*`: claim via `workflow/testing/scripts/claim-playwright-slot.ps1`.  
+    If claim fails (busy) → wait or reschedule; do **not** start another instance.  
+    **After** the run (pass/fail/abort): release via `release-playwright-slot.ps1` with a result confirmation so the next agent can proceed.  
+    Editing `e2e/**` specs does not require the slot — **running** does. Parallel Device Lab *authors* are fine; **execution** is serialized through this slot.
+
+16. **DEV E2E before git tag / pack** (user-directed 2026-07-15 — **keep**)  
+    For UI apps, run Device Lab E2E against **DEV** (`:3xxx` / local DEV URL) **before** annotated release tags and H: pack cut.  
+    SoT: `GIT-RELEASE-MANAGEMENT.md` §6 · skill `git-release` · hire `e2e-hire` + Playwright slot (#15).  
+    Prefer Realme **360×780** + desktop **1280×800** + tablet **800×1280** on DEV. Staging/prod browser checks may complement promote; they do **not** replace DEV E2E as the tag gate.  
+    Hire **`git-release`** for tagging only after DEV E2E is green (or API-only app with API E2E green). Missing DEV E2E → **NO-GO for tag**.
+
+17. **Reviewer SIGN-OFF before any git push** (user-directed 2026-07-15 — **keep**)  
+    Before **`git push`** of a branch tip **or** annotated tag, the Lead **must hire a readonly Reviewer** and obtain a written **SIGN-OFF** with verdict **GO**.  
+    SoT: `workflow/review/REVIEWER-SIGNOFF.md` (template + store path). Preferred evidence: `H:\releases\<app>-<ver>\evidence\review\SIGN-OFF.md` (or session `agents/.../SIGN-OFF.md` when no pack yet).  
+    Local **`git commit`** may proceed without a Reviewer. **`git push`** / **`git push --tags`** without **GO** → **NO-GO** (do not push).  
+    Log reviewer agent id + SIGN-OFF path in ACTIVITY-LOG. Reviewer checks at minimum: docs updated (#12), no secrets, fleet splits respected (classic vs side fleets), and DEV E2E green when the push includes a release tag (#16).
 
 ---
 

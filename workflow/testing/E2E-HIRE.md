@@ -9,10 +9,13 @@ Hire testing subagents when **any** of these happen:
 
 - A new application is scaffolded / first built
 - A meaningful UI or user-facing API surface ships or changes
-- A promote pack is prepared for Q1/Q2 (UI apps)
+- **Before** `git-release` tag / H: pack cut (CONSCIOUS **#16** — DEV E2E gate)
+- A promote pack is prepared for Q1/Q2 (UI apps; destination smoke complements DEV)
 - Soft-ship “done” would otherwise be claimed after coding without E2E evidence
 
 Do **not** treat `scripts/smoke.mjs` or ad-hoc PowerShell alone as satisfying this rule for visual apps.
+
+**Preferred base URL:** DEV (`http://127.0.0.1:3xxx` or app DEV host). Staging/prod Playwright is optional after tag/pack/promote — not the first green.
 
 ## Required hires (visual / UI apps)
 
@@ -42,9 +45,19 @@ Hire at least one `e2e-api` testing subagent (contract / health / auth matrix). 
 
 | Pattern | Rule |
 |---------|------|
-| Parallel lanes | Disjoint file ownership (`e2e/realme/**`, `e2e/tablet/**`, `e2e/desktop/**`) |
-| Lead | Owns `playwright.config.ts`, `e2e/fixtures/devices.ts`, hire GO, ACTIVITY-LOG serialize |
+| Parallel lanes | Disjoint file ownership (`e2e/realme/**`, `e2e/tablet/**`, `e2e/desktop/**`) — **authoring** may be parallel |
+| Playwright **execution** | **Serialized** — CONSCIOUS **#15** · claim → run → release · see [PLAYWRIGHT-SLOT.md](./PLAYWRIGHT-SLOT.md) |
+| Lead | Owns `playwright.config.ts`, `e2e/fixtures/devices.ts`, hire GO, ACTIVITY-LOG serialize; usually **one** claim for all projects |
 | No F/G cutover | Testers do not promote unless EM GO separately |
+
+### Playwright slot (mandatory before run)
+
+```powershell
+# claim (exit 2 = busy — do not run)
+E:\MyAgent\workflow\testing\scripts\claim-playwright-slot.ps1 -SessionId "..." -AppId "proddeck" -Project "all" -AgentRole "e2e-lead"
+# ... run playwright ...
+E:\MyAgent\workflow\testing\scripts\release-playwright-slot.ps1 -SessionId "..." -Result pass   # or fail / aborted
+```
 
 ## Promote gate
 

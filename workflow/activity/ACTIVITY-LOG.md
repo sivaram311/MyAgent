@@ -1,12 +1,22 @@
-ï»¿# Activity log
+# Activity log
 
 Append-only. Newest entries at the **top** (below this header block).
 
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
+| 2026-07-15 04:20 | `css-api-migrate-wave-2026-07-15` | cursor | policy+qa | CONSCIOUS #17 Reviewer-before-push + CSS API prove | MyAgent review/ · CSS css-api-prove-working · H: api-prove | ok | JWKS/OAuth green; DEV :9000 down; Reviewer then push |
+| 2026-07-15 04:00 | `proddeck-keepers-quay-2026-07-14` | cursor | git-release+lead | Fleet Phase A complete ? stop for Phase B EM GO | PD `v0.8.1` pack · AV main merge · CSS fleets · Library DEV E2E | ok | No F/G redeploy; matrix live pins unchanged; await EM GO |
+| 2026-07-15 03:58 | `proddeck-keepers-quay-2026-07-14` | cursor | git-release | Library release/0.1.1 + DEV E2E 12/12; no v0.1.2; no F/G | sandbox/library `:3330` · tip docs-only after `v0.1.1` | ok | H:\releases\library-0.1.1\evidence\e2e; slot fleet-git-release-lib-011 |
+| 2026-07-15 03:57 | `proddeck-keepers-quay-2026-07-14` | cursor | git-release | CSS classic keep `v0.1.0`; push `release/0.2.0` css-next | css `:5900` / css-next `:5910` · no jar cutover | ok | fleet pointers under H:\releases\css(-next)-*\evidence |
+| 2026-07-15 03:56 | `proddeck-keepers-quay-2026-07-14` | cursor | git-release | AV classic `release/0.3.17` ? merge to main; keep `v0.3.17` | agentverse-project `dc7acce`/`ce2f364` · no upgrade MIR | ok | DEV :3310 waive; staging :4310 200; strategy evidence on pack |
+| 2026-07-15 03:55 | `proddeck-keepers-quay-2026-07-14` | cursor | git-release | ProdDeck `v0.8.1` @990afae after DEV E2E 24/24 + pack | `H:\releases\proddeck-0.8.1` · F/G stay 0.8.0 | ok | slot fleet-git-release-pd-081; Phase B pending |
+| 2026-07-15 03:48 | `proddeck-keepers-quay-2026-07-14` | cursor | git-release+lead | Phase A0 reconcile + hire Lead/Reviewer for fleet align | PD/AV/CSS/css-next git-reconcile evidence | ok | plan Fleet git-release align; Phase A git-only |
+| 2026-07-15 03:32 | `css-sso-phase1-2026-07-15` | cursor | docs | Write git release management recs at MyAgent root | `GIT-RELEASE-MANAGEMENT.md` (Grok ask) | ok | Spec at repo root first; not yet linked under workflow/promote |
 | 2026-07-15 03:21 | `css-sso-phase1-2026-07-15` | cursor | policy+docs | Commit+push CONSCIOUS #14 E2E hire + field-ops/archive docs | MyAgent `main` workflow/testing + skills | ok | leftover WIP from E2E mandate; CSS already clean on feature/css-next |
 | 2026-07-15 03:20 | agentverse-feature-branch-2026-07-15 | cursor | integrate+qa | Closeout E2E green 12/12 + docs DONE | AV feature/upgradation-functionality | ok | auth+desk; H:\releases\agentverse-upgrade-0.3.1\evidence\e2e-closeout; no secrets |
+| 2026-07-15 03:42 | `proddeck-keepers-quay-2026-07-14` | cursor | policy+skill | Hire git-release skill + CONSCIOUS #16 DEV E2E before tag | MyAgent git-release skill Â· GIT-RELEASE-MANAGEMENT Â§6 Â· global rules | ok | tag after DEV Device Lab; Playwright slot; tagâ‰ live |
+| 2026-07-15 03:27 | `proddeck-keepers-quay-2026-07-14` | cursor | policy | CONSCIOUS #15 Playwright slot claim/release | workflow/testing/PLAYWRIGHT-SLOT + scripts Â· global rules | ok | max 1 runner; claim busy exit 2; release confirms |
 | 2026-07-15 03:15 | `css-sso-phase1-2026-07-15` | cursor | docs | ProdDeck/css-next OAuth integration spec (no app code) | CSS `docs/proddeck-css-next-oauth-pilot.md` + indexes | ok | Reverted accidental PD OAuth edits; implement later from spec |
 | 2026-07-15 03:12 | docs-library-idea-2026-07-15 | cursor | ops | Library DEV/PREPROD/PROD subdomains DNS+nginx | library[-dev|-staging].delena.buzz :3330/4330/5330 | ok | CF A created; nginx reload; DEV public 200; staging/prod 502 until F/G deploy |
 | 2026-07-15 03:06 | agentverse-feature-branch-2026-07-15 | cursor | qa+e2e | Closeout Lane B deepen Playwright E2E | AV feature/upgradation-functionality e2e/ | ok | auth desk prod flatroster dispatch-path; dual project; no secrets |

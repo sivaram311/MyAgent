@@ -18,7 +18,8 @@
 | [`promote-review`](../../.cursor/skills/promote-review/SKILL.md) | Diff + rule compliance |
 | [`promote-ops`](../../.cursor/skills/promote-ops/SKILL.md) | Deploy after GO only |
 | [`promote-field-ops`](../../.cursor/skills/promote-field-ops/SKILL.md) | Field lessons (bind race, CF cache, PS traps, ACTIVITY-LOG) |
-| [`e2e-hire`](../../.cursor/skills/e2e-hire/SKILL.md) | CONSCIOUS **#14** — hire E2E testing subagents (visual: Realme + desktop + tablet) |
+| [`e2e-hire`](../../.cursor/skills/e2e-hire/SKILL.md) | CONSCIOUS **#14/#15/#16** — hire E2E testers; **DEV** Device Lab + Playwright slot before tag |
+| [`git-release`](../../.cursor/skills/git-release/SKILL.md) | Annotated tags after DEV E2E · `GIT-RELEASE-MANAGEMENT.md` · tag ≠ live |
 
 ## Field lessons (read on every promote)
 
