@@ -1,7 +1,7 @@
 # Dependency matrix — live pins (source of truth)
 
 **Last updated:** 2026-07-15  
-**Session:** `css-next-0.2.0-promote-2026-07-15`  
+**Session:** `agentverse-upgrade-0.3.1-sot-closeout`  
 **Policy:** `workflow/deps/README.md` · Machine-readable: `DEPENDENCIES.json`
 
 Update this file **in the same turn** as any F:/G: cutover or CSS (shared) release.  
@@ -23,14 +23,16 @@ Columns: what is **live**, what **git tag** backs it, and which **upstream versi
 | App ID | Live PROD version | App git tag / commit | Release pack | Depends on | Dep version | Dep git tag | clientId | Issuer / notes |
 |--------|-------------------|----------------------|--------------|------------|-------------|-------------|----------|----------------|
 | agent-portal | 0.1.8 | _(jar pack)_ | `H:\releases\agent-portal-0.1.8` | css | 0.1.0 | `v0.1.0` | `agent-portal` | prod CSS `:5900` / css.delena.buzz |
-| agentverse | 0.3.17 | `v0.3.17` @ `d972909` | `H:\releases\agentverse-0.3.17` | css | 0.1.0 | `v0.1.0` | `agent-portal` (reuse) | Intentional clientId reuse; densify+desk |
-| proddeck | 0.8.0 | `v0.8.0` @ `6882ea46` | `H:\releases\proddeck-0.8.0` | css | 0.1.0 | `v0.1.0` | `proddeck` | home.delena.buzz `:5320`; Wave A drain + stop-dry-run |
+| agentverse-upgrade | 0.3.1 | `v0.3.1` @ `bda5a9b` | `H:\releases\agentverse-upgrade-0.3.1` | css | 0.1.0 | `v0.1.0` | `agent-portal` (reuse) | **ProdDeck Dispatch peer SoT** · staging `:4312` `agentverse-upgrade-staging.delena.buzz` · prod `:5312` `agentverse-upgrade.delena.buzz` · `F/G:\apps\agentverse-upgrade` |
+| agentverse | 0.3.17 | `v0.3.17` @ `d972909` | `H:\releases\agentverse-0.3.17` | css | 0.1.0 | `v0.1.0` | `agent-portal` (reuse) | Classic densify **rollback only** · `:4310`/`:5310` · **not** Dispatch default |
+| proddeck | 0.8.0 | `v0.8.0` @ `6882ea46` | `H:\releases\proddeck-0.8.0` | css | 0.1.0 | `v0.1.0` | `proddeck` | home.delena.buzz `:5320`; Wave A; Dispatch → **agentverse-upgrade 0.3.1** |
 | stack-pilot | 0.2.0-a | _(record on next promote)_ | `H:\releases\stack-pilot-0.2.0-a` | css | waived | — | waived-public-read | Auth disabled by design |
 | h-drive-server | 0.1.0 | _(record on next promote)_ | `H:\releases\h-drive-server-0.1.0` | css | waived | — | waived-public-read | Open CORS file expose by design |
 
 ### PREPROD notes
 
-PREPROD consumer apps that auth against **prod CSS** still list dep = CSS `v0.1.0` / `0.1.0` (same IdP). ProdDeck F matches PROD pin **0.8.0**.
+PREPROD consumer apps that auth against **prod CSS** still list dep = CSS `v0.1.0` / `0.1.0` (same IdP). ProdDeck F matches PROD pin **0.8.0**.  
+**agentverse-upgrade** F (`:4312`) and G (`:5312`) both pin **0.3.1** — Dispatch SoT on both envs.
 
 ---
 

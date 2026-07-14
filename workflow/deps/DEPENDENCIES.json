@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-07-15",
-  "sessionId": "css-next-0.2.0-promote-2026-07-15",
+  "sessionId": "agentverse-upgrade-0.3.1-sot-closeout",
   "policy": "E:/MyAgent/workflow/deps/README.md",
   "shared": {
     "css": {
@@ -51,6 +51,41 @@
       ]
     },
     {
+      "appId": "agentverse-upgrade",
+      "liveProdVersion": "0.3.1",
+      "appGitTag": "v0.3.1",
+      "appGitCommit": "bda5a9bc98c328701ec3e74f75d88b55b4c84dcf",
+      "releaseId": "agentverse-upgrade-0.3.1",
+      "releasePath": "H:/releases/agentverse-upgrade-0.3.1",
+      "repo": "E:/MyWorkspace/agentverse-project",
+      "prodUrl": "https://agentverse-upgrade.delena.buzz",
+      "prodPort": 5312,
+      "preprodUrl": "https://agentverse-upgrade-staging.delena.buzz",
+      "preprodPort": 4312,
+      "prodPath": "G:/apps/agentverse-upgrade",
+      "preprodPath": "F:/apps/agentverse-upgrade",
+      "dependencies": [
+        {
+          "name": "css",
+          "version": "0.1.0",
+          "gitTag": "v0.1.0",
+          "releaseId": "css-0.1.0",
+          "clientId": "agent-portal",
+          "status": "verified-q1-q2-2026-07-15",
+          "notes": "Intentional clientId reuse with agent-portal"
+        },
+        {
+          "name": "proddeck",
+          "version": "0.8.0",
+          "gitTag": "v0.8.0",
+          "releaseId": "proddeck-0.8.0",
+          "status": "dispatch-peer-sot",
+          "notes": "ProdDeck Dispatch deep-links land on this upgrade fleet (not classic)"
+        }
+      ],
+      "notes": "Dispatch peer SoT — staging+prod upgrade hosts; classic densify is rollback only"
+    },
+    {
       "appId": "agentverse",
       "liveProdVersion": "0.3.17",
       "appGitTag": "v0.3.17",
@@ -64,7 +99,7 @@
           "releaseId": "css-0.1.0",
           "clientId": "agent-portal",
           "status": "verified-q1-q2-2026-07-15",
-          "notes": "Intentional clientId reuse with agent-portal"
+          "notes": "Intentional clientId reuse with agent-portal; classic densify rollback only — not Dispatch SoT"
         }
       ]
     },
@@ -91,11 +126,20 @@
           "status": "verified-os-events-forward"
         },
         {
+          "name": "agentverse-upgrade",
+          "version": "0.3.1",
+          "gitTag": "v0.3.1",
+          "releaseId": "agentverse-upgrade-0.3.1",
+          "status": "dispatch-peer-sot",
+          "notes": "Cloud OS Dispatch SoT — hosts :4312/:5312 upgrade fleet"
+        },
+        {
           "name": "agentverse",
           "version": "0.3.17",
           "gitTag": "v0.3.17",
           "releaseId": "agentverse-0.3.17",
-          "status": "peer-live"
+          "status": "peer-rollback",
+          "notes": "Classic densify rollback; not Dispatch default"
         }
       ]
     },
