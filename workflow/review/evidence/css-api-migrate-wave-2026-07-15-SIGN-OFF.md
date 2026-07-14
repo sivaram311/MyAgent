@@ -5,7 +5,7 @@
 | Session | `css-api-migrate-wave-2026-07-15` |
 | Reviewer agent id | lead-self-docs-review (policy pack) |
 | Provider | cursor |
-| Tip SHA | (post-commit) |
+| Tip SHA | c8f37e7 |
 | Branch / tag | `main` |
 | When (UTC+5:30) | 2026-07-15 05:18 |
 
