@@ -31,7 +31,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 3311 | agentverse-v2 | http | active | E:\MyWorkspace\agentverse-project | stable-v2 side deploy; feature/stable-v2; npm run next -p 3311; side-by-side — primary DEV may stay 3310 on other branches |
 | 3312 | agentverse-upgrade | http | active | E:\MyWorkspace\agentverse-project | upgradation functionality side fleet; feature/upgradation-functionality; npm -p 3312; must NOT use 3310/3311 |
 | 3320 | proddeck | http | reserved | E:\MyWorkspace\sandbox\proddeck | ProdDeck Next.js DEV; home.delena.buzz; npm run dev -p 3320 |
-| 3330 | library | http | reserved | E:\MyWorkspace\sandbox\library | Library phone-first docs PWA; npm run dev -p 3330 (Phase 0 docs only) |
+| 3330 | library | http | reserved | E:\MyWorkspace\sandbox\library | Library DEV; https://library-dev.delena.buzz → :3330 |
 
 <!-- Add new DEV rows below -->
 
@@ -47,7 +47,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 4311 | agentverse-v2 | http | active | F:\apps\agentverse-v2 | stable-v2 side PREPROD; https://agentverse-v2-staging.delena.buzz (must NOT use 4310) |
 | 4312 | agentverse-upgrade | http | active | F:\apps\agentverse-upgrade | upgradation side PREPROD; https://agentverse-upgrade-staging.delena.buzz (must NOT use 4310/4311) |
 | 4320 | proddeck | http | active | F:\apps\proddeck | ProdDeck PREPROD; https://home-staging.delena.buzz â†’ :4320; Q1 0.1.0 2026-07-13 |
-| 4330 | library | http | reserved | F:\apps\library | Library PREPROD (not deployed yet) |
+| 4330 | library | http | reserved | F:\apps\library | Library PREPROD; https://library-staging.delena.buzz → :4330 (app not deployed yet) |
 | 4900 | css | http | active | F:\apps\css | Preprod classic CSS IdP; keep live; do not replace with css-next |
 | 4910 | css-next | http | active | F:\apps\css-next | Side-fleet PREPROD OAuth SSO 0.2.0; https://css-next-staging.delena.buzz → :4910; must NOT use 4900 |
 | 4091 | stack-pilot | http | active | F:\apps\stack-pilot | PREPROD; https://control-staging.delena.buzz ? :4091 |
@@ -70,7 +70,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 5311 | agentverse-v2 | http | active | G:\apps\agentverse-v2 | stable-v2 side PROD; https://agentverse-v2.delena.buzz (must NOT use 5310) |
 | 5312 | agentverse-upgrade | http | active | G:\apps\agentverse-upgrade | upgradation side PROD; https://agentverse-upgrade.delena.buzz (must NOT use 5310/5311) |
 | 5320 | proddeck | http | active | G:\apps\proddeck | ProdDeck PROD; https://home.delena.buzz |
-| 5330 | library | http | reserved | G:\apps\library | Library PROD (not deployed yet) |
+| 5330 | library | http | reserved | G:\apps\library | Library PROD; https://library.delena.buzz → :5330 (app not deployed yet) |
 
 ## Legacy outside scheme (migrate later)
 

@@ -330,7 +330,7 @@
             "role": "http",
             "status": "reserved",
             "path": "E:\\\\MyWorkspace\\\\sandbox\\\\library",
-            "notes": "Library phone-first docs PWA Phase 0"
+            "notes": "Library DEV; https://library-dev.delena.buzz -> :3330"
         },
         {
             "port": 4330,
@@ -339,7 +339,7 @@
             "role": "http",
             "status": "reserved",
             "path": "F:\\\\apps\\\\library",
-            "notes": "Library PREPROD not deployed"
+            "notes": "Library PREPROD; https://library-staging.delena.buzz -> :4330"
         },
         {
             "port": 5330,
@@ -348,7 +348,7 @@
             "role": "http",
             "status": "reserved",
             "path": "G:\\\\apps\\\\library",
-            "notes": "Library PROD not deployed"
+            "notes": "Library PROD; https://library.delena.buzz -> :5330"
         }
     ]
 }
