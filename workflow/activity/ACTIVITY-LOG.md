@@ -5,6 +5,7 @@ Append-only. Newest entries at the **top** (below this header block).
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
+| 2026-07-15 03:15 | `css-sso-phase1-2026-07-15` | cursor | docs | ProdDeck/css-next OAuth integration spec (no app code) | CSS `docs/proddeck-css-next-oauth-pilot.md` + indexes | ok | Reverted accidental PD OAuth edits; implement later from spec |
 | 2026-07-15 03:12 | docs-library-idea-2026-07-15 | cursor | ops | Library DEV/PREPROD/PROD subdomains DNS+nginx | library[-dev|-staging].delena.buzz :3330/4330/5330 | ok | CF A created; nginx reload; DEV public 200; staging/prod 502 until F/G deploy |
 | 2026-07-15 03:06 | agentverse-feature-branch-2026-07-15 | cursor | qa+e2e | Closeout Lane B deepen Playwright E2E | AV feature/upgradation-functionality e2e/ | ok | auth desk prod flatroster dispatch-path; dual project; no secrets |
 | 2026-07-15 02:53 | agentverse-feature-branch-2026-07-15 | cursor | qa+e2e | Lane E2E-SPECS Playwright suite vs upgrade-staging | agentverse-project e2e/ + playwright.config | ok | 6 passed 1 skipped (auth); health/shell/desk/hire; docs/E2E.md |

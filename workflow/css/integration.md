@@ -36,6 +36,10 @@ Browser  --API-------->  App backend   [validates JWT via JWKS, aud/clientId mat
 
 Second app: repeat authorize with SSO cookie — **no password re-prompt** while session valid.
 
+**ProdDeck DEV pilot (spec, not implemented):** full wiring + API contracts →  
+`E:\MyWorkspace\centralized-security-system\docs\proddeck-css-next-oauth-pilot.md`  
+(IdP = css-next / `https://css-next.delena.buzz`; app = ProdDeck `:3320` / `clientId=proddeck`).
+
 ## Pattern — legacy password login (still supported)
 
 ```text
