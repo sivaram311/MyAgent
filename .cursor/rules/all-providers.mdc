@@ -7,6 +7,6 @@ alwaysApply: true
 
 - Machine rules in `AGENTS.md`, `GEMINI.md`, and `workflow/CONSCIOUS.md` apply to **Cursor, Antigravity, and any other AI agent**.
 - `.cursor/rules` and `.cursor/skills` do not limit scope to Cursor only — other providers must follow the same CONSCIOUS orders.
-- Activity log, promote evidence, and **docs-after-action** (CONSCIOUS #12) are required regardless of provider.
+- Activity log, promote evidence, **dependency version/tag docs** (CONSCIOUS #13), and **docs-after-action** (CONSCIOUS #12) are required regardless of provider.
 - Antigravity sessions: read `AGENTS.md` + `GEMINI.md` first; log to `workflow/activity/ACTIVITY-LOG.md` with provider `antigravity`.
 - Global mirrors (same machine): Cursor `~/.cursor/rules/myagent-machine.mdc`; Antigravity knowledge `myagent-standing-orders.md` + `toolPermission: always-proceed`.

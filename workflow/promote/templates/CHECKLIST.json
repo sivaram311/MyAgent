@@ -1,13 +1,27 @@
 {
-  "version": 1,
+  "version": 2,
   "appId": "",
   "appVersion": "",
+  "appGitTag": "",
+  "appGitCommit": "",
   "gate": "q1",
   "sourceEnv": "dev",
   "targetEnv": "preprod",
   "decision": "PENDING",
   "sessionId": "",
   "updated": "",
+  "dependencies": {
+    "upstream": [
+      {
+        "name": "css",
+        "version": "",
+        "gitTag": "",
+        "releaseId": "",
+        "clientId": "",
+        "status": "pending"
+      }
+    ]
+  },
   "required": {
     "qa_smoke_pass": false,
     "qa_regression_pass": null,
@@ -16,6 +30,9 @@
     "ports_compliant": false,
     "db_schema_compliant": false,
     "css_client_registered": false,
+    "app_git_tag_recorded": false,
+    "dependency_versions_recorded": false,
+    "dependency_matrix_updated": false,
     "evidence_complete": false
   },
   "notes": ""

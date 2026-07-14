@@ -12,6 +12,7 @@ Source of truth (always prefer these over chat memory):
 | `E:\MyAgent\workflow\ports\` | Port reservation |
 | `E:\MyAgent\workflow\db\` | Postgres schema-per-env |
 | `E:\MyAgent\workflow\css\` | Centralized Security System |
+| `E:\MyAgent\workflow\deps\` | Inter-app dependency versions + git tags |
 | `E:\MyAgent\workflow\promote\` | Promote evidence gates |
 
 ## Before work
@@ -21,6 +22,7 @@ Source of truth (always prefer these over chat memory):
 3. Honor drives: E DEV / F PREPROD / G PROD / H RELEASES.
 4. No delete/partition without explicit user confirmation.
 5. Update docs after meaningful changes (CONSCIOUS #12).
+6. On promotes: record **app git tag** + **dependency versions/tags** (CONSCIOUS #13) in DEPENDENCIES.md, CHECKLIST, SUMMARY, and ACTIVITY-LOG.
 
 ## Agent Portal runs
 

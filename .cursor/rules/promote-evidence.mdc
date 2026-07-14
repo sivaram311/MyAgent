@@ -6,6 +6,7 @@ alwaysApply: true
 # Environment promote (mandatory)
 
 - Promotes **DEV→PREPROD (Q1)** and **PREPROD→PROD (Q2)** require an evidence pack under `H:\releases\<app>-<version>\evidence\<q1|q2>\`.
-- Use skills: `promote-em` (orchestrate), `promote-qa`, `promote-security`, `promote-review`, `promote-ops`.
+- Use skills: `promote-em` (orchestrate), `promote-qa`, `promote-security`, `promote-review`, `promote-ops`, `promote-field-ops`.
 - **Ops must not deploy** unless `CHECKLIST.json` decision is **GO** and required flags are true.
-- Details: `workflow/promote/README.md`
+- **Dependency versions required:** app **git tag** + upstream **version/tag** (CSS for auth apps) in `DEPENDENCIES.md`, CHECKLIST, SUMMARY, and ACTIVITY-LOG. Update `workflow/deps/` after deploy. Missing → NO-GO (CONSCIOUS #13).
+- Details: `workflow/promote/README.md` · `workflow/deps/README.md`

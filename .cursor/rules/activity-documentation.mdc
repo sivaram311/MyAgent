@@ -9,7 +9,8 @@ alwaysApply: true
 - Applies to **Cursor and Antigravity** (and any other provider).
 - Append to `workflow/activity/ACTIVITY-LOG.md` (when, session id, **provider**, role, action, target, result, evidence).
 - Promote work also writes role folders under `H:\releases\...\evidence\`.
+- **Promote ACTIVITY-LOG rows must mention app git tag and dependency versions/tags** (CONSCIOUS #13).
 - Update `workflow/sessions.md` outcomes for milestones.
 - **Update product/ops docs after meaningful actions** (CONSCIOUS #12) — OPS/README/platform/DEPLOY; same turn when practical. Activity log alone is not enough for how-to knowledge.
 - Never log secrets/tokens/passwords.
-- Details: `workflow/activity/README.md` · Entry: `AGENTS.md` · Standing order: `workflow/CONSCIOUS.md` rule 12
+- Details: `workflow/activity/README.md` · Entry: `AGENTS.md` · Standing order: `workflow/CONSCIOUS.md` rules 12–13

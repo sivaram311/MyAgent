@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-07-11",
+  "updated": "2026-07-15",
   "policy": "mandatory-schema-per-env",
   "instance": {
     "host": "127.0.0.1",
@@ -19,7 +19,7 @@
       "schemas": ["dev", "preprod", "prod"],
       "roles": ["app_css_dev", "app_css_preprod", "app_css_prod"],
       "status": "active",
-      "notes": "DDL applied 2026-07-11; CSS preprod/prod on Postgres"
+      "notes": "DDL 2026-07-11; DEV+PREPROD+PROD all Postgres (dev/preprod/prod schemas). H2 only for test/h2 profiles."
     },
     {
       "appId": "agent-portal",

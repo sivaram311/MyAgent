@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "updated": "2026-07-15",
+  "sessionId": "proddeck-keepers-quay-2026-07-14",
+  "policy": "E:/MyAgent/workflow/deps/README.md",
+  "shared": {
+    "css": {
+      "appId": "css",
+      "liveProdVersion": "0.1.0",
+      "gitTag": "v0.1.0",
+      "gitCommit": "b754f0b0814420a7fefa1796d0d09295838786b8",
+      "releaseId": "css-0.1.0",
+      "releasePath": "H:/releases/css-0.1.0",
+      "repo": "E:/MyWorkspace/centralized-security-system",
+      "prodUrl": "https://css.delena.buzz",
+      "prodPort": 5900,
+      "preprodPort": 4900,
+      "devPort": 9000
+    }
+  },
+  "consumers": [
+    {
+      "appId": "agent-portal",
+      "liveProdVersion": "0.1.8",
+      "appGitTag": null,
+      "releaseId": "agent-portal-0.1.8",
+      "dependencies": [
+        {
+          "name": "css",
+          "version": "0.1.0",
+          "gitTag": "v0.1.0",
+          "releaseId": "css-0.1.0",
+          "clientId": "agent-portal",
+          "status": "verified-assumed-current-prod-css"
+        }
+      ]
+    },
+    {
+      "appId": "agentverse",
+      "liveProdVersion": "0.3.17",
+      "appGitTag": "v0.3.17",
+      "appGitCommit": "d9729094b112686cd209fdfc0bde881ca4c2c085",
+      "releaseId": "agentverse-0.3.17",
+      "dependencies": [
+        {
+          "name": "css",
+          "version": "0.1.0",
+          "gitTag": "v0.1.0",
+          "releaseId": "css-0.1.0",
+          "clientId": "agent-portal",
+          "status": "verified-q1-q2-2026-07-15",
+          "notes": "Intentional clientId reuse with agent-portal"
+        }
+      ]
+    },
+    {
+      "appId": "proddeck",
+      "liveProdVersion": "0.8.0",
+      "appGitTag": "v0.8.0",
+      "appGitCommit": "6882ea46bfc8d0995681de80f6fe296ac097a4ca",
+      "releaseId": "proddeck-0.8.0",
+      "dependencies": [
+        {
+          "name": "css",
+          "version": "0.1.0",
+          "gitTag": "v0.1.0",
+          "releaseId": "css-0.1.0",
+          "clientId": "proddeck",
+          "status": "verified-q1-q2-2026-07-15"
+        },
+        {
+          "name": "agent-portal",
+          "version": "0.1.8",
+          "gitTag": null,
+          "releaseId": "agent-portal-0.1.8",
+          "status": "verified-os-events-forward"
+        },
+        {
+          "name": "agentverse",
+          "version": "0.3.17",
+          "gitTag": "v0.3.17",
+          "releaseId": "agentverse-0.3.17",
+          "status": "peer-live"
+        }
+      ]
+    },
+    {
+      "appId": "stack-pilot",
+      "liveProdVersion": "0.2.0-a",
+      "appGitTag": null,
+      "releaseId": "stack-pilot-0.2.0-a",
+      "dependencies": [
+        {
+          "name": "css",
+          "version": null,
+          "gitTag": null,
+          "status": "waived-public-read",
+          "notes": "stackpilot.auth.enabled=false"
+        }
+      ]
+    },
+    {
+      "appId": "h-drive-server",
+      "liveProdVersion": "0.1.0",
+      "appGitTag": null,
+      "releaseId": "h-drive-server-0.1.0",
+      "dependencies": [
+        {
+          "name": "css",
+          "version": null,
+          "gitTag": null,
+          "status": "waived-public-read",
+          "notes": "Open CORS file expose by design"
+        }
+      ]
+    }
+  ]
+}

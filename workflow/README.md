@@ -18,6 +18,7 @@ Machine-local process for managing MyAgent development activity across **Cursor,
 | `workflow/ports/` | **Mandatory** port reservations (DEV/PREPROD/PROD) |
 | `workflow/db/` | **Mandatory** Postgres schema-per-env registry |
 | `workflow/css/` | **Mandatory** CSS (centralized auth) for apps |
+| `workflow/deps/` | **Mandatory** inter-app dependency versions + git tags |
 | `workflow/promote/` | **Mandatory** qualify/promote with evidence packs |
 | `workflow/activity/` | **Mandatory** agent/subagent activity log |
 | `workflow/prod-deploy.md` | Prod deploy wrapper (Cloudflare + nginx) |
@@ -29,6 +30,7 @@ Machine-local process for managing MyAgent development activity across **Cursor,
 | `.cursor/rules/port-reservation.mdc` | Always-on: reserve ports before bind |
 | `.cursor/rules/db-schema-per-env.mdc` | Always-on: schema per env on shared Postgres |
 | `.cursor/rules/css-mandatory.mdc` | Always-on: use Centralized Security System |
+| `.cursor/rules/dependency-versions.mdc` | Always-on: record git tags + dependency versions on promote |
 | `.cursor/rules/promote-evidence.mdc` | Always-on: promote needs evidence + EM GO |
 | `.cursor/rules/activity-documentation.mdc` | Always-on: document all agent activity (all providers) |
 | `.cursor/rules/all-providers.mdc` | Always-on: Cursor + Antigravity share CONSCIOUS |

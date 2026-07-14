@@ -2,29 +2,50 @@
 
 ## Runtime
 
+| Env | Profile | Port | Database | Issuer |
+|-----|---------|------|----------|--------|
+| DEV | `dev` | **9000** | Postgres `app_css.dev` (`app_css_dev`) | `http://127.0.0.1:9000` |
+| PREPROD | `preprod` | **4900** | Postgres `app_css.preprod` | `http://127.0.0.1:4900` |
+| PROD | `prod` | **5900** | Postgres `app_css.prod` | `https://css.delena.buzz` |
+| Tests / CI | `test` | random | H2 in-memory | fixed test issuer |
+| Optional demo | `h2` | 9000 | H2 in-memory | local |
+
+**DEV start (aligned with F/G Postgres):** `scripts/start-dev.ps1` (loads `E:\MyAgent\workflow\db\secrets\postgres.env`).
+
 | Item | Value |
 |------|-------|
 | Project | `E:\MyWorkspace\centralized-security-system` |
-| Listen | `127.0.0.1:9000` |
-| Login | `POST /auth/login` `{ username, password, clientId }` |
+| Password login (legacy / API) | `POST /auth/login` `{ username, password, clientId }` |
+| SSO (Phase 2) | `GET /oauth/authorize` → CSS login → `code` → `POST /oauth/token` (PKCE) |
 | JWKS | `GET /.well-known/jwks.json` |
-| Public (via nginx) | `https://delena.buzz/auth/` → `:9000` |
+| Public (via nginx) | `https://delena.buzz/auth/` → `:9000` (DEV); prod `https://css.delena.buzz` |
 
-## Pattern (every new app)
+## Pattern (every new app) — preferred SSO
 
 ```text
-Browser  --login-->  CSS (:9000)   [clientId = <app-id>]
-Browser  --API---->  App backend   [validates JWT via JWKS, aud/clientId match]
+Browser  --authorize-->  CSS /oauth/authorize?client_id&redirect_uri&code_challenge...
+Browser  --login once--> CSS /oauth/login  (SSO cookie CSS_SSO)
+Browser  --redirect----> App?code=...
+App      --token-------> CSS /oauth/token  (code + code_verifier) → app-scoped JWT
+Browser  --API-------->  App backend   [validates JWT via JWKS, aud/clientId match]
 ```
 
-1. Reserve ports + DB schemas as usual (`workflow/ports`, `workflow/db`).
-2. Reserve **CSS clientId** in `CLIENT-REGISTRY.md` (usually same as `app-id`).
-3. Register client in CSS seed/config (follow CSS repo docs).
-4. Wire resource server:
-   - Spring: install/use `css-spring-boot-starter`
-   - Other stacks: validate RS256 via JWKS; check `iss`, `aud`/`client_id`, `exp`, `roles`
-5. Frontend: no embedded user tables; use CSS login + store access/refresh tokens securely.
-6. Prod subdomain: ensure CSS CORS allows `https://<app>.delena.buzz`.
+Second app: repeat authorize with SSO cookie — **no password re-prompt** while session valid.
+
+## Pattern — legacy password login (still supported)
+
+```text
+Browser  --login-->  CSS /auth/login   [clientId = <app-id>]
+Browser  --API---->  App backend   [JWKS]
+```
+
+1. Reserve ports + DB schemas (`workflow/ports`, `workflow/db`).
+2. Reserve **CSS clientId** in `CLIENT-REGISTRY.md`.
+3. Register client in CSS seed/config.
+4. Wire resource server (starter / JWKS).
+5. Prefer OAuth redirect gate over embedding password forms.
+6. Prod subdomain: CSS CORS allows `https://<app>.delena.buzz`.
+7. Promote: record CSS **version + git tag** (`workflow/deps/`).
 
 ## Example config (Spring resource server)
 
@@ -37,11 +58,10 @@ css:
     client-id: my-shop
 ```
 
-For browser apps behind delena.buzz, set public auth URL to the proxied host (e.g. `CSS_AUTH_URL=https://delena.buzz`) so mixed content does not break HTTPS.
-
 ## Do not
 
 - Add a second JWT issuer per app
-- Share CSS private keys with apps (apps use JWKS only)
-- Skip `clientId` on login
-- Point DEV apps at PROD-only client registrations without registering env-appropriate clients if CSS requires separation (prefer one clientId per app; env isolation stays on ports/DB/drives)
+- Share CSS private signing keys with apps
+- Skip `clientId` / `client_id` on login or token exchange
+- Point DEV processes at `preprod`/`prod` schemas
+- Use H2 for DEV runtime (use profile `dev` + Postgres; H2 is `test`/`h2` only)

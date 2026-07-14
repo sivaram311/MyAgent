@@ -1,0 +1,16 @@
+---
+description: Mandatory inter-app dependency versions and git tags on promote
+alwaysApply: true
+---
+
+# Dependency versions + git tags (mandatory)
+
+- Multi-app prod requires tracking **which version/tag** of shared services (especially **CSS**) each app was verified against.
+- SoT: `workflow/deps/DEPENDENCY-MATRIX.md` (+ `DEPENDENCIES.json`).
+- Every Q1/Q2 promote must include `H:\releases\<app>-<ver>\DEPENDENCIES.md` with:
+  - App **git tag** (preferred) or commit SHA
+  - Each upstream **version + git tag** + release id
+- CHECKLIST / SUMMARY / ACTIVITY-LOG must name these fields; missing → **NO-GO**.
+- After GO + deploy, update the dependency matrix to match live F:/G: pins.
+- `clientId` registry alone is **not** sufficient.
+- Details: `workflow/deps/README.md` · Standing order: `workflow/CONSCIOUS.md` rule **13**

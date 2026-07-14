@@ -8,6 +8,7 @@ alwaysApply: true
 - Auth for new/migrated apps uses **CSS** at `E:\MyWorkspace\centralized-security-system` (**port 9000**).
 - Do not build a separate login/JWT issuer per app without explicit user confirmation.
 - Register `clientId` in `workflow/css/CLIENT-REGISTRY.md` before wiring.
+- On promote: also record **CSS version + git tag** from `workflow/deps/` (not only clientId).
 - Spring apps: prefer `css-spring-boot-starter`; validate via JWKS (RS256).
 - Public auth via nginx `/auth/` on delena.buzz when exposed; not raw public IP in configs.
-- Details: `workflow/css/README.md` and CSS repo `docs/application-integration.md`
+- Details: `workflow/css/README.md`, `workflow/deps/README.md`, and CSS repo `docs/application-integration.md`

@@ -2,8 +2,8 @@
 
 Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) — including **Cursor**, **Antigravity**, and any other provider (Agent Portal or local).
 
-**Last updated:** 2026-07-11  
-**Session that recorded this:** `93d977cc-7c3b-4a37-b889-09d2e6676ed5`
+**Last updated:** 2026-07-15  
+**Session that recorded this:** `css-prod-tag-2026-07-15` / dependency-matrix policy
 
 **Provider note:** `.cursor/rules` and `.cursor/skills` help Cursor discover policy. Antigravity and others must still follow this file and `AGENTS.md`. Activity logging and promote evidence are **provider-agnostic**.
 
@@ -62,6 +62,15 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
     Chat + ACTIVITY-LOG alone are **not** enough when the next human/agent would otherwise lack written how-to.  
     Do this in the **same work turn** as the change whenever practical; do not leave “docs later” as the default.
 
+13. **Dependency versions + git tags are mandatory on promote** (user-directed 2026-07-15 — **keep**)  
+    Multi-app prod means shared upstreams (especially **CSS**). Every Q1/Q2 promote must record:  
+    - This app’s **git tag** (preferred) or commit SHA  
+    - Each dependency’s **version + git tag** + release pack id (CSS minimum for auth apps)  
+    SoT: `workflow/deps/DEPENDENCY-MATRIX.md` (+ `DEPENDENCIES.json`).  
+    Per release: `H:\releases\<app>-<ver>\DEPENDENCIES.md`.  
+    CHECKLIST / SUMMARY / ACTIVITY-LOG must name these; missing → **NO-GO**.  
+    After GO + deploy, update the matrix to match live F:/G: pins.
+
 ---
 
 ## Allowed without extra confirmation
@@ -87,7 +96,7 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
 | **E:** | `DEV` | ~68 GB | **Development** — AI agents, repos, MyAgent, MyWorkspace, Source, GitBackup | Day-to-day create/edit here |
 | **F:** | `PREPROD` | 10 GB | **Pre-production / staging** runtime only | Change only when user says pre-prod/staging |
 | **G:** | `PROD` | 10 GB | **Production-like** runtime only | Change only when user explicitly says prod |
-| **H:** | `RELEASES` | 10 GB | **Last 3 release packages** only (`H:\releases\`) | Add/promote releases only when asked; retention max 3 |
+| **H:** | `RELEASES` | 10 GB | **Release handoff** — last **3 per app family** (+ live F:/G: pins) under `H:\releases\`; older → `C:\backup\releases\` zips | Add/promote when asked; archive/prune per `workflow/promote/release-archive.md` |
 
 Each env drive also has `PURPOSE.md` at its root.
 
@@ -97,10 +106,12 @@ Each env drive also has `PURPOSE.md` at its root.
 E:\          → development work (default for agents)
 F:\          → staging deploy root (not an archive)
 G:\          → prod-like deploy root (not an archive)
-H:\releases\ → versioned release artifacts (keep last 3 only)
+H:\releases\ → versioned release handoff (last 3 per app + F/G pins; not a runtime)
+C:\backup\releases\ → cold archive zips (GDrive-synced; no node_modules / .env*)
 ```
 
 Promote flow: build on **E:** → store package on **H:** → deploy to **F:** → promote to **G:** when approved.  
+H: packs may omit `node_modules` — on F:/G: run `npm ci` then start. Archive SOP: `workflow/promote/release-archive.md`.  
 Prod public go-live: `workflow/prod-deploy.md` → `E:\Source\Deployment\scripts\deploy-prod-app.ps1` (zone **delena.buzz**).
 
 ### Port contracts
@@ -132,8 +143,19 @@ Instance: `127.0.0.1:5432`. Registry: `workflow/db/SCHEMA-REGISTRY.md`
 | Port | **9000** |
 | Public | `https://delena.buzz/auth/` → nginx → `:9000` |
 | Registry | `workflow/css/CLIENT-REGISTRY.md` |
+| Version SoT | `workflow/deps/` (CSS live tag e.g. `v0.1.0`) |
 
-New apps: login via CSS + validate JWT via JWKS (`clientId` required).
+New apps: login via CSS + validate JWT via JWKS (`clientId` required).  
+Promotes must cite **CSS version + git tag**, not only `clientId`.
+
+### Dependency version contracts
+
+| Item | Value |
+|------|-------|
+| Matrix SoT | `workflow/deps/DEPENDENCY-MATRIX.md` |
+| JSON mirror | `workflow/deps/DEPENDENCIES.json` |
+| Per release | `H:\releases\<app>-<ver>\DEPENDENCIES.md` |
+| Promote bar | App git tag + upstream versions/tags required or **NO-GO** |
 
 ### Promote contracts
 
@@ -142,11 +164,13 @@ New apps: login via CSS + validate JWT via JWKS (`clientId` required).
 | Q1 | E: → F: | `H:\releases\<app>-<ver>\evidence\q1\` |
 | Q2 | F: → G: | `H:\releases\<app>-<ver>\evidence\q2\` |
 
-Orchestrator skill: `promote-em`. Details: `workflow/promote/README.md`
+Orchestrator skill: `promote-em`. Details: `workflow/promote/README.md`  
+Dependency policy: `workflow/deps/README.md` (rule **13**).
 
 ### Activity documentation
 
-All agent/subagent work is append-logged in `workflow/activity/ACTIVITY-LOG.md` (plus evidence packs when promoting).
+All agent/subagent work is append-logged in `workflow/activity/ACTIVITY-LOG.md` (plus evidence packs when promoting).  
+Promote rows must include **git tag** and **dependent versions**.
 
 ### Docs after action (rule 12)
 
@@ -181,6 +205,8 @@ Note: F/G/H are logical partitions inside one MBR extended partition on Disk 0 (
 - DB schema rule: `.cursor/rules/db-schema-per-env.mdc`
 - CSS auth: `workflow/css/README.md`
 - CSS rule: `.cursor/rules/css-mandatory.mdc`
+- Dependency versions: `workflow/deps/README.md`
+- Dependency rule: `.cursor/rules/dependency-versions.mdc`
 - Promote: `workflow/promote/README.md`
 - Promote rule: `.cursor/rules/promote-evidence.mdc`
 - Activity log: `workflow/activity/README.md`
