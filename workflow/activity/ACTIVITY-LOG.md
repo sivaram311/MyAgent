@@ -5,6 +5,7 @@ Append-only. Newest entries at the **top** (below this header block).
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
+| 2026-07-15 04:32 | `css-api-migrate-wave-2026-07-15` | cursor | implement+qa | ProdDeck-only css-next OAuth pilot DEV | `feature/css-next-oauth-pilot` @63718fc · E2E 24/24 | ok | REVIEWER GO; F/G classic unchanged; H: evidence css-next-oauth-pilot |
 | 2026-07-15 04:26 | `css-api-migrate-wave-2026-07-15` | cursor | reviewer+git | Push after SIGN-OFF GO (#17) | MyAgent `50c3133` · CSS `f70b1bd` release/0.2.0 | ok | H:\releases\css-next-0.2.0\evidence\review\SIGN-OFF.md; await EM wave list GO |
 | 2026-07-15 04:20 | `css-api-migrate-wave-2026-07-15` | cursor | policy+qa | CONSCIOUS #17 Reviewer-before-push + CSS API prove | MyAgent review/ · CSS css-api-prove-working · H: api-prove | ok | JWKS/OAuth green; DEV :9000 down; Reviewer then push |
 | 2026-07-15 04:00 | `proddeck-keepers-quay-2026-07-14` | cursor | git-release+lead | Fleet Phase A complete ? stop for Phase B EM GO | PD `v0.8.1` pack · AV main merge · CSS fleets · Library DEV E2E | ok | No F/G redeploy; matrix live pins unchanged; await EM GO |
