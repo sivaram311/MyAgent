@@ -15,7 +15,8 @@ Hire testing subagents when **any** of these happen:
 
 Do **not** treat `scripts/smoke.mjs` or ad-hoc PowerShell alone as satisfying this rule for visual apps.
 
-**Preferred base URL:** DEV (`http://127.0.0.1:3xxx` or app DEV host). Staging/prod Playwright is optional after tag/pack/promote — not the first green.
+**Preferred base URL:** DEV. For **login / OAuth / hybrid auth**, prefer the app’s **DEV public domain** (CONSCIOUS **#18** · [DEV-HOST-E2E.md](./DEV-HOST-E2E.md)) — e.g. ProdDeck `https://home-dev.delena.buzz`.  
+`http://127.0.0.1:3xxx` alone does **not** satisfy login E2E when a DEV subdomain exists. Staging/prod Playwright is optional after tag/pack/promote — not the first green.
 
 ## Required hires (visual / UI apps)
 
@@ -37,9 +38,10 @@ Hire at least one `e2e-api` testing subagent (contract / health / auth matrix). 
 
 1. Playwright (preferred) or equivalent project under app `e2e/`
 2. Named projects matching device presets (visual apps)
-3. Evidence: app `docs/E2E.md` **and/or** `H:\releases\<app>-<ver>\evidence\e2e\`
-4. ACTIVITY-LOG row with role `qa+e2e` (or per-lane), session id, result
-5. Crew hire note under app `agents/hires/` (or `agents/crew-activity.md`)
+3. **Login specs:** `baseURL` = DEV public hostname when present (#18); evidence names that URL
+4. Evidence: app `docs/E2E.md` **and/or** `H:\releases\<app>-<ver>\evidence\e2e\`
+5. ACTIVITY-LOG row with role `qa+e2e` (or per-lane), session id, result
+6. Crew hire note under app `agents/hires/` (or `agents/crew-activity.md`)
 
 ## Ownership / parallelism
 

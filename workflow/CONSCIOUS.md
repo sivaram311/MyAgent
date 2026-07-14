@@ -3,7 +3,7 @@
 Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) — including **Cursor**, **Antigravity**, and any other provider (Agent Portal or local).
 
 **Last updated:** 2026-07-15  
-**Session that recorded this:** `proddeck-keepers-quay-2026-07-14` / E2E (#14) · Playwright slot (#15) · DEV-E2E-before-tag (#16) · Reviewer-before-push (#17)
+**Session that recorded this:** `proddeck-keepers-quay-2026-07-14` / E2E (#14–#16) · Reviewer-before-push (#17) · DEV-domain-login-E2E (#18) · `css-api-migrate-wave-2026-07-15`
 
 **Provider note:** `.cursor/rules` and `.cursor/skills` help Cursor discover policy. Antigravity and others must still follow this file and `AGENTS.md`. Activity logging and promote evidence are **provider-agnostic**.
 
@@ -90,16 +90,23 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
     Editing `e2e/**` specs does not require the slot — **running** does. Parallel Device Lab *authors* are fine; **execution** is serialized through this slot.
 
 16. **DEV E2E before git tag / pack** (user-directed 2026-07-15 — **keep**)  
-    For UI apps, run Device Lab E2E against **DEV** (`:3xxx` / local DEV URL) **before** annotated release tags and H: pack cut.  
-    SoT: `GIT-RELEASE-MANAGEMENT.md` §6 · skill `git-release` · hire `e2e-hire` + Playwright slot (#15).  
+    For UI apps, run Device Lab E2E against **DEV** **before** annotated release tags and H: pack cut.  
+    SoT: `GIT-RELEASE-MANAGEMENT.md` §6 · skill `git-release` · hire `e2e-hire` + Playwright slot (#15) + DEV host login (#18).  
     Prefer Realme **360×780** + desktop **1280×800** + tablet **800×1280** on DEV. Staging/prod browser checks may complement promote; they do **not** replace DEV E2E as the tag gate.  
-    Hire **`git-release`** for tagging only after DEV E2E is green (or API-only app with API E2E green). Missing DEV E2E → **NO-GO for tag**.
+    Hire **`git-release`** for tagging only after DEV E2E is green (or API-only app with API E2E green). Missing DEV E2E → **NO-GO for tag**.  
+    When the app has a DEV public hostname, auth/login E2E on that host is part of this gate (#18) — loopback-only login does **not** satisfy #16 for CSS consumers.
 
 17. **Reviewer SIGN-OFF before any git push** (user-directed 2026-07-15 — **keep**)  
     Before **`git push`** of a branch tip **or** annotated tag, the Lead **must hire a readonly Reviewer** and obtain a written **SIGN-OFF** with verdict **GO**.  
     SoT: `workflow/review/REVIEWER-SIGNOFF.md` (template + store path). Preferred evidence: `H:\releases\<app>-<ver>\evidence\review\SIGN-OFF.md` (or session `agents/.../SIGN-OFF.md` when no pack yet).  
     Local **`git commit`** may proceed without a Reviewer. **`git push`** / **`git push --tags`** without **GO** → **NO-GO** (do not push).  
-    Log reviewer agent id + SIGN-OFF path in ACTIVITY-LOG. Reviewer checks at minimum: docs updated (#12), no secrets, fleet splits respected (classic vs side fleets), and DEV E2E green when the push includes a release tag (#16).
+    Log reviewer agent id + SIGN-OFF path in ACTIVITY-LOG. Reviewer checks at minimum: docs updated (#12), no secrets, fleet splits respected (classic vs side fleets), DEV E2E green when the push includes a release tag (#16), and domain login evidence when #18 applies.
+
+18. **Playwright login E2E on DEV public domain** (user-directed 2026-07-15 — **keep**)  
+    When a Playwright tester exercises **login** (password, hybrid, or CSS SSO), the run **must** use the app’s **DEV public hostname** when one exists (e.g. ProdDeck `https://home-dev.delena.buzz`) — not only `http://127.0.0.1:3xxx` / `localhost`.  
+    SoT: `workflow/testing/DEV-HOST-E2E.md` (+ `E2E-HIRE.md`).  
+    Reasons: OAuth `redirect_uri` / origin, cookies, HTTPS, nginx/CF path, CSS CORS. Loopback may complement non-auth smoke; it does **not** replace domain login for auth apps.  
+    Evidence must record the domain `baseURL`. No DEV subdomain yet → loopback + documented waive + task to add host. Missing domain login E2E when a DEV host exists → incomplete / **NO-GO** for #16 tag on that app.
 
 ---
 

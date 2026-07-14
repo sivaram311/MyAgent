@@ -11,7 +11,7 @@ description: >-
 ## SoT (read first)
 
 - `E:\MyAgent\GIT-RELEASE-MANAGEMENT.md`
-- CONSCIOUS **#13** (deps/tags) · **#14** (E2E hire) · **#15** (Playwright slot) · **#16** (DEV E2E before tag) · **#17** (Reviewer SIGN-OFF before push)
+- CONSCIOUS **#13** (deps/tags) · **#14** (E2E hire) · **#15** (Playwright slot) · **#16** (DEV E2E before tag) · **#17** (Reviewer SIGN-OFF before push) · **#18** (DEV domain login E2E)
 - Live pins: `E:\MyAgent\workflow\deps/` (mutable — updated **after** deploy, not by this skill alone)
 - Reviewer SoT: `E:\MyAgent\workflow\review\REVIEWER-SIGNOFF.md`
 

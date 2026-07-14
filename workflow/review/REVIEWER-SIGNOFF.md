@@ -58,6 +58,7 @@ Prefer `generalPurpose` with `readonly: true`. Lead serializes ACTIVITY-LOG.
 - [ ] No secrets in commit
 - [ ] Fleet splits OK (classic vs css-next / AV upgrade, etc.)
 - [ ] DEV E2E green if this push includes a release tag (#16)
+- [ ] Login E2E used DEV public domain when host exists (#18) or waive documented
 - [ ] Tag ≠ live understood (matrix not falsely bumped)
 
 ## Verdict

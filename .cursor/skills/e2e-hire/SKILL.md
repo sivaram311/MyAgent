@@ -13,6 +13,7 @@ description: >-
 
 - Hire: `E:\MyAgent\workflow\testing\E2E-HIRE.md` (#14)
 - **Run slot:** `E:\MyAgent\workflow\testing\PLAYWRIGHT-SLOT.md` (#15)
+- **DEV domain login:** `E:\MyAgent\workflow\testing\DEV-HOST-E2E.md` (#18)
 - Devices: `E:\MyAgent\workflow\devices\` (do not web-search)
 
 ## Checklist
@@ -27,7 +28,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File E:\MyAgent\workflow\testing\
   -SessionId "<session>" -Provider cursor -AppId "<app>" -Project "all" -AgentRole "e2e-lead"
 ```
 
-5. **Run against DEV first** (`http://127.0.0.1:3xxx` / app DEV URL) — CONSCIOUS **#16**. Staging/prod optional later. Do not cut over F/G unless EM GO. Prefer **one** claimed run covering all projects.
+5. **Run against DEV first** — CONSCIOUS **#16**. For **login / SSO / hybrid**, set `baseURL` to the app’s **DEV public domain** when it exists (e.g. `https://home-dev.delena.buzz`) — CONSCIOUS **#18** · `workflow/testing/DEV-HOST-E2E.md`. Loopback alone does not satisfy auth E2E. Staging/prod optional later. Do not cut over F/G unless EM GO. Prefer **one** claimed run covering all projects.
 6. **After the run — release with confirmation:**
 
 ```powershell

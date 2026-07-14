@@ -5,6 +5,7 @@ Append-only. Newest entries at the **top** (below this header block).
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
+| 2026-07-15 05:18 | `css-api-migrate-wave-2026-07-15` | cursor | policy+docs | CONSCIOUS #18 DEV domain login Playwright | `workflow/testing/DEV-HOST-E2E.md` + E2E-HIRE/AGENTS/global mirrors | ok | Login E2E must use public DEV host (e.g. home-dev); not loopback-only |
 | 2026-07-15 05:12 | `css-api-migrate-wave-2026-07-15` | cursor | docs | Track pending CSS consumer migrate in MyAgent | `workflow/css/MIGRATE-PENDING.md` + wave §5 | ok | Portal/AV/Phase6/merge-tag listed; env checklist |
 | 2026-07-15 04:50 | docs-library-idea-2026-07-15 | cursor | implement+crew | Library Ask RAG + Listen TTS v0.2.0 | sandbox/library /api/ask /ask Listen FAB | ok | hire rag-tts GO; extractive RAG; Web Speech; 18 e2e PASS; schema frozen |
 | 2026-07-15 04:38 | `css-api-migrate-wave-2026-07-15` | cursor | ops | CF+nginx home-dev.delena.buzz to :3320 | https://home-dev.delena.buzz | ok | public 200; oauth redirect; ports SoT |

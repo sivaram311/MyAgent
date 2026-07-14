@@ -19,6 +19,7 @@ Last updated: **2026-07-15**
 | ProdDeck hybrid login DEV | Deck form → css-next; SSO optional |
 | `home-dev.delena.buzz` CF + nginx → `:3320` | Public 200 |
 | URLs in env (`src/lib/cssEnv.ts`) | `.env.local` / `.env.example` |
+| CONSCIOUS **#18** DEV domain login E2E | SoT `workflow/testing/DEV-HOST-E2E.md` — PD login PW must use `home-dev` |
 
 ---
 

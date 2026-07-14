@@ -130,7 +130,7 @@ Per ship, only this:
 
 1. Feature → PR/merge → `main` (or documented integration tip)
 2. **DEV** build + smoke on `:3xxx`
-3. **DEV E2E** Device Lab (visual: Realme + desktop + tablet) against **DEV URL** — claim/release Playwright slot (CONSCIOUS **#14/#15/#16**). Staging/prod browser runs are optional cutover checks, not the first gate.
+3. **DEV E2E** Device Lab (visual: Realme + desktop + tablet) against **DEV URL** — claim/release Playwright slot (CONSCIOUS **#14/#15/#16**). For CSS/login apps, `baseURL` must be the **DEV public domain** when one exists (CONSCIOUS **#18** · `workflow/testing/DEV-HOST-E2E.md`); loopback-only login does not gate the tag. Staging/prod browser runs are optional cutover checks, not the first gate.
 4. Hire **readonly Reviewer** → write `SIGN-OFF.md` with **GO** (CONSCIOUS **#17**, `workflow/review/REVIEWER-SIGNOFF.md`) **before any `git push`** of the branch tip or tag
 5. Hire **`git-release`** (`.cursor/skills/git-release/SKILL.md`) → annotated `git tag -a vX.Y.Z` → push branch+tag only after Reviewer GO (tag SHA = pack SHA)
 6. Build pack → `H:\releases\<app>-<ver>\` + fill DEPENDENCIES (app tag + CSS/deps) + keep Reviewer SIGN-OFF under `evidence/review/`
