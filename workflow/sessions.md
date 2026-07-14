@@ -6,9 +6,51 @@ Track Cursor agent session IDs for this machine and workspace (`E:\MyAgent`).
 
 | Field | Value |
 |-------|-------|
+| **Session ID** | `proddeck-finish-2026-07-13` |
+| **Started** | 2026-07-13 |
+| **Status** | `q1_closed` (PREPROD live) |
+| **Focus** | ProdDeck 0.1.0 Q1 complete — home-staging live |
+| **Path** | `E:\MyWorkspace\sandbox\proddeck\` · `F:\apps\proddeck` |
+| **Crew** | `agents/crew-manifest.md` · `agents/crew-activity.md` |
+
+### Outcomes (update as work proceeds)
+
+- [x] Pre-work GO; ports 3320/4320/5320 + CSS `clientId proddeck` registered
+- [x] Next.js scaffold + JWKS catalog gate
+- [x] Parallel QA smoke **PASS** + security **PASS** (post-JWKS)
+- [x] Q1 pack `H:\releases\proddeck-0.1.0` + F: deploy + CF DNS + nginx
+- [x] Destination smoke public **Q1_PREPROD_OK_010**
+- [ ] Q2 / `https://home.delena.buzz` — **not started**
+---
+
+## Prior session (closed focus)
+
+| Field | Value |
+|-------|-------|
+| **Session ID** | `stack-pilot-control-panel-vision-2026-07-13` |
+| **Started** | 2026-07-13 |
+| **Status** | `parked` (superseded by ProdDeck finish focus 2026-07-13 afternoon) |
+| **Focus** | Stack Pilot Machine Control Panel — Phase A implemented; optional promote |
+| **Idea** | `ideas/stack-pilot-machine-control-panel.md` |
+| **Vision** | `E:\Source\stack-pilot\agents\pre-work\01-vision-walkthrough.md` |
+
+### Outcomes
+
+- [x] Human accepts vision / Phase A scope
+- [x] Architecture + design-system pre-work
+- [x] Validation + approval GO
+- [x] Phase A implementation (Fleet IA, env strip, drives API)
+- [ ] Phase A promote to prod (optional — ask human)
+- [ ] Phase B+
+---
+
+## Prior session (closed focus)
+
+| Field | Value |
+|-------|-------|
 | **Session ID** | `93d977cc-7c3b-4a37-b889-09d2e6676ed5` |
 | **Started** | 2026-07-11 |
-| **Status** | `in_progress` |
+| **Status** | `parked` (superseded focus 2026-07-13) |
 | **Focus** | Env partitions + promotes; stack-pilot 0.1.0 Q1+Q2 GO |
 | **Transcript** | `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\93d977cc-7c3b-4a37-b889-09d2e6676ed5\` |
 

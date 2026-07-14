@@ -40,7 +40,12 @@ Use this template for each idea:
 
 ## In progress
 
-<!-- Ideas currently being implemented -->
+### Stack Pilot — Machine Control Panel
+- **Status:** in progress (pre-work / vision)
+- **Priority:** high
+- **Summary:** Evolve Stack Pilot into the host operator cockpit on `control.delena.buzz` (fleet, edge, drives, promote status) keeping OLED palette; MyAgent stays SoT.
+- **Why:** Control URL + prod fleet management already point at this role; need one phone-friendly surface without a second policy editor.
+- **Notes:** Full sketch: [stack-pilot-machine-control-panel.md](./stack-pilot-machine-control-panel.md). Vision: `E:\Source\stack-pilot\agents\pre-work\01-vision-walkthrough.md`. **No coding until approval.**
 
 ## Done
 

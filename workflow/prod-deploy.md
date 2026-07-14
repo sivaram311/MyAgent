@@ -38,7 +38,10 @@ cd E:\Source\Deployment\scripts
 | Cloudflare helper | `E:\MyWorkspace\agent-portal\scripts\cloudflare-dns.ps1` |
 | Credentials | `E:\MyWorkspace\agent-portal\.env` (never commit) |
 | Prod runtime | `G:\apps\<AppId>\` |
-| Releases | `H:\releases\<ReleaseId>\` |
+| Releases (handoff) | `H:\releases\<ReleaseId>\` |
+| Cold archive | `C:\backup\releases\<ReleaseId>.zip` (no `node_modules` / `.env*`) |
+
+After copying a Node release from H: (or restoring a zip) to `G:\apps\<AppId>`, run **`npm ci`** in the app root if `node_modules` is absent, then start. See `workflow/promote/release-archive.md`.
 
 ## Safety
 
@@ -51,3 +54,10 @@ cd E:\Source\Deployment\scripts
 - Always dry-run first
 - If the app uses Postgres: prod datasource must use schema **`prod`** in `app_<appId>` only — see `workflow/db/conventions.md`
 - Auth: register CSS `clientId` and validate JWTs via CSS (`workflow/css/`) — do not add a private login stack
+
+## Cloudflare cache after static UI promotes
+
+- `CLOUDFLARE_API_TOKEN` used for DNS is often **Zone Edit only** — Cache Purge API may return auth error.
+- Prefer versioned asset URLs in DYNAMIC HTML (`?v=<release>` or content hash). See `workflow/promote/field-lessons.md`.
+- After jar/UI promote: smoke the **versioned** public URL the HTML loads; bare `/js/app.js` may remain a stale HIT for hours.
+- Launcher scripts (`start.ps1`) with a ~10s bind check can false-fail on cold JVM — poll the port longer before declaring deploy failure.

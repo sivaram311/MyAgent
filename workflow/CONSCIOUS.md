@@ -3,7 +3,7 @@
 Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) — including **Cursor**, **Antigravity**, and any other provider (Agent Portal or local).
 
 **Last updated:** 2026-07-15  
-**Session that recorded this:** `css-prod-tag-2026-07-15` / dependency-matrix policy
+**Session that recorded this:** `proddeck-keepers-quay-2026-07-14` / E2E-hire mandate (#14)
 
 **Provider note:** `.cursor/rules` and `.cursor/skills` help Cursor discover policy. Antigravity and others must still follow this file and `AGENTS.md`. Activity logging and promote evidence are **provider-agnostic**.
 
@@ -70,6 +70,16 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
     Per release: `H:\releases\<app>-<ver>\DEPENDENCIES.md`.  
     CHECKLIST / SUMMARY / ACTIVITY-LOG must name these; missing → **NO-GO**.  
     After GO + deploy, update the matrix to match live F:/G: pins.
+
+14. **E2E testing subagents are mandatory when an application is built** (user-directed 2026-07-15 — **keep**)  
+    Whenever an app (or meaningful UI/API surface) is **built / shipped / materially changed**, the Crew Lead **must hire testing subagents** for end-to-end coverage — not chat-only smoke.  
+    SoT: `workflow/testing/E2E-HIRE.md` (+ `workflow/testing/README.md`).  
+    **Visual / UI apps:** validate at least these device presets from `workflow/devices/` **in parallel hires** when practical:  
+    - **Realme P2 Pro** (`realme-p2-pro` · **360×780**) — primary phone  
+    - **Computer / desktop** (`desktop-1280` · **1280×800**)  
+    - **Tablet** (`tablet-pad2-approx` · **800×1280**)  
+    API-only surfaces may hire API E2E without the three visual projects, but must still hire a testing subagent and write evidence.  
+    Missing hired E2E for a UI ship → treat as incomplete; do not call “done” / promote-ready without evidence under the app `e2e/` (or `H:\releases\...\evidence\e2e\`).
 
 ---
 

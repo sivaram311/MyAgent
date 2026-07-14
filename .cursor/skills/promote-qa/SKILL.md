@@ -34,3 +34,11 @@ Prove the build works on the **environment under test**. Write evidence; do not 
 - No silent prod changes
 - No secrets in evidence files (redact tokens)
 - Document results in evidence + ACTIVITY-LOG
+
+## Also load
+
+- Skill **`promote-field-ops`** + `E:\MyAgent\workflow\promote\field-lessons.md`
+- Smoke the **exact asset URLs** referenced by HTML (e.g. `/js/app.js?v=0.1.3`), not only bare `/js/app.js` (edge may still HIT stale)
+- For JS-heavy UIs: `node --check` (or browser console) on the **served** file from the env under test
+- Note `CF-Cache-Status` when public vs origin disagree
+- Do not fail Q2 solely because unversioned path is stale if versioned href from HTML PASSes

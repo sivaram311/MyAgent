@@ -1,0 +1,51 @@
+# E2E testing hire mandate (CONSCIOUS #14)
+
+**Status:** standing order · user-directed 2026-07-15  
+**SoT devices:** [`../devices/`](../devices/) (Realme P2 Pro primary — do not web-search)
+
+## When this fires
+
+Hire testing subagents when **any** of these happen:
+
+- A new application is scaffolded / first built
+- A meaningful UI or user-facing API surface ships or changes
+- A promote pack is prepared for Q1/Q2 (UI apps)
+- Soft-ship “done” would otherwise be claimed after coding without E2E evidence
+
+Do **not** treat `scripts/smoke.mjs` or ad-hoc PowerShell alone as satisfying this rule for visual apps.
+
+## Required hires (visual / UI apps)
+
+Spin **parallel** testing subagents (or one Device Lab crew with parallel lanes), covering:
+
+| Role / lane | Viewport preset | Size | Priority |
+|-------------|-----------------|------:|----------|
+| `e2e-realme` | `realme-p2-pro` | **360×780** | **Primary** — must pass first for “mobile done” |
+| `e2e-desktop` | `desktop-1280` | **1280×800** | Computer / desktop screen |
+| `e2e-tablet` | `tablet-pad2-approx` | **800×1280** | Tablet screen |
+
+Presets: [`../devices/VIEWPORTS.md`](../devices/VIEWPORTS.md) · numbers: [`../devices/PRIMARY.json`](../devices/PRIMARY.json).
+
+## API-only apps
+
+Hire at least one `e2e-api` testing subagent (contract / health / auth matrix). Visual trio optional unless a UI appears later.
+
+## Deliverables (each hire)
+
+1. Playwright (preferred) or equivalent project under app `e2e/`
+2. Named projects matching device presets (visual apps)
+3. Evidence: app `docs/E2E.md` **and/or** `H:\releases\<app>-<ver>\evidence\e2e\`
+4. ACTIVITY-LOG row with role `qa+e2e` (or per-lane), session id, result
+5. Crew hire note under app `agents/hires/` (or `agents/crew-activity.md`)
+
+## Ownership / parallelism
+
+| Pattern | Rule |
+|---------|------|
+| Parallel lanes | Disjoint file ownership (`e2e/realme/**`, `e2e/tablet/**`, `e2e/desktop/**`) |
+| Lead | Owns `playwright.config.ts`, `e2e/fixtures/devices.ts`, hire GO, ACTIVITY-LOG serialize |
+| No F/G cutover | Testers do not promote unless EM GO separately |
+
+## Promote gate
+
+UI promote CHECKLIST / SUMMARY should note E2E hire + last green run (or explicit NO-GO / waived with reason). Missing hired E2E → incomplete — do not call promote-ready.

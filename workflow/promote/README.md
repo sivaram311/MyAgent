@@ -18,6 +18,7 @@
 | [`promote-review`](../../.cursor/skills/promote-review/SKILL.md) | Diff + rule compliance |
 | [`promote-ops`](../../.cursor/skills/promote-ops/SKILL.md) | Deploy after GO only |
 | [`promote-field-ops`](../../.cursor/skills/promote-field-ops/SKILL.md) | Field lessons (bind race, CF cache, PS traps, ACTIVITY-LOG) |
+| [`e2e-hire`](../../.cursor/skills/e2e-hire/SKILL.md) | CONSCIOUS **#14** — hire E2E testing subagents (visual: Realme + desktop + tablet) |
 
 ## Field lessons (read on every promote)
 
@@ -47,6 +48,7 @@ Human requests promote
 - DB schemas: `workflow/db/`
 - CSS: `workflow/css/`
 - **Dependency versions / git tags:** `workflow/deps/` (**mandatory** on every promote)
+- **E2E testing hires:** `workflow/testing/E2E-HIRE.md` (CONSCIOUS **#14** — UI apps)
 - Prod wrapper: `workflow/prod-deploy.md`
 - Evidence format: [evidence-pack.md](./evidence-pack.md)
 - Gate bars: [gates.md](./gates.md)

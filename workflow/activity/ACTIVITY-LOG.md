@@ -5,6 +5,7 @@ Append-only. Newest entries at the **top** (below this header block).
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
+| 2026-07-15 03:21 | `css-sso-phase1-2026-07-15` | cursor | policy+docs | Commit+push CONSCIOUS #14 E2E hire + field-ops/archive docs | MyAgent `main` workflow/testing + skills | ok | leftover WIP from E2E mandate; CSS already clean on feature/css-next |
 | 2026-07-15 03:20 | agentverse-feature-branch-2026-07-15 | cursor | integrate+qa | Closeout E2E green 12/12 + docs DONE | AV feature/upgradation-functionality | ok | auth+desk; H:\releases\agentverse-upgrade-0.3.1\evidence\e2e-closeout; no secrets |
 | 2026-07-15 03:15 | `css-sso-phase1-2026-07-15` | cursor | docs | ProdDeck/css-next OAuth integration spec (no app code) | CSS `docs/proddeck-css-next-oauth-pilot.md` + indexes | ok | Reverted accidental PD OAuth edits; implement later from spec |
 | 2026-07-15 03:12 | docs-library-idea-2026-07-15 | cursor | ops | Library DEV/PREPROD/PROD subdomains DNS+nginx | library[-dev|-staging].delena.buzz :3330/4330/5330 | ok | CF A created; nginx reload; DEV public 200; staging/prod 502 until F/G deploy |

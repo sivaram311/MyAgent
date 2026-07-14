@@ -17,6 +17,7 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 | [`workflow/css/`](workflow/css/) | Centralized Security System |
 | [`workflow/deps/`](workflow/deps/) | Inter-app dependency versions + git tags (SoT matrix) |
 | [`workflow/devices/`](workflow/devices/) | **Primary phone SoT (Realme P2 Pro)** — do not web-search |
+| [`workflow/testing/`](workflow/testing/) | **E2E hire mandate** (CONSCIOUS #14) — testing subagents when apps are built |
 | [`workflow/promote/`](workflow/promote/) | DEV→PREPROD→PROD evidence gates |
 | [`workflow/promote/field-lessons.md`](workflow/promote/field-lessons.md) | Promote crew field lessons (bind race, CF cache, PS traps) |
 | [`workflow/prod-deploy.md`](workflow/prod-deploy.md) | Prod DNS + nginx wrapper |
@@ -31,6 +32,7 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 6. After meaningful changes: **update docs** (app OPS/README, registries, DEPLOY.md) — CONSCIOUS rule **12**. Chat + activity log alone are not enough.
 7. On promotes: hire **`promote-field-ops`** with em/qa/ops (`workflow/promote/field-lessons.md`).
 8. On promotes: record **app git tag** + **dependency versions/tags** (`workflow/deps/`) — CONSCIOUS rule **13**; missing → NO-GO.
+9. When an application is **built** or a UI/API surface materially changes: **hire E2E testing subagents** (`workflow/testing/E2E-HIRE.md`) — CONSCIOUS rule **14**. Visual apps must cover **Realme P2 Pro (360×780)**, **desktop (1280×800)**, and **tablet (800×1280)** — prefer parallel hires. Missing hired E2E → incomplete.
 
 ## Antigravity
 
