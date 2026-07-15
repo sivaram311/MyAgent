@@ -5,6 +5,7 @@ Append-only. Newest entries at the **top** (below this header block).
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
 | When (UTC+5:30) | Session | Provider | Role | Action | Target | Result | Evidence / notes |
+| 2026-07-15 06:22 | agentverse-feature-branch-2026-07-15 | cursor | promote-em+ops+qa+sec+review+field-ops | Q1 agentverse-upgrade 0.3.2 to F:4312 | tag v0.3.2 @2aa2e7c · staging health 0.3.2 · E2E 4/4 | ok | classic/v2 untouched; G:5312 still 0.3.1; H:\releases\agentverse-upgrade-0.3.2 |
 | 2026-07-15 06:00 | agentverse-feature-branch-2026-07-15 | cursor | lead+crews | W0 GO; W1 chrome; W2a packs; Q1 plan; hire parallel | AV upgrade 0.3.2 branch | ok | StageControls; packs proddeck/av-upgrade/css; PROMOTE-PERSONA-TRAIN-Q1; no F deploy |
 | 2026-07-15 05:50 | agentverse-feature-branch-2026-07-15 | cursor | lead+grok | Action plan app-personas + Grok review fold | AV docs ACTION-PLAN / CAST / PACK | ok | W0 GO-WITH-CHANGES; W1 NO-GO; Layer B parallel off-stage; _grok-review-out.md |
 | 2026-07-15 05:18 | `css-api-migrate-wave-2026-07-15` | cursor | policy+docs | CONSCIOUS #18 DEV domain login Playwright | `workflow/testing/DEV-HOST-E2E.md` + E2E-HIRE/AGENTS/global mirrors | ok | Login E2E must use public DEV host (e.g. home-dev); not loopback-only |

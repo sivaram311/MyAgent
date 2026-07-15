@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-07-15",
-  "sessionId": "agentverse-upgrade-0.3.1-sot-closeout",
+  "sessionId": "agentverse-upgrade-0.3.2-q1-preprod",
   "policy": "E:/MyAgent/workflow/deps/README.md",
   "shared": {
     "css": {
@@ -53,10 +53,11 @@
     {
       "appId": "agentverse-upgrade",
       "liveProdVersion": "0.3.1",
-      "appGitTag": "v0.3.1",
-      "appGitCommit": "bda5a9bc98c328701ec3e74f75d88b55b4c84dcf",
-      "releaseId": "agentverse-upgrade-0.3.1",
-      "releasePath": "H:/releases/agentverse-upgrade-0.3.1",
+      "livePreprodVersion": "0.3.2",
+      "appGitTag": "v0.3.2",
+      "appGitCommit": "2aa2e7c00d86626981cc5a3f72ccf05accde5ac4",
+      "releaseId": "agentverse-upgrade-0.3.2",
+      "releasePath": "H:/releases/agentverse-upgrade-0.3.2",
       "repo": "E:/MyWorkspace/agentverse-project",
       "prodUrl": "https://agentverse-upgrade.delena.buzz",
       "prodPort": 5312,
@@ -71,7 +72,7 @@
           "gitTag": "v0.1.0",
           "releaseId": "css-0.1.0",
           "clientId": "agent-portal",
-          "status": "verified-q1-q2-2026-07-15",
+          "status": "verified-q1-2026-07-15",
           "notes": "Intentional clientId reuse with agent-portal"
         },
         {
@@ -83,7 +84,7 @@
           "notes": "ProdDeck Dispatch deep-links land on this upgrade fleet (not classic)"
         }
       ],
-      "notes": "Dispatch peer SoT — staging+prod upgrade hosts; classic densify is rollback only"
+      "notes": "Q1 2026-07-15: F:4312=0.3.2 tag v0.3.2; G:5312 still 0.3.1 until Q2. Dispatch peer SoT."
     },
     {
       "appId": "agentverse",
