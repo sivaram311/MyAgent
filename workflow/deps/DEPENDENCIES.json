@@ -16,7 +16,7 @@
       "prodPort": 5900,
       "preprodPort": 4900,
       "devPort": 9000,
-      "notes": "Classic IdP \u2014 trading-portal F/G still pin here"
+      "notes": "Classic IdP kept available; no active consumer pins after trading-portal flipped"
     },
     "css-next": {
       "appId": "css-next",
@@ -30,17 +30,17 @@
       "prodPort": 5910,
       "preprodPort": 4910,
       "preprodUrl": "https://css-next-staging.delena.buzz",
-      "notes": "IdP brand 0.2.1; Portal/AV/ProdDeck pin here; classic css remains for trading-portal"
+      "notes": "IdP brand 0.2.1; all active auth consumers pin here"
     }
   },
   "consumers": [
     {
       "appId": "agent-portal",
-      "liveProdVersion": "0.1.9",
+      "liveProdVersion": "0.1.10",
       "appGitTag": null,
-      "appGitCommit": "08b0b18",
-      "releaseId": "agent-portal-0.1.9",
-      "releasePath": "H:/releases/agent-portal-0.1.9",
+      "appGitCommit": "084e94a",
+      "releaseId": "agent-portal-0.1.10",
+      "releasePath": "H:/releases/agent-portal-0.1.10",
       "dependencies": [
         {
           "name": "css-next",
@@ -49,7 +49,7 @@
           "releaseId": "css-next-0.2.1",
           "clientId": "agent-portal",
           "status": "verified-domain-login-2026-07-15",
-          "notes": "Password IdP flip; nginx /auth -> :5910"
+          "notes": "hybrid password + OAuth/PKCE; BFF /api/auth/oauth/token"
         }
       ]
     },
@@ -126,9 +126,9 @@
         },
         {
           "name": "agent-portal",
-          "version": "0.1.9",
+          "version": "0.1.10",
           "gitTag": null,
-          "releaseId": "agent-portal-0.1.9",
+          "releaseId": "agent-portal-0.1.10",
           "status": "verified-os-events-forward"
         },
         {
@@ -183,16 +183,16 @@
       "appId": "trading-portal",
       "liveProdVersion": "0.1.0",
       "gitTag": "v0.1.0",
-      "commit": "cf5176dd317742defa67b4a0797c6cfdc3dea6b3",
+      "commit": "5ea733468682ee990040e4112ca3925591b1c863",
       "releaseId": "trading-portal-0.1.0",
       "repo": "https://github.com/sivaram311/trading-portal",
       "dependsOn": [
         {
-          "name": "css",
-          "version": "0.1.0",
-          "gitTag": "v0.1.0",
+          "name": "css-next",
+          "version": "0.2.1",
+          "gitTag": "v0.2.1",
           "clientId": "trading-portal",
-          "notes": "F+G classic CSS JWKS (:4900/:5900); tip cf5176d pushed"
+          "notes": "F JWKS :4910 / G :5910; tip 5ea7334"
         }
       ]
     }
