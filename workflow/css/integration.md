@@ -14,7 +14,9 @@
 
 **Classic vs next:** Fleets stay split. Live after 2026-07-15 consumer wave: Portal / AgentVerse-upgrade / ProdDeck → **css-next** (`0.2.1` / `v0.2.1`). Trading-portal → **classic** (`css` 0.1.0 / `v0.1.0`). Matrix: `../deps/DEPENDENCY-MATRIX.md`.
 
-**DEV start (aligned with F/G Postgres):** `scripts/start-dev.ps1` (loads `E:\MyAgent\workflow\db\secrets\postgres.env`).
+**DEV start (aligned with F/G Postgres):** `scripts/start-dev.ps1` (loads `postgres.env` + `CSS_ADMIN_PASSWORD` from `G:\apps\css\.env`).
+
+**Admin password SoT:** [`PASSWORD-SOT.md`](./PASSWORD-SOT.md) — env `CSS_ADMIN_PASSWORD` must match Postgres `users.admin` hash; DataSeeder does not rotate existing admin.
 
 | Item | Value |
 |------|-------|
