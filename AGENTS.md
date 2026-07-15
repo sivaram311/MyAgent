@@ -20,6 +20,7 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 | [`workflow/testing/`](workflow/testing/) | **E2E hire** (#14) · Playwright slot (#15) · DEV E2E before tag (#16) · **DEV domain login** (#18) |
 | [`workflow/review/`](workflow/review/) | **Reviewer SIGN-OFF before push** (#17) |
 | [`GIT-RELEASE-MANAGEMENT.md`](GIT-RELEASE-MANAGEMENT.md) | Git tagging / no env branches — hire skill `git-release` |
+| [`.cursor/skills/css-migrate/`](.cursor/skills/css-migrate/) | **CSS consumer migrate** orchestrator (prove→DEV→E2E→tag→Q1/Q2) — hire when aligning apps to css-next / `MIGRATE-PENDING.md` |
 | [`workflow/promote/`](workflow/promote/) | DEV→PREPROD→PROD evidence gates |
 | [`workflow/promote/field-lessons.md`](workflow/promote/field-lessons.md) | Promote crew field lessons (bind race, CF cache, PS traps) |
 | [`workflow/prod-deploy.md`](workflow/prod-deploy.md) | Prod DNS + nginx wrapper |

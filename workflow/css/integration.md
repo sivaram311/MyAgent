@@ -43,6 +43,8 @@ Evidence: `H:\releases\css-next-0.2.0\evidence\api-prove\` · session `css-api-m
 `E:\MyWorkspace\centralized-security-system\docs\proddeck-css-next-oauth-pilot.md`  
 (IdP = css-next / `https://css-next.delena.buzz`; app = ProdDeck `:3320` / `clientId=proddeck`) — implement only after prove GO.
 
+**Migration manager skill:** hire [`css-migrate`](E:/MyAgent/.cursor/skills/css-migrate/SKILL.md) to run prove → DEV → E2E → merge/tag → Q1/Q2 → matrix. Tracker: [`MIGRATE-PENDING.md`](./MIGRATE-PENDING.md).
+
 ## Pattern — legacy password login (still supported)
 
 ```text
