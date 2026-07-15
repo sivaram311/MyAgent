@@ -3,7 +3,7 @@
 **Session SoT:** `css-api-migrate-wave-2026-07-15`  
 **Wave doc:** [`E:\MyWorkspace\centralized-security-system\docs\css-consumer-migrate-wave.md`](E:/MyWorkspace/centralized-security-system/docs/css-consumer-migrate-wave.md)  
 **Prove:** [`css-api-prove-working.md`](E:/MyWorkspace/centralized-security-system/docs/css-api-prove-working.md)  
-**ProdDeck pilot branch:** `feature/css-next-oauth-pilot` · host `https://home-dev.delena.buzz`
+**ProdDeck:** live **0.8.2** on css-next hybrid · `v0.8.2` · `H:\releases\proddeck-0.8.2`
 
 Last updated: **2026-07-15**
 
@@ -19,7 +19,10 @@ Last updated: **2026-07-15**
 | ProdDeck hybrid login DEV | Deck form → css-next; SSO optional |
 | `home-dev.delena.buzz` CF + nginx → `:3320` | Public 200 |
 | URLs in env (`src/lib/cssEnv.ts`) | `.env.local` / `.env.example` |
-| CONSCIOUS **#18** DEV domain login E2E | SoT `workflow/testing/DEV-HOST-E2E.md` — PD login PW must use `home-dev` |
+| CONSCIOUS **#18** DEV domain login E2E | SoT `workflow/testing/DEV-HOST-E2E.md` |
+| Skill **`css-migrate`** | `E:\MyAgent\.cursor\skills\css-migrate\` |
+| `mig-pd-merge-tag` | Merged to `main` · tag `v0.8.2` @ `2c57914` · Reviewer GO |
+| `mig-phase6` (ProdDeck) | Q1 F:4320 + Q2 G:5320 **0.8.2** css-next hybrid; matrix updated |
 
 ---
 
@@ -27,34 +30,29 @@ Last updated: **2026-07-15**
 
 | ID | Task | Owner cue | Blocked by |
 |----|------|-----------|------------|
-| `mig-portal` | Agent Portal DEV → css-next | implement | PD pilot stable |
+| `mig-portal` | Agent Portal DEV → css-next | implement | PD pilot stable (done) |
 | `mig-av` | AgentVerse DEV → css-next | implement | Portal contract + shared `agent-portal` clientId |
 | `mig-css-dev9000` | CSS DEV `:9000` Postgres up | ops | start-dev / seeds |
-| `mig-pd-merge-tag` | ProdDeck merge hybrid → `main` + annotated tag/pack | git-release + Reviewer #17 | EM GO on ship |
-| `mig-phase6` | F/G consumer cutover + **matrix** update | promote-em + field-ops | Explicit EM GO; DEV E2E first |
 | `mig-idp-brand` | Brand css-next `/oauth/login` | CSS UI | Optional |
 
 **Out of wave (do not start unbidden):** Library auth, grok-dev, erpnext-bridge, h-drive/stack-pilot waived, agentverse-upgrade issuer flip.
 
 ---
 
-## ProdDeck env checklist (track in `.env.local`)
+## ProdDeck env checklist (live F/G)
 
-| Variable | Purpose | DEV pilot example |
-|----------|---------|-------------------|
-| `CSS_AUTH_URL` | BFF / JWKS upstream | `https://css-next.delena.buzz` |
-| `NEXT_PUBLIC_CSS_ISSUER` | JWT `iss` | same as above |
+| Variable | Purpose | F/G value |
+|----------|---------|-----------|
+| `CSS_AUTH_URL` | BFF / JWKS upstream | `http://127.0.0.1:5910` |
+| `NEXT_PUBLIC_CSS_ISSUER` | JWT `iss` | `https://css-next.delena.buzz` |
 | `NEXT_PUBLIC_CSS_AUTH_MODE` | `password` \| `hybrid` | `hybrid` |
-| `NEXT_PUBLIC_APP_URL` | Public app base | `https://home-dev.delena.buzz` |
-| `NEXT_PUBLIC_DEV_HOSTS` | DEV hostname list | `localhost,127.0.0.1,home-dev.delena.buzz` |
-| `NEXT_PUBLIC_CSS_OAUTH_REDIRECT_URI` | Optional SSO override | blank → browser origin |
-| `PLATFORM_APPS_URL` | Portal catalog | optional |
-| `OS_EVENTS_FORWARD` | OS event soft-forward | optional / F/G `1` |
+| `NEXT_PUBLIC_APP_URL` | Public app base | home-staging / home |
+| `OS_EVENTS_FORWARD` | OS event soft-forward | `1` |
 
-F/G bake stays classic: `.env.production` → `NEXT_PUBLIC_CSS_ISSUER=https://css.delena.buzz`, `CSS_AUTH_URL=http://127.0.0.1:5900`.
+Rollback: `H:\releases\proddeck-0.8.0` + classic issuer `https://css.delena.buzz` / `:5900`.
 
 ---
 
 ## Resume one-liner
 
-> Continue CSS consumer migrate from `workflow/css/MIGRATE-PENDING.md`: ProdDeck DEV hybrid done; next = Portal DEV, then AV; Phase 6 F/G only after EM GO.
+> ProdDeck **0.8.2** live on css-next (F+G). Next migrate IDs: Portal DEV (`mig-portal`), then AV (`mig-av`). Hire skill `css-migrate`.

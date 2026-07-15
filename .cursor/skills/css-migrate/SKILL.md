@@ -70,7 +70,7 @@ prove → app-DEV → e2e → merge-tag → Q1 → Q2 → matrix → tracker upd
 | DEV host | `https://home-dev.delena.buzz` → `:3320` |
 | IdP (migrate target) | `https://css-next.delena.buzz` (`v0.2.0`) |
 | Auth mode F/G | `NEXT_PUBLIC_CSS_AUTH_MODE=hybrid` |
-| Pending IDs | `mig-pd-merge-tag`, `mig-phase6` |
+| Pending IDs | `mig-portal`, `mig-av`, `mig-css-dev9000`, `mig-idp-brand` (ProdDeck merge/phase6 **done** 0.8.2) |
 
 F/G bake env (after EM GO):
 

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-07-15",
-  "sessionId": "agentverse-upgrade-0.3.2-q1-q2",
+  "sessionId": "css-api-migrate-wave-2026-07-15",
   "policy": "E:/MyAgent/workflow/deps/README.md",
   "shared": {
     "css": {
@@ -52,12 +52,12 @@
     },
     {
       "appId": "agentverse-upgrade",
-      "liveProdVersion": "0.3.2",
-      "livePreprodVersion": "0.3.2",
-      "appGitTag": "v0.3.2",
-      "appGitCommit": "2aa2e7c00d86626981cc5a3f72ccf05accde5ac4",
-      "releaseId": "agentverse-upgrade-0.3.2",
-      "releasePath": "H:/releases/agentverse-upgrade-0.3.2",
+      "liveProdVersion": "0.3.6",
+      "livePreprodVersion": "0.3.6",
+      "appGitTag": "v0.3.6",
+      "appGitCommit": "3d90a73878ed0db9b92f4d999228417867c294fc",
+      "releaseId": "agentverse-upgrade-0.3.6",
+      "releasePath": "H:/releases/agentverse-upgrade-0.3.6",
       "repo": "E:/MyWorkspace/agentverse-project",
       "prodUrl": "https://agentverse-upgrade.delena.buzz",
       "prodPort": 5312,
@@ -77,14 +77,14 @@
         },
         {
           "name": "proddeck",
-          "version": "0.8.0",
-          "gitTag": "v0.8.0",
-          "releaseId": "proddeck-0.8.0",
+          "version": "0.8.2",
+          "gitTag": "v0.8.2",
+          "releaseId": "proddeck-0.8.2",
           "status": "dispatch-peer-sot",
-          "notes": "ProdDeck Dispatch deep-links land on this upgrade fleet (not classic)"
+          "notes": "ProdDeck Dispatch deep-links land on this upgrade fleet (not classic); ProdDeck IdP is css-next"
         }
       ],
-      "notes": "Q1+Q2 2026-07-15: F:4312 and G:5312 both 0.3.2 tag v0.3.2. Dispatch peer SoT."
+      "notes": "Q1+Q2 2026-07-15: F:4312 and G:5312 both 0.3.6 tag v0.3.6 — specialist cast remap (shared Priya+Rajesh)."
     },
     {
       "appId": "agentverse",
@@ -106,18 +106,19 @@
     },
     {
       "appId": "proddeck",
-      "liveProdVersion": "0.8.0",
-      "appGitTag": "v0.8.0",
-      "appGitCommit": "6882ea46bfc8d0995681de80f6fe296ac097a4ca",
-      "releaseId": "proddeck-0.8.0",
+      "liveProdVersion": "0.8.2",
+      "appGitTag": "v0.8.2",
+      "appGitCommit": "2c57914d8ba4a52fe080b64c3ffb73dbd56f723d",
+      "releaseId": "proddeck-0.8.2",
       "dependencies": [
         {
-          "name": "css",
-          "version": "0.1.0",
-          "gitTag": "v0.1.0",
-          "releaseId": "css-0.1.0",
+          "name": "css-next",
+          "version": "0.2.0",
+          "gitTag": "v0.2.0",
+          "releaseId": "css-next-0.2.0",
           "clientId": "proddeck",
-          "status": "verified-q1-q2-2026-07-15"
+          "status": "verified-q1-q2-2026-07-15",
+          "notes": "Hybrid auth Mode; JWT iss https://css-next.delena.buzz; BFF CSS_AUTH_URL :5910"
         },
         {
           "name": "agent-portal",
@@ -128,9 +129,9 @@
         },
         {
           "name": "agentverse-upgrade",
-          "version": "0.3.2",
-          "gitTag": "v0.3.2",
-          "releaseId": "agentverse-upgrade-0.3.2",
+          "version": "0.3.6",
+          "gitTag": "v0.3.6",
+          "releaseId": "agentverse-upgrade-0.3.6",
           "status": "dispatch-peer-sot",
           "notes": "Cloud OS Dispatch SoT — hosts :4312/:5312 upgrade fleet"
         },
