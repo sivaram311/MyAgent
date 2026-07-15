@@ -35,8 +35,10 @@ _None for this session._
 | AgentVerse-upgrade | 0.3.8 | css-next | password |
 | Trading Portal | 0.1.0 tip `5ea7334` | **css-next** | JWKS F`:4910` / G`:5910` |
 
+**Admin password:** env `CSS_ADMIN_PASSWORD` + Postgres hash aligned all schemas (`PASSWORD-SOT.md`). Legacy `admin123` rejected.
+
 ---
 
 ## Resume one-liner
 
-> All active auth consumers pin **css-next**. Portal hybrid OAuth/PKCE live as **0.1.10**. Trading-portal F/G on css-next JWKS. No migrate pending IDs.
+> All active auth consumers pin **css-next**. Admin password SoT aligned (Postgres + env). Portal **0.1.10** hybrid. Trading-portal F/G css-next JWKS. No migrate pending IDs.
