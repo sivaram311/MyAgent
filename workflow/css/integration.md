@@ -12,7 +12,7 @@
 | Tests / CI | `test` | random | H2 in-memory | fixed test issuer |
 | Optional demo | `h2` | 9000 | H2 in-memory | local |
 
-**Classic vs next:** Existing apps keep using **css.delena.buzz** (`css` 0.1.0 / `v0.1.0`). New OAuth SSO fleet is **css-next** (`v0.2.0`) on css-next*.delena.buzz — opt-in only.
+**Classic vs next:** Fleets stay split. Live after 2026-07-15 consumer wave: Portal / AgentVerse-upgrade / ProdDeck → **css-next** (`0.2.1` / `v0.2.1`). Trading-portal → **classic** (`css` 0.1.0 / `v0.1.0`). Matrix: `../deps/DEPENDENCY-MATRIX.md`.
 
 **DEV start (aligned with F/G Postgres):** `scripts/start-dev.ps1` (loads `E:\MyAgent\workflow\db\secrets\postgres.env`).
 
@@ -37,13 +37,11 @@ Browser  --API-------->  App backend   [validates JWT via JWKS, aud/clientId mat
 Second app: repeat authorize with SSO cookie — **no password re-prompt** while session valid.
 
 **API prove (working):** [`css-api-prove-working.md`](E:/MyWorkspace/centralized-security-system/docs/css-api-prove-working.md)  
-Evidence: `H:\releases\css-next-0.2.0\evidence\api-prove\` · session `css-api-migrate-wave-2026-07-15`.
+Evidence: `H:\releases\css-next-0.2.0\evidence\api-prove\` · brand prove `H:\releases\css-next-0.2.1\evidence\idp-brand\` · session `css-api-migrate-wave-2026-07-15`.
 
-**ProdDeck DEV pilot (contract):**  
-`E:\MyWorkspace\centralized-security-system\docs\proddeck-css-next-oauth-pilot.md`  
-(IdP = css-next / `https://css-next.delena.buzz`; app = ProdDeck `:3320` / `clientId=proddeck`) — implement only after prove GO.
+**ProdDeck:** Live **0.8.4** hybrid on css-next (pilot contract archived at `proddeck-css-next-oauth-pilot.md`). Pack `H:\releases\proddeck-0.8.4`.
 
-**Migration manager skill:** hire [`css-migrate`](E:/MyAgent/.cursor/skills/css-migrate/SKILL.md) to run prove → DEV → E2E → merge/tag → Q1/Q2 → matrix. Tracker: [`MIGRATE-PENDING.md`](./MIGRATE-PENDING.md).
+**Migration manager skill:** [`css-migrate`](E:/MyAgent/.cursor/skills/css-migrate/SKILL.md). Tracker: [`MIGRATE-PENDING.md`](./MIGRATE-PENDING.md) (wave **COMPLETE**). Wave log: [`CSS-NEXT-CONSUMER-WAVE.md`](./CSS-NEXT-CONSUMER-WAVE.md).
 
 ## Pattern — legacy password login (still supported)
 

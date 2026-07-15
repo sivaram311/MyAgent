@@ -12,7 +12,7 @@
 | B | CSS DEV `:9000` | **GO** — already up on Postgres `app_css.dev`; JWKS+login PASS |
 | C | QA login matrix | **PASS** — classic IdP + BFFs; evidence under `H:\releases\css-classic-align-2026-07-15\evidence\qa\` |
 | — | Portal / AV F/G | Already classic — verified, no cutover |
-| — | ProdDeck | Already 0.8.3 classic — no change |
+| — | ProdDeck | Was 0.8.3 classic at classic-align time — **later** re-cut to **0.8.4** css-next hybrid in consumer wave |
 
 ## Out of wave
 
