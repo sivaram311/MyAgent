@@ -23,17 +23,14 @@ Columns: what is **live**, what **git tag** backs it, and which **upstream versi
 | App ID | Live PROD version | App git tag / commit | Release pack | Depends on | Dep version | Dep git tag | clientId | Issuer / notes |
 |--------|-------------------|----------------------|--------------|------------|-------------|-------------|----------|----------------|
 | agent-portal | **0.1.10** | `084e94a` | `H:\releases\agent-portal-0.1.10` | css-next | 0.2.1 | `v0.2.1` | `agent-portal` | hybrid password + OAuth/PKCE; BFF token; nginx `/auth` → `:5910` |
-| agentverse-upgrade | **0.3.8** | `4786508` | `H:\releases\agentverse-upgrade-0.3.8` | css-next | 0.2.1 | `v0.2.1` | `agent-portal` (reuse) | F+G **0.3.8** · css-next lockstep · `agentverse-upgrade[-staging].delena.buzz` |
-| agentverse | 0.3.17 | `v0.3.17` @ `d972909` | `H:\releases\agentverse-0.3.17` | css | 0.1.0 | `v0.1.0` | `agent-portal` (reuse) | Classic densify **rollback only** · `:4310`/`:5310` · **not** Dispatch default |
-| proddeck | **0.8.4** | `v0.8.4` @ `0121b64` | `H:\releases\proddeck-0.8.4` | css-next | 0.2.1 | `v0.2.1` | `proddeck` | home.delena.buzz `:5320` · hybrid css-next · BFF `:5910` |
-| stack-pilot | 0.2.0-a | _(record on next promote)_ | `H:\releases\stack-pilot-0.2.0-a` | css | waived | — | waived-public-read | Auth disabled by design |
-| h-drive-server | 0.1.0 | _(record on next promote)_ | `H:\releases\h-drive-server-0.1.0` | css | waived | — | waived-public-read | Open CORS file expose by design |
-| trading-portal | **0.1.0** | tip `5ea7334` | `H:\releases\trading-portal-0.1.0` | css-next | 0.2.1 | `v0.2.1` | `trading-portal` | F JWKS `:4910`; G JWKS `:5910`; paper-only |
+| agentverse-upgrade | **0.3.8** | `4786508` | `H:\releases\agentverse-upgrade-0.3.8` | css-next | 0.2.1 | `v0.2.1` | `agent-portal` (reuse) | F+G **0.3.8** · css-next · named hosts `agentverse-upgrade[-staging].delena.buzz` **and** short hosts `agentverse[-staging].delena.buzz` (nginx → `:4312`/`:5312` since 2026-07-15) |
+| agentverse | 0.3.17 | `v0.3.17` @ `d972909` | `H:\releases\agentverse-0.3.17` | css | 0.1.0 | `v0.1.0` | `agent-portal` (reuse) | Classic densify **rollback only** · tree still on `:4310`/`:5310` (often stopped) · **not** public hostname SoT |
 
 ### PREPROD notes
 
 PREPROD: ProdDeck F (`:4320`) **0.8.4** css-next hybrid.  
 **agentverse-upgrade** F (`:4312`) and G (`:5312`) both **0.3.8** css-next.  
+Public short names: `agentverse-staging.delena.buzz` → nginx `:4312`; `agentverse.delena.buzz` → nginx `:5312` (upgrade).  
 **agent-portal** F (`:4080`) **0.1.10** hybrid.  
 **trading-portal** F (`:4340`/`:4341`) **0.1.0** css-next JWKS `:4910`.
 

@@ -211,8 +211,8 @@
       "appId": "agentverse",
       "env": "prod",
       "role": "http",
-      "status": "active",
-      "notes": "AgentVerse 0.2.2 PROD; https://agentverse.delena.buzz"
+      "status": "reserved",
+      "notes": "Classic densify rollback; public hostname nginx-aliased to upgrade"
     },
     {
       "port": 5311,
@@ -256,9 +256,9 @@
       "appId": "agentverse",
       "env": "preprod",
       "role": "http",
-      "status": "active",
+      "status": "reserved",
       "path": "F:\\\\apps\\\\agentverse",
-      "notes": "AgentVerse 0.2.2 PREPROD; https://agentverse-staging.delena.buzz"
+      "notes": "Classic densify rollback; public hostname nginx-aliased to upgrade"
     },
     {
       "port": 4311,
@@ -318,7 +318,7 @@
       "port": 4312,
       "role": "http",
       "path": "F:\\\\apps\\\\agentverse-upgrade",
-      "notes": "upgradation side PREPROD; https://agentverse-upgrade-staging.delena.buzz (must NOT use 4310/4311)",
+      "notes": "upgrade SoT; also serves agentverse[-staging].delena.buzz via nginx",
       "appId": "agentverse-upgrade",
       "status": "active",
       "env": "preprod"
@@ -327,7 +327,7 @@
       "port": 5312,
       "role": "http",
       "path": "G:\\\\apps\\\\agentverse-upgrade",
-      "notes": "upgradation side PROD; https://agentverse-upgrade.delena.buzz (must NOT use 5310/5311)",
+      "notes": "upgrade SoT; also serves agentverse[-staging].delena.buzz via nginx",
       "appId": "agentverse-upgrade",
       "status": "active",
       "env": "prod"

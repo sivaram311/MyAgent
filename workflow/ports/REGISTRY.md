@@ -46,9 +46,9 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 |------|--------|------|--------|----------------|-------|
 | 4010 | h-drive-server | http | active | F:\apps\h-drive-server | Staging expose of H:\; open CORS |
 | 4080 | agent-portal | http | active | F:\apps\agent-portal | API; UI static via nginx; https://agent-portal-staging.delena.buzz |
-| 4310 | agentverse | http | active | F:\apps\agentverse | AgentVerse 0.2.2 PREPROD; https://agentverse-staging.delena.buzz |
+| 4310 | agentverse | http | reserved | F:\apps\agentverse | Classic densify PREPROD rollback tree; **not** public SoT. Hostname `agentverse-staging.delena.buzz` nginx → **`:4312`** (upgrade) since 2026-07-15 |
 | 4311 | agentverse-v2 | http | active | F:\apps\agentverse-v2 | stable-v2 side PREPROD; https://agentverse-v2-staging.delena.buzz (must NOT use 4310) |
-| 4312 | agentverse-upgrade | http | active | F:\apps\agentverse-upgrade | upgradation side PREPROD; https://agentverse-upgrade-staging.delena.buzz (must NOT use 4310/4311) |
+| 4312 | agentverse-upgrade | http | active | F:\apps\agentverse-upgrade | upgradation PREPROD SoT; https://agentverse-upgrade-staging.delena.buzz **and** nginx alias https://agentverse-staging.delena.buzz |
 | 4320 | proddeck | http | active | F:\apps\proddeck | ProdDeck PREPROD; https://home-staging.delena.buzz â†’ :4320; Q1 0.1.0 2026-07-13 |
 | 4330 | library | http | reserved | F:\apps\library | Library PREPROD; https://library-staging.delena.buzz → :4330 (app not deployed yet) |
 | 4900 | css | http | active | F:\apps\css | Preprod classic CSS IdP; keep live; do not replace with css-next |
@@ -72,9 +72,9 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 
 ---
 
-| 5310 | agentverse | http | active | G:\apps\agentverse | AgentVerse 0.2.2 PROD; https://agentverse.delena.buzz |
+| 5310 | agentverse | http | reserved | G:\apps\agentverse | Classic densify PROD rollback tree; **not** public SoT. Hostname `agentverse.delena.buzz` nginx → **`:5312`** (upgrade) since 2026-07-15 |
 | 5311 | agentverse-v2 | http | active | G:\apps\agentverse-v2 | stable-v2 side PROD; https://agentverse-v2.delena.buzz (must NOT use 5310) |
-| 5312 | agentverse-upgrade | http | active | G:\apps\agentverse-upgrade | upgradation side PROD; https://agentverse-upgrade.delena.buzz (must NOT use 5310/5311) |
+| 5312 | agentverse-upgrade | http | active | G:\apps\agentverse-upgrade | upgradation PROD SoT; https://agentverse-upgrade.delena.buzz **and** nginx alias https://agentverse.delena.buzz |
 | 5320 | proddeck | http | active | G:\apps\proddeck | ProdDeck PROD; https://home.delena.buzz |
 | 5330 | library | http | reserved | G:\apps\library | Library PROD; https://library.delena.buzz → :5330 (app not deployed yet) |
 | 5340 | trading-portal | http | active | F: or G: apps\trading-portal | Spring Boot API PROD; ACTIVE 2026-07-15 health ok; paper-only |
