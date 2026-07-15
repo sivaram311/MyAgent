@@ -4,6 +4,7 @@ Append-only. Newest entries at the **top** (below this header block).
 
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
+| 2026-07-15 11:55 | `css-api-migrate-wave-2026-07-15` | cursor | css-ops | Reset CSS admin password hash all schemas + seed proddeck client preprod/dev | Postgres app_css prod/preprod/dev · verify home/staging/dev login | ok | password matches CSS_ADMIN_PASSWORD; admin123 rejected |
 | 2026-07-15 11:05 | `css-api-migrate-wave-2026-07-15` | cursor | css-migrate+ops | ProdDeck 0.8.3 all envs → classic CSS Postgres | tag `v0.8.3` @3acaaee · DEV/F/G login PASS iss css.delena.buzz | ok | rolled back css-next; H:\releases\proddeck-0.8.3 |
 | 2026-07-15 10:55 | av-upgrade-037 | cursor | lead+ops+review | Q1+Q2 agentverse-upgrade 0.3.7 F:4312 + G:5312 | tag v0.3.7 @dff155d · display names + tap-only chat | ok | H:\releases\agentverse-upgrade-0.3.7 · matrix pin 0.3.7 |
 | 2026-07-15 10:45 | trading-portal-build-2026-07-15 | cursor | promote-em+ops+qa+sec+review+field-ops | Q2 trading-portal 0.1.0 → PROD G:5340/5341 | tag v0.1.0 @ea10238 · css 0.1.0/v0.1.0 | ok | paper-only; user waived soak; H:\releases\trading-portal-0.1.0\evidence\q2 |
