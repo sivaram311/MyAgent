@@ -16,7 +16,7 @@
       "prodPort": 5900,
       "preprodPort": 4900,
       "devPort": 9000,
-      "notes": "Classic IdP — keep live; consumers still pin here"
+      "notes": "Classic IdP \u2014 keep live; consumers still pin here"
     },
     "css-next": {
       "appId": "css-next",
@@ -52,12 +52,12 @@
     },
     {
       "appId": "agentverse-upgrade",
-      "liveProdVersion": "0.3.6",
-      "livePreprodVersion": "0.3.6",
-      "appGitTag": "v0.3.6",
-      "appGitCommit": "3d90a73878ed0db9b92f4d999228417867c294fc",
-      "releaseId": "agentverse-upgrade-0.3.6",
-      "releasePath": "H:/releases/agentverse-upgrade-0.3.6",
+      "liveProdVersion": "0.3.7",
+      "livePreprodVersion": "0.3.7",
+      "appGitTag": "v0.3.7",
+      "appGitCommit": "dff155d5185b7a782af700f302d319c854d2f298",
+      "releaseId": "agentverse-upgrade-0.3.7",
+      "releasePath": "H:/releases/agentverse-upgrade-0.3.7",
       "repo": "E:/MyWorkspace/agentverse-project",
       "prodUrl": "https://agentverse-upgrade.delena.buzz",
       "prodPort": 5312,
@@ -81,10 +81,10 @@
           "gitTag": "v0.8.2",
           "releaseId": "proddeck-0.8.2",
           "status": "dispatch-peer-sot",
-          "notes": "ProdDeck Dispatch deep-links land on this upgrade fleet (not classic); ProdDeck IdP is css-next"
+          "notes": "ProdDeck Dispatch deep-links land on this upgrade fleet (not classic); ProdDeck IdP is classic CSS"
         }
       ],
-      "notes": "Q1+Q2 2026-07-15: F:4312 and G:5312 both 0.3.6 tag v0.3.6 — specialist cast remap (shared Priya+Rajesh)."
+      "notes": "Q1+Q2 2026-07-15: F:4312 and G:5312 both 0.3.7 tag v0.3.7 \u2014 pack overlay display names + tap-only chat."
     },
     {
       "appId": "agentverse",
@@ -100,25 +100,25 @@
           "releaseId": "css-0.1.0",
           "clientId": "agent-portal",
           "status": "verified-q1-q2-2026-07-15",
-          "notes": "Intentional clientId reuse with agent-portal; classic densify rollback only — not Dispatch SoT"
+          "notes": "Intentional clientId reuse with agent-portal; classic densify rollback only \u2014 not Dispatch SoT"
         }
       ]
     },
     {
       "appId": "proddeck",
-      "liveProdVersion": "0.8.2",
-      "appGitTag": "v0.8.2",
-      "appGitCommit": "2c57914d8ba4a52fe080b64c3ffb73dbd56f723d",
-      "releaseId": "proddeck-0.8.2",
+      "liveProdVersion": "0.8.3",
+      "appGitTag": "v0.8.3",
+      "appGitCommit": "3acaaee8eff8d1b6975f834459ec0443a1b743f6",
+      "releaseId": "proddeck-0.8.3",
       "dependencies": [
         {
-          "name": "css-next",
-          "version": "0.2.0",
-          "gitTag": "v0.2.0",
-          "releaseId": "css-next-0.2.0",
+          "name": "css",
+          "version": "0.1.0",
+          "gitTag": "v0.1.0",
+          "releaseId": "css-0.1.0",
           "clientId": "proddeck",
           "status": "verified-q1-q2-2026-07-15",
-          "notes": "Hybrid auth Mode; JWT iss https://css-next.delena.buzz; BFF CSS_AUTH_URL :5910"
+          "notes": "Classic IdP; JWT iss https://css.delena.buzz; BFF CSS_AUTH_URL :5900; Postgres app_css.prod"
         },
         {
           "name": "agent-portal",
@@ -129,11 +129,11 @@
         },
         {
           "name": "agentverse-upgrade",
-          "version": "0.3.6",
-          "gitTag": "v0.3.6",
-          "releaseId": "agentverse-upgrade-0.3.6",
+          "version": "0.3.7",
+          "gitTag": "v0.3.7",
+          "releaseId": "agentverse-upgrade-0.3.7",
           "status": "dispatch-peer-sot",
-          "notes": "Cloud OS Dispatch SoT — hosts :4312/:5312 upgrade fleet"
+          "notes": "Cloud OS Dispatch SoT \u2014 hosts :4312/:5312 upgrade fleet"
         },
         {
           "name": "agentverse",
@@ -172,6 +172,20 @@
           "gitTag": null,
           "status": "waived-public-read",
           "notes": "Open CORS file expose by design"
+        }
+      ]
+    },
+    {
+      "appId": "trading-portal",
+      "version": "0.1.0",
+      "gitTag": "v0.1.0",
+      "commit": "ea1023833b37374a49b9223a791a6c195308d179",
+      "dependsOn": [
+        {
+          "name": "css",
+          "version": "0.1.0",
+          "gitTag": "v0.1.0",
+          "clientId": "trading-portal"
         }
       ]
     }
