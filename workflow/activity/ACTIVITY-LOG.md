@@ -1,9 +1,16 @@
-﻿# Activity log
+# Activity log
 
 Append-only. Newest entries at the **top** (below this header block).
 
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
+| 2026-07-15 13:05 | `css-api-migrate-wave-2026-07-15` | cursor | css-migrate+promote | css-next consumer wave COMPLETE | PD 0.8.4 + Portal 0.1.9 + AV 0.3.8 + css-next 0.2.1; domain logins PASS; matrix updated | ok | trading-portal remains classic |
+| 2026-07-15 12:55 | `css-api-migrate-wave-2026-07-15` | cursor | promote+ops+qa | agentverse-upgrade 0.3.8 -> css-next F/G | tip 4786508 · domain login iss css-next | ok | H:\releases\agentverse-upgrade-0.3.8 |
+| 2026-07-15 12:50 | `css-api-migrate-wave-2026-07-15` | cursor | ops+review | agent-portal 0.1.9 IdP flip + push | tip 08b0b18 · nginx /auth :5910 · domain login PASS | ok | H:\releases\agent-portal-0.1.9 |
+| 2026-07-15 12:40 | `css-api-migrate-wave-2026-07-15` | cursor | css-migrate+promote | ProdDeck 0.8.4 hybrid Q1+Q2 | tag v0.8.4 @0121b64 · home[-staging|-dev] login PASS | ok | H:\releases\proddeck-0.8.4 · dep css-next 0.2.1 |
+| 2026-07-15 12:25 | `css-api-migrate-wave-2026-07-15` | cursor | git-release+ops | css-next 0.2.1 IdP brand F/G | tag v0.2.1 @75ae5ae · domain brand prove PASS | ok | H:\releases\css-next-0.2.1 |
+| 2026-07-15 12:20 | `css-api-migrate-wave-2026-07-15` | cursor | git-release+review | Push trading-portal main @cf5176d classic-align | Reviewer GO H:evidence\review\SIGN-OFF-push-cf5176d · repo sivaram311/trading-portal | ok | no tags; crew-activity left unstaged |
+| 2026-07-15 12:15 | `css-api-migrate-wave-2026-07-15` | cursor | css-migrate+ops+qa | Classic-align wave: Trading F?`:4900`; CSS DEV `:9000` GO; login matrix PASS | Portal/AV already classic; PD 0.8.3; H:css-classic-align + trading evidence | ok | css-next side fleet only; TP push pending GO |
 | 2026-07-15 11:55 | `css-api-migrate-wave-2026-07-15` | cursor | css-ops | Reset CSS admin password hash all schemas + seed proddeck client preprod/dev | Postgres app_css prod/preprod/dev · verify home/staging/dev login | ok | password matches CSS_ADMIN_PASSWORD; admin123 rejected |
 | 2026-07-15 11:05 | `css-api-migrate-wave-2026-07-15` | cursor | css-migrate+ops | ProdDeck 0.8.3 all envs → classic CSS Postgres | tag `v0.8.3` @3acaaee · DEV/F/G login PASS iss css.delena.buzz | ok | rolled back css-next; H:\releases\proddeck-0.8.3 |
 | 2026-07-15 10:55 | av-upgrade-037 | cursor | lead+ops+review | Q1+Q2 agentverse-upgrade 0.3.7 F:4312 + G:5312 | tag v0.3.7 @dff155d · display names + tap-only chat | ok | H:\releases\agentverse-upgrade-0.3.7 · matrix pin 0.3.7 |

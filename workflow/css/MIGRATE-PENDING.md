@@ -1,7 +1,7 @@
-# CSS consumer migrate — PENDING tracker
+﻿# CSS consumer migrate — PENDING tracker
 
 **Session SoT:** `css-api-migrate-wave-2026-07-15`  
-**ProdDeck live:** **0.8.3** on **classic CSS** `v0.1.0` (Postgres) · all envs DEV/F/G · pack `H:\releases\proddeck-0.8.3`
+**Wave:** css-next consumer wave (locked defaults) — **COMPLETE** 2026-07-15
 
 Last updated: **2026-07-15**
 
@@ -11,38 +11,38 @@ Last updated: **2026-07-15**
 
 | Item | Notes |
 |------|--------|
-| ProdDeck → classic CSS all envs | 0.8.3 · issuer `https://css.delena.buzz` · BFF `:5900` · mode `password` |
-| Login validated DEV+F+G | `admin`/`admin123` · iss classic · catalog 200 |
-| Skill `css-migrate` | Still available for future consumer waves |
+| `mig-tp-push` | trading-portal `cf5176d` pushed; repo https://github.com/sivaram311/trading-portal (created) |
+| `mig-idp-brand` | css-next **0.2.1** / `v0.2.1` @ `75ae5ae` · Delena `/oauth/login` · F/G redeployed · domain brand prove PASS |
+| `mig-pd-css-next-retry` | ProdDeck **0.8.4** / `v0.8.4` @ `0121b64` · hybrid css-next · DEV/F/G domain login PASS |
+| `mig-portal` | agent-portal **0.1.9** @ `08b0b18` · password IdP → css-next · nginx `/auth`→`:5910` · domain login PASS · pushed |
+| `mig-av` | agentverse-upgrade **0.3.8** @ `4786508` · lockstep css-next · F/G domain login PASS · pushed |
+| `mig-css-dev9000` | Earlier classic-align: `:9000` Postgres GO |
 
-**Historical:** 0.8.2 briefly cut ProdDeck to css-next hybrid; **rolled back** to stable classic by user ask 2026-07-15.
-
----
-
-## PENDING (do not lose)
-
-| ID | Task | Owner cue | Blocked by |
-|----|------|-----------|------------|
-| `mig-portal` | Agent Portal DEV → css-next | implement | EM GO |
-| `mig-av` | AgentVerse DEV → css-next | implement | Portal contract |
-| `mig-css-dev9000` | CSS DEV `:9000` Postgres up | ops | start-dev / seeds |
-| `mig-idp-brand` | Brand css-next `/oauth/login` | CSS UI | Optional |
-| `mig-pd-css-next-retry` | Re-cut ProdDeck to css-next | EM GO | Only if password/seed + OAuth prove ready |
-
-**Out of wave:** Library auth, grok-dev, erpnext-bridge, waived public-read apps.
+**Out of wave (unchanged):** trading-portal stays on **classic** CSS; classic densify agentverse; waived apps; Portal OAuth/PKCE rewrite (future).
 
 ---
 
-## ProdDeck env (live all envs)
+## PENDING (future)
 
-| Variable | Value |
-|----------|--------|
-| `CSS_AUTH_URL` | `http://127.0.0.1:5900` |
-| `NEXT_PUBLIC_CSS_ISSUER` | `https://css.delena.buzz` |
-| `NEXT_PUBLIC_CSS_AUTH_MODE` | `password` |
+| ID | Task | Notes |
+|----|------|--------|
+| `mig-portal-oauth` | Angular OAuth/PKCE (optional) | Password lane already on css-next |
+| — | Classic CSS consumers only | trading-portal F/G |
+
+---
+
+## Live IdP map (post-wave)
+
+| App | IdP | Mode |
+|-----|-----|------|
+| ProdDeck DEV/F/G | css-next | hybrid |
+| Agent Portal DEV/F/G | css-next | password |
+| AgentVerse-upgrade F/G | css-next | password (shared clientId) |
+| Trading Portal F/G | classic | JWKS |
+| css-next itself | — | branded `/oauth/login` |
 
 ---
 
 ## Resume one-liner
 
-> ProdDeck **0.8.3** lives on **classic CSS** Postgres for DEV/F/G. css-next remains side fleet only.
+> Portal **0.1.9**, AgentVerse-upgrade **0.3.8**, ProdDeck **0.8.4** pin **css-next 0.2.1**. Trading-portal remains classic. Wave pending IDs closed.

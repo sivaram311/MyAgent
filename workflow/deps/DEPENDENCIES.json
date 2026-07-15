@@ -16,48 +16,51 @@
       "prodPort": 5900,
       "preprodPort": 4900,
       "devPort": 9000,
-      "notes": "Classic IdP \u2014 keep live; consumers still pin here"
+      "notes": "Classic IdP \u2014 trading-portal F/G still pin here"
     },
     "css-next": {
       "appId": "css-next",
-      "liveProdVersion": "0.2.0",
-      "gitTag": "v0.2.0",
-      "gitCommit": "180ac132919592c3d5eae73405014d4614e7a95e",
-      "releaseId": "css-next-0.2.0",
-      "releasePath": "H:/releases/css-next-0.2.0",
+      "liveProdVersion": "0.2.1",
+      "gitTag": "v0.2.1",
+      "gitCommit": "75ae5aed78149426d14a02226bc1b655090d2d72",
+      "releaseId": "css-next-0.2.1",
+      "releasePath": "H:/releases/css-next-0.2.1",
       "repo": "E:/MyWorkspace/centralized-security-system",
       "prodUrl": "https://css-next.delena.buzz",
       "prodPort": 5910,
       "preprodPort": 4910,
       "preprodUrl": "https://css-next-staging.delena.buzz",
-      "notes": "Side-fleet OAuth SSO; does not replace classic css"
+      "notes": "IdP brand 0.2.1; Portal/AV/ProdDeck pin here; classic css remains for trading-portal"
     }
   },
   "consumers": [
     {
       "appId": "agent-portal",
-      "liveProdVersion": "0.1.8",
+      "liveProdVersion": "0.1.9",
       "appGitTag": null,
-      "releaseId": "agent-portal-0.1.8",
+      "appGitCommit": "08b0b18",
+      "releaseId": "agent-portal-0.1.9",
+      "releasePath": "H:/releases/agent-portal-0.1.9",
       "dependencies": [
         {
-          "name": "css",
-          "version": "0.1.0",
-          "gitTag": "v0.1.0",
-          "releaseId": "css-0.1.0",
+          "name": "css-next",
+          "version": "0.2.1",
+          "gitTag": "v0.2.1",
+          "releaseId": "css-next-0.2.1",
           "clientId": "agent-portal",
-          "status": "verified-assumed-current-prod-css"
+          "status": "verified-domain-login-2026-07-15",
+          "notes": "Password IdP flip; nginx /auth -> :5910"
         }
       ]
     },
     {
       "appId": "agentverse-upgrade",
-      "liveProdVersion": "0.3.7",
-      "livePreprodVersion": "0.3.7",
-      "appGitTag": "v0.3.7",
-      "appGitCommit": "dff155d5185b7a782af700f302d319c854d2f298",
-      "releaseId": "agentverse-upgrade-0.3.7",
-      "releasePath": "H:/releases/agentverse-upgrade-0.3.7",
+      "liveProdVersion": "0.3.8",
+      "livePreprodVersion": "0.3.8",
+      "appGitTag": null,
+      "appGitCommit": "47865087791eaa797ee3800b90da85878bec34a1",
+      "releaseId": "agentverse-upgrade-0.3.8",
+      "releasePath": "H:/releases/agentverse-upgrade-0.3.8",
       "repo": "E:/MyWorkspace/agentverse-project",
       "prodUrl": "https://agentverse-upgrade.delena.buzz",
       "prodPort": 5312,
@@ -67,24 +70,24 @@
       "preprodPath": "F:/apps/agentverse-upgrade",
       "dependencies": [
         {
-          "name": "css",
-          "version": "0.1.0",
-          "gitTag": "v0.1.0",
-          "releaseId": "css-0.1.0",
+          "name": "css-next",
+          "version": "0.2.1",
+          "gitTag": "v0.2.1",
+          "releaseId": "css-next-0.2.1",
           "clientId": "agent-portal",
-          "status": "verified-q1-q2-2026-07-15",
+          "status": "verified-domain-login-2026-07-15",
           "notes": "Intentional clientId reuse with agent-portal"
         },
         {
           "name": "proddeck",
-          "version": "0.8.2",
-          "gitTag": "v0.8.2",
-          "releaseId": "proddeck-0.8.2",
+          "version": "0.8.4",
+          "gitTag": "v0.8.4",
+          "releaseId": "proddeck-0.8.4",
           "status": "dispatch-peer-sot",
-          "notes": "ProdDeck Dispatch deep-links land on this upgrade fleet (not classic); ProdDeck IdP is classic CSS"
+          "notes": "ProdDeck Dispatch deep-links land on this upgrade fleet"
         }
       ],
-      "notes": "Q1+Q2 2026-07-15: F:4312 and G:5312 both 0.3.7 tag v0.3.7 \u2014 pack overlay display names + tap-only chat."
+      "notes": "Q1+Q2 2026-07-15: F:4312 and G:5312 both 0.3.8 css-next lockstep with Portal"
     },
     {
       "appId": "agentverse",
@@ -106,32 +109,33 @@
     },
     {
       "appId": "proddeck",
-      "liveProdVersion": "0.8.3",
-      "appGitTag": "v0.8.3",
-      "appGitCommit": "3acaaee8eff8d1b6975f834459ec0443a1b743f6",
-      "releaseId": "proddeck-0.8.3",
+      "liveProdVersion": "0.8.4",
+      "appGitTag": "v0.8.4",
+      "appGitCommit": "0121b647856e3479a237d34df770fc5fea55f373",
+      "releaseId": "proddeck-0.8.4",
+      "releasePath": "H:/releases/proddeck-0.8.4",
       "dependencies": [
         {
-          "name": "css",
-          "version": "0.1.0",
-          "gitTag": "v0.1.0",
-          "releaseId": "css-0.1.0",
+          "name": "css-next",
+          "version": "0.2.1",
+          "gitTag": "v0.2.1",
+          "releaseId": "css-next-0.2.1",
           "clientId": "proddeck",
           "status": "verified-q1-q2-2026-07-15",
-          "notes": "Classic IdP; JWT iss https://css.delena.buzz; BFF CSS_AUTH_URL :5900; Postgres app_css.prod"
+          "notes": "Hybrid; JWT iss https://css-next.delena.buzz; BFF :5910"
         },
         {
           "name": "agent-portal",
-          "version": "0.1.8",
+          "version": "0.1.9",
           "gitTag": null,
-          "releaseId": "agent-portal-0.1.8",
+          "releaseId": "agent-portal-0.1.9",
           "status": "verified-os-events-forward"
         },
         {
           "name": "agentverse-upgrade",
-          "version": "0.3.7",
-          "gitTag": "v0.3.7",
-          "releaseId": "agentverse-upgrade-0.3.7",
+          "version": "0.3.8",
+          "gitTag": null,
+          "releaseId": "agentverse-upgrade-0.3.8",
           "status": "dispatch-peer-sot",
           "notes": "Cloud OS Dispatch SoT \u2014 hosts :4312/:5312 upgrade fleet"
         },
@@ -177,15 +181,18 @@
     },
     {
       "appId": "trading-portal",
-      "version": "0.1.0",
+      "liveProdVersion": "0.1.0",
       "gitTag": "v0.1.0",
-      "commit": "ea1023833b37374a49b9223a791a6c195308d179",
+      "commit": "cf5176dd317742defa67b4a0797c6cfdc3dea6b3",
+      "releaseId": "trading-portal-0.1.0",
+      "repo": "https://github.com/sivaram311/trading-portal",
       "dependsOn": [
         {
           "name": "css",
           "version": "0.1.0",
           "gitTag": "v0.1.0",
-          "clientId": "trading-portal"
+          "clientId": "trading-portal",
+          "notes": "F+G classic CSS JWKS (:4900/:5900); tip cf5176d pushed"
         }
       ]
     }
