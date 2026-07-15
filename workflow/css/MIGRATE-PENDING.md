@@ -1,7 +1,7 @@
 ﻿# CSS consumer migrate — PENDING tracker
 
 **Session SoT:** `css-api-migrate-wave-2026-07-15`  
-**Wave:** css-next consumer wave (locked defaults) — **COMPLETE** 2026-07-15
+**Status:** **COMPLETE** (including optional follow-ons) — 2026-07-15
 
 Last updated: **2026-07-15**
 
@@ -11,38 +11,32 @@ Last updated: **2026-07-15**
 
 | Item | Notes |
 |------|--------|
-| `mig-tp-push` | trading-portal `cf5176d` pushed; repo https://github.com/sivaram311/trading-portal (created) |
-| `mig-idp-brand` | css-next **0.2.1** / `v0.2.1` @ `75ae5ae` · Delena `/oauth/login` · F/G redeployed · domain brand prove PASS |
-| `mig-pd-css-next-retry` | ProdDeck **0.8.4** / `v0.8.4` @ `0121b64` · hybrid css-next · DEV/F/G domain login PASS |
-| `mig-portal` | agent-portal **0.1.9** @ `08b0b18` · password IdP → css-next · nginx `/auth`→`:5910` · domain login PASS · pushed |
-| `mig-av` | agentverse-upgrade **0.3.8** @ `4786508` · lockstep css-next · F/G domain login PASS · pushed |
-| `mig-css-dev9000` | Earlier classic-align: `:9000` Postgres GO |
-
-**Out of wave (unchanged):** trading-portal stays on **classic** CSS; classic densify agentverse; waived apps; Portal OAuth/PKCE rewrite (future).
+| css-next consumer wave | Portal/AV/ProdDeck on css-next · IdP brand 0.2.1 · docs pushed |
+| `mig-portal-oauth` | Portal **0.1.10** hybrid OAuth/PKCE + password · tip `084e94a` (+ packs `95f740d`) · DEV/F/G SSO prove PASS |
+| Trading-portal → css-next | tip `5ea7334` · F JWKS `:4910` · G JWKS `:5910` · smoke PASS · pushed |
+| DataSeeder trading-portal | CSS `86315fb` seeds `trading-portal` client + roles |
+| Registry cleanup | MyAgent ports/db trading-portal rows · `8a8f444` |
 
 ---
 
-## PENDING (future)
+## PENDING
 
-| ID | Task | Notes |
-|----|------|--------|
-| `mig-portal-oauth` | Angular OAuth/PKCE (optional) | Password lane already on css-next |
-| — | Classic CSS consumers only | trading-portal F/G |
+_None for this session._
 
 ---
 
-## Live IdP map (post-wave)
+## Live IdP map
 
-| App | IdP | Mode |
-|-----|-----|------|
-| ProdDeck DEV/F/G | css-next | hybrid |
-| Agent Portal DEV/F/G | css-next | password |
-| AgentVerse-upgrade F/G | css-next | password (shared clientId) |
-| Trading Portal F/G | classic | JWKS |
-| css-next itself | — | branded `/oauth/login` |
+| App | Version | IdP | Mode |
+|-----|---------|-----|------|
+| css-next | 0.2.1 | — | branded OAuth login |
+| ProdDeck | 0.8.4 | css-next | hybrid |
+| Agent Portal | **0.1.10** | css-next | **hybrid** (password + OAuth/PKCE) |
+| AgentVerse-upgrade | 0.3.8 | css-next | password |
+| Trading Portal | 0.1.0 tip `5ea7334` | **css-next** | JWKS F`:4910` / G`:5910` |
 
 ---
 
 ## Resume one-liner
 
-> Portal **0.1.9**, AgentVerse-upgrade **0.3.8**, ProdDeck **0.8.4** pin **css-next 0.2.1**. Trading-portal remains classic. Wave pending IDs closed.
+> All active auth consumers pin **css-next**. Portal hybrid OAuth/PKCE live as **0.1.10**. Trading-portal F/G on css-next JWKS. No migrate pending IDs.

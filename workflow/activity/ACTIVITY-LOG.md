@@ -4,7 +4,7 @@ Append-only. Newest entries at the **top** (below this header block).
 
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
-| 2026-07-15 13:15 | `css-api-migrate-wave-2026-07-15` | cursor | docs+review | docs sync after css-next consumer wave | MyAgent CLIENT-REGISTRY/integration + CSS migrate-wave/prove/pilot; Reviewer GO | ok | pushed MyAgent main + CSS release/0.2.0 |
+| 2026-07-15 13:30 | `css-api-migrate-wave-2026-07-15` | cursor | css-migrate+ops | optional follow-ons COMPLETE | Portal 0.1.10 OAuth hybrid; TP F/G css-next; DataSeeder+registry pushed | ok | no migrate pending |\r\n| 2026-07-15 13:15 | `css-api-migrate-wave-2026-07-15` | cursor | docs+review | docs sync after css-next consumer wave | MyAgent CLIENT-REGISTRY/integration + CSS migrate-wave/prove/pilot; Reviewer GO | ok | pushed MyAgent main + CSS release/0.2.0 |
 | 2026-07-15 13:05 | `css-api-migrate-wave-2026-07-15` | cursor | css-migrate+promote | css-next consumer wave COMPLETE | PD 0.8.4 + Portal 0.1.9 + AV 0.3.8 + css-next 0.2.1; domain logins PASS; matrix updated | ok | trading-portal remains classic |
 | 2026-07-15 12:55 | `css-api-migrate-wave-2026-07-15` | cursor | promote+ops+qa | agentverse-upgrade 0.3.8 -> css-next F/G | tip 4786508 · domain login iss css-next | ok | H:\releases\agentverse-upgrade-0.3.8 |
 | 2026-07-15 12:50 | `css-api-migrate-wave-2026-07-15` | cursor | ops+review | agent-portal 0.1.9 IdP flip + push | tip 08b0b18 · nginx /auth :5910 · domain login PASS | ok | H:\releases\agent-portal-0.1.9 |
