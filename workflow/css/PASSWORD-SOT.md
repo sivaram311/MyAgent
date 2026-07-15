@@ -27,3 +27,13 @@ Loopback IdP `:9000` `:4900` `:5900` `:4910` `:5910` + domain BFF logins — env
 
 - Commit `CSS_ADMIN_PASSWORD` to git.
 - Expect env-only changes to update live login without Postgres hash reset or admin row recreate.
+
+## PROD browser login (2026-07-15)
+
+Evidence: `H:\releases\css-0.1.0\evidence\prod-browser-login\`
+
+After issuer bake/nginx fixes, Playwright Chromium PROD password login **PASS** for: home, home-staging, agent-portal, agentverse[-upgrade], trading-portal (iss=css-next), css-next IdP page.
+
+Fixes applied same day:
+1. ProdDeck F/G rebuild — baked NEXT_PUBLIC still classic until clean rebuild (shell env override).
+2. trading-portal.delena.buzz nginx `/auth`+JWKS → css-next `:5910`.

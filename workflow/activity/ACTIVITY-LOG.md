@@ -4,6 +4,7 @@ Append-only. Newest entries at the **top** (below this header block).
 
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
+| 2026-07-15 15:40 | css-api-migrate-wave-2026-07-15 | cursor | qa+ops | PROD browser login audit + issuer fixes | ProdDeck rebuild bake css-next; trading nginx /auth :5910; all PROD PASS retest | ok | evidence H:css-0.1.0\prod-browser-login |\r
 | 2026-07-15 14:40 | css-password-align | cursor | css-ops | Admin password realign all schemas | Postgres dev/preprod/prod hash reset; env already SoT; start-dev loads CSS_ADMIN_PASSWORD | ok | evidence H:css-0.1.0 password-align |\r
 | 2026-07-15 14:30 | ops-agentverse-hostname | cursor | ops+docs | Retarget agentverse[.staging].delena.buzz nginx to upgrade :5312/:4312 | classic densify down caused CF 502; public /health 200 | ok | docs + ports matrix updated |\r
 | 2026-07-15 13:30 | `css-api-migrate-wave-2026-07-15` | cursor | css-migrate+ops | optional follow-ons COMPLETE | Portal 0.1.10 OAuth hybrid; TP F/G css-next; DataSeeder+registry pushed | ok | no migrate pending |\r\n| 2026-07-15 13:15 | `css-api-migrate-wave-2026-07-15` | cursor | docs+review | docs sync after css-next consumer wave | MyAgent CLIENT-REGISTRY/integration + CSS migrate-wave/prove/pilot; Reviewer GO | ok | pushed MyAgent main + CSS release/0.2.0 |
