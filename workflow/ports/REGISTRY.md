@@ -32,6 +32,9 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 3312 | agentverse-upgrade | http | active | E:\MyWorkspace\agentverse-project | upgradation functionality side fleet; feature/upgradation-functionality; npm -p 3312; must NOT use 3310/3311 |
 | 3320 | proddeck | http | active | E:\wt\proddeck-integrate | ProdDeck DEV; https://home-dev.delena.buzz → :3320 |
 | 3330 | library | http | reserved | E:\MyWorkspace\sandbox\library | Library DEV; https://library-dev.delena.buzz → :3330 |
+| 3340 | trading-portal | api | active | E:\MyWorkspace\trading-portal\backend | Spring Boot 3.3 API DEV; ACTIVE 2026-07-15 (/api/health ok); dev-bypass auth (CSS JWKS ready); GROK-DECISION-001 |
+| 3341 | trading-portal | http | active | E:\MyWorkspace\trading-portal | Angular UI DEV; UI listening verified GET / → 200 (2026-07-15) |
+| 3342 | trading-portal | worker | active | E:\MyWorkspace\trading-portal\python | Python MT5 XAUUSD ingest worker DEV; optional `GET /health` verified 2026-07-15 (`python -m trading_portal_ingest seed --health`); not a persistent daemon by default — start via `scripts/run-ingest-dev.ps1` |
 
 <!-- Add new DEV rows below -->
 
@@ -51,6 +54,9 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 4900 | css | http | active | F:\apps\css | Preprod classic CSS IdP; keep live; do not replace with css-next |
 | 4910 | css-next | http | active | F:\apps\css-next | Side-fleet PREPROD OAuth SSO 0.2.0; https://css-next-staging.delena.buzz → :4910; must NOT use 4900 |
 | 4091 | stack-pilot | http | active | F:\apps\stack-pilot | PREPROD; https://control-staging.delena.buzz ? :4091 |
+| 4340 | trading-portal | http | active | F:\apps\trading-portal | Spring Boot API PREPROD; ACTIVE 2026-07-15 health ok; paper-only |
+| 4341 | trading-portal | http | active | F:\apps\trading-portal | Angular UI static PREPROD; ACTIVE 2026-07-15 GET / 200 |
+| 4342 | trading-portal | worker | reserved | F:\apps\trading-portal\python | Python MT5 XAUUSD ingest worker PREPROD; not bound yet — GROK-DECISION-001 |
 
 ---
 
@@ -71,6 +77,9 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 5312 | agentverse-upgrade | http | active | G:\apps\agentverse-upgrade | upgradation side PROD; https://agentverse-upgrade.delena.buzz (must NOT use 5310/5311) |
 | 5320 | proddeck | http | active | G:\apps\proddeck | ProdDeck PROD; https://home.delena.buzz |
 | 5330 | library | http | reserved | G:\apps\library | Library PROD; https://library.delena.buzz → :5330 (app not deployed yet) |
+| 5340 | trading-portal | http | active | F: or G: apps\trading-portal | Spring Boot API PROD; ACTIVE 2026-07-15 health ok; paper-only |
+| 5341 | trading-portal | http | active | F: or G: apps\trading-portal | Angular UI static PROD; ACTIVE 2026-07-15 GET / 200 |
+| 5342 | trading-portal | worker | reserved | G:\apps\trading-portal\python | Python MT5 XAUUSD ingest worker PROD; not bound yet — GROK-DECISION-001 |
 
 ## Legacy outside scheme (migrate later)
 

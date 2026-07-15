@@ -28,6 +28,14 @@
       "roles": ["app_agent_portal_dev", "app_agent_portal_preprod", "app_agent_portal_prod"],
       "status": "active",
       "notes": "DDL applied 2026-07-11; preprod/prod use prod CSS IdP (css.delena.buzz / :5900)"
+    },
+    {
+      "appId": "trading-portal",
+      "database": "app_trading_portal",
+      "schemas": ["dev", "preprod", "prod"],
+      "roles": ["app_trading_portal_dev", "app_trading_portal_preprod", "app_trading_portal_prod"],
+      "status": "reserved",
+      "notes": "GROK-DECISION-001 2026-07-15; no DDL yet; API :3340 dev / :4340 preprod / :5340 prod; OHLC + IctSnapshot + GannSnapshot + ConfluenceDecision + RiskVerdict + paper journal tables planned"
     }
   ]
 }
