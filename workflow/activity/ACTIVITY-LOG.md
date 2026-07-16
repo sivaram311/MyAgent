@@ -4,6 +4,7 @@ Append-only. Newest entries at the **top** (below this header block).
 
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
+| 2026-07-16 11:00 | `machine-gateway-v0-hire-recommend` | antigravity | review | Recommended review personas to hire for PR #1 | E:\MyWorkspace\agent-portal | ok | Recommended 4 personas with disjoint paths for merge review |
 | 2026-07-16 10:52 | `machine-gateway-compliance-pr` | cursor+agy | ops+docs+review | Ports/CF compliance GO + PR #1 | https://github.com/sivaram311/agent-portal/pull/1 | ok | no new port/DNS; registries updated; tip 18a704c |
 | 2026-07-16 10:45 | `machine-gateway-v0-agy-go` | cursor+agy | impl+review | Machine Gateway v0 W1+W2; Agy GO | agent-portal feature/machine-gateway-v0 @b097743; machine-gateway collab docs @650212e | ok | /api/machine/context+chat; GATEWAY_* roles; SecretRedactor; MachineToolGuard |
 | 2026-07-16 10:09 | `machine-gateway-git-public` | cursor | ops+docs | git init+commit+public GitHub push machine-gateway | https://github.com/sivaram311/machine-gateway | ok | docs-only idea; secrets gitignored; tip 8bf264b; index+hub README updated |
