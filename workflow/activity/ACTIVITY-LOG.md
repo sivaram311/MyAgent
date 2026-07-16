@@ -4,6 +4,7 @@ Append-only. Newest entries at the **top** (below this header block).
 
 Session transcripts (Cursor): `C:\Users\Administrator\.cursor\projects\E-MyAgent\agent-transcripts\<session-id>\`
 
+| 2026-07-16 10:45 | `machine-gateway-v0-agy-go` | cursor+agy | impl+review | Machine Gateway v0 W1+W2; Agy GO | agent-portal feature/machine-gateway-v0 @b097743; machine-gateway collab docs @650212e | ok | /api/machine/context+chat; GATEWAY_* roles; SecretRedactor; MachineToolGuard |
 | 2026-07-16 10:09 | `machine-gateway-git-public` | cursor | ops+docs | git init+commit+public GitHub push machine-gateway | https://github.com/sivaram311/machine-gateway | ok | docs-only idea; secrets gitignored; tip 8bf264b; index+hub README updated |
 | 2026-07-15 15:40 | css-api-migrate-wave-2026-07-15 | cursor | qa+ops | PROD browser login audit + issuer fixes | ProdDeck rebuild bake css-next; trading nginx /auth :5910; all PROD PASS retest | ok | evidence H:css-0.1.0\prod-browser-login |\r
 | 2026-07-15 14:40 | css-password-align | cursor | css-ops | Admin password realign all schemas | Postgres dev/preprod/prod hash reset; env already SoT; start-dev loads CSS_ADMIN_PASSWORD | ok | evidence H:css-0.1.0 password-align |\r
