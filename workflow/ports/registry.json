@@ -156,7 +156,7 @@
       "env": "dev",
       "role": "http",
       "status": "legacy",
-      "notes": "DEV API"
+      "notes": "DEV API; Machine Gateway /api/machine/* (no extra port); migrate toward :3080"
     },
     {
       "port": 8081,

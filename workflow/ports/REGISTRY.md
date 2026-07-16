@@ -86,7 +86,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | Port | App ID | Env | Role | Status | Process | Notes |
 |------|--------|-----|------|--------|---------|-------|
 | 4200 | agent-portal | dev | http | legacy | node/ng | DEV UI (ng serve); public delena.buzz / |
-| 8080 | agent-portal | dev | http | legacy | java | DEV API; migrate toward :3080 |
+| 8080 | agent-portal | dev | http | legacy | java | DEV API; migrate toward :3080; Machine Gateway `/api/machine/*` (no extra port) |
 | 8081 | legacy-java-8081 | unknown | http | legacy | java | Identify owner |
 | 8082 | legacy-java-8082 | unknown | http | legacy | java | Identify owner |
 | 8091 | stack-pilot | dev | http | legacy | java | Stopped 2026-07-11 sole cutover; prod :5091 owns control.delena.buzz |
