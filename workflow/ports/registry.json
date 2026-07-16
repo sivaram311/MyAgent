@@ -107,8 +107,8 @@
       "appId": "agent-portal",
       "env": "preprod",
       "role": "http",
-      "status": "active",
-      "notes": "NGINX public-IP edge PREPROD only; 103.118.183.185:4081 -> 127.0.0.1:4080 + /auth :5910; no CF DNS"
+      "status": "retired",
+      "notes": "Public-IP NGINX edge disabled 2026-07-16; use agent-portal-staging.delena.buzz"
     },
     {
       "port": 5080,
