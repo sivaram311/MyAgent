@@ -41,7 +41,7 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 11. **DEV E2E before tag** — CONSCIOUS rule **16**: run Device Lab against DEV URL, then hire **`git-release`** for annotated `v*` tags per `GIT-RELEASE-MANAGEMENT.md`. Do not tag/pack UI apps on staging-only browser runs. Tag ≠ live (matrix is live). When a DEV public hostname exists, login E2E on that domain is required (#18).
 12. **Reviewer before push** — CONSCIOUS rule **17**: before any `git push` (branch or tag), hire a readonly Reviewer and get **GO** in `SIGN-OFF.md` (`workflow/review/REVIEWER-SIGNOFF.md`). Local commit allowed; push without GO → NO-GO.
 13. **Login E2E on DEV domain** — CONSCIOUS rule **18**: Playwright login/SSO must use the app’s DEV public hostname when it exists (e.g. `https://home-dev.delena.buzz`), not only `127.0.0.1` — SoT `workflow/testing/DEV-HOST-E2E.md`.
-14. **Cloudflare Workers AI** — CONSCIOUS rule **19**: use User env / `workflow/secrets/cloudflare-workers-ai.env` for `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_WORKERS_AI_TOKEN`; never commit; keep separate from Zone Edit DNS token — SoT `workflow/cloudflare-workers-ai.md`.
+14. **Cloudflare Workers AI** — CONSCIOUS rule **19**: use User env / `workflow/secrets/cloudflare-workers-ai.env` for `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_WORKERS_AI_TOKEN`; never commit; keep separate from Zone Edit DNS token. Fetch models via `ai/models/search`; check neuron quota per `workflow/cloudflare-workers-ai.md` (header / GraphQL / dashboard).
 
 ## Antigravity
 

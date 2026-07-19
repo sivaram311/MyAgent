@@ -111,7 +111,7 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
 19. **Cloudflare Workers AI credentials via env (never commit)** (user-directed 2026-07-19 — **keep**)  
     Workers AI account/token live in **Windows User env** and `workflow/secrets/cloudflare-workers-ai.env` (gitignored).  
     Vars: **`CLOUDFLARE_ACCOUNT_ID`**, **`CLOUDFLARE_WORKERS_AI_TOKEN`**.  
-    SoT how-to: `workflow/cloudflare-workers-ai.md` (+ `.env.example`).  
+    SoT how-to: `workflow/cloudflare-workers-ai.md` (+ `.env.example`) — includes **model catalog fetch** (`ai/models/search`) and **neuron quota checks** (`cf-ai-neurons` header · GraphQL `aiInferenceAdaptiveGroups` · Free **10k neurons/day** UTC · error **4006** when exhausted).  
     Keep Workers AI token **separate** from Zone Edit / DNS (`workflow/secrets/cloudflare.token`, `agent-portal/.env` `CLOUDFLARE_API_TOKEN`).  
     Never commit tokens; redact in ACTIVITY-LOG. Verify with token verify + a sample `ai/run` call before relying on inference.  
     Mindmap must keep an awareness node for this standing order.
