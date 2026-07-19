@@ -2,8 +2,8 @@
 
 Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) — including **Cursor**, **Antigravity**, and any other provider (Agent Portal or local).
 
-**Last updated:** 2026-07-15  
-**Session that recorded this:** `proddeck-keepers-quay-2026-07-14` / E2E (#14–#16) · Reviewer-before-push (#17) · DEV-domain-login-E2E (#18) · `css-api-migrate-wave-2026-07-15`
+**Last updated:** 2026-07-19  
+**Session that recorded this:** Cloudflare Workers AI env (#19) · prior: E2E (#14–#16) · Reviewer-before-push (#17) · DEV-domain-login-E2E (#18)
 
 **Provider note:** `.cursor/rules` and `.cursor/skills` help Cursor discover policy. Antigravity and others must still follow this file and `AGENTS.md`. Activity logging and promote evidence are **provider-agnostic**.
 
@@ -107,6 +107,14 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
     SoT: `workflow/testing/DEV-HOST-E2E.md` (+ `E2E-HIRE.md`).  
     Reasons: OAuth `redirect_uri` / origin, cookies, HTTPS, nginx/CF path, CSS CORS. Loopback may complement non-auth smoke; it does **not** replace domain login for auth apps.  
     Evidence must record the domain `baseURL`. No DEV subdomain yet → loopback + documented waive + task to add host. Missing domain login E2E when a DEV host exists → incomplete / **NO-GO** for #16 tag on that app.
+
+19. **Cloudflare Workers AI credentials via env (never commit)** (user-directed 2026-07-19 — **keep**)  
+    Workers AI account/token live in **Windows User env** and `workflow/secrets/cloudflare-workers-ai.env` (gitignored).  
+    Vars: **`CLOUDFLARE_ACCOUNT_ID`**, **`CLOUDFLARE_WORKERS_AI_TOKEN`**.  
+    SoT how-to: `workflow/cloudflare-workers-ai.md` (+ `.env.example`).  
+    Keep Workers AI token **separate** from Zone Edit / DNS (`workflow/secrets/cloudflare.token`, `agent-portal/.env` `CLOUDFLARE_API_TOKEN`).  
+    Never commit tokens; redact in ACTIVITY-LOG. Verify with token verify + a sample `ai/run` call before relying on inference.  
+    Mindmap must keep an awareness node for this standing order.
 
 ---
 
@@ -213,6 +221,16 @@ Promote rows must include **git tag** and **dependent versions**.
 
 Updating **how-to / ops / product docs** after meaningful changes is mandatory — same priority as the activity log. Prefer same-turn updates to app `docs/`, README, `DEPLOY.md`, and `workflow/` when topology or procedure changes.
 
+### Cloudflare Workers AI (rule 19)
+
+| Item | Value |
+|------|-------|
+| Account ID env | `CLOUDFLARE_ACCOUNT_ID` |
+| Token env | `CLOUDFLARE_WORKERS_AI_TOKEN` |
+| Secret file | `workflow/secrets/cloudflare-workers-ai.env` (gitignored) |
+| How-to | `workflow/cloudflare-workers-ai.md` |
+| DNS/Zone token | separate — `workflow/secrets/cloudflare.token` / agent-portal `.env` |
+
 ---
 
 ## Environment layout status
@@ -248,3 +266,4 @@ Note: F/G/H are logical partitions inside one MBR extended partition on Disk 0 (
 - Promote rule: `.cursor/rules/promote-evidence.mdc`
 - Activity log: `workflow/activity/README.md`
 - Activity rule: `.cursor/rules/activity-documentation.mdc`
+- Cloudflare Workers AI: `workflow/cloudflare-workers-ai.md`

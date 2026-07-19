@@ -22,6 +22,8 @@ Machine-local process for managing MyAgent development activity across **Cursor,
 | `workflow/promote/` | **Mandatory** qualify/promote with evidence packs |
 | `workflow/activity/` | **Mandatory** agent/subagent activity log |
 | `workflow/prod-deploy.md` | Prod deploy wrapper (Cloudflare + nginx) |
+| `workflow/cloudflare-workers-ai.md` | **Workers AI** env + verify/sample (`CLOUDFLARE_*`) — CONSCIOUS #19 |
+| `workflow/cloudflare-workers-ai.env.example` | Placeholder for Workers AI secrets (real values in `secrets/`) |
 | `ideas/README.md` | Capture and prioritize implementation ideas |
 | `workflow/sessions.md` | Log session IDs (Cursor/Antigravity) and outcomes |
 | `workflow/README.md` | This workflow definition |
