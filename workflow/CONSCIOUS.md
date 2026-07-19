@@ -116,6 +116,12 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
     Never commit tokens; redact in ACTIVITY-LOG. Verify with token verify + a sample `ai/run` call before relying on inference.  
     Mindmap must keep an awareness node for this standing order.
 
+20. **Repository visibility inventory is mandatory** (user-directed 2026-07-19 — **keep**)
+    Track every GitHub repository owned by `sivaram311` in `workflow/repos/REGISTRY.md` and `registry.json`.
+    Required metadata: authoritative GitHub visibility (`PUBLIC` / `PRIVATE` / `INTERNAL`), URL, default branch, archived/fork status, local path when known, and update timestamp.
+    Refresh with `workflow/repos/refresh-repository-registry.ps1` after create/import/rename/transfer/delete, visibility changes, archive changes, or default-branch changes.
+    Visibility must come from authenticated GitHub metadata (`gh repo list`), never inference from a clone URL. Never record credentials or collaborator secrets.
+
 ---
 
 ## Allowed without extra confirmation
