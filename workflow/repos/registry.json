@@ -1,16 +1,16 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedAt":  "2026-07-19T18:30:30Z",
+    "generatedAt":  "2026-07-21T16:56:53Z",
     "owner":  "sivaram311",
     "source":  "gh repo list",
-    "total":  20,
+    "total":  21,
     "counts":  {
-                   "public":  18,
+                   "public":  19,
                    "private":  2,
                    "internal":  0,
                    "archived":  0,
                    "forks":  0,
-                   "local":  17
+                   "local":  18
                },
     "repositories":  [
                          {
@@ -62,6 +62,18 @@
                              "updatedAt":  "2026-07-12T13:44:35Z"
                          },
                          {
+                             "name":  "deployment",
+                             "owner":  "sivaram311",
+                             "url":  "https://github.com/sivaram311/deployment",
+                             "visibility":  "PUBLIC",
+                             "defaultBranch":  "main",
+                             "archived":  false,
+                             "fork":  false,
+                             "localPath":  "E:\\Source\\Deployment",
+                             "description":  "delena.buzz fleet ops: nginx config + Windows Session-0 durable runtime scripts (no secrets)",
+                             "updatedAt":  "2026-07-21T16:56:36Z"
+                         },
+                         {
                              "name":  "forgecity-launcher",
                              "owner":  "sivaram311",
                              "url":  "https://github.com/sivaram311/forgecity-launcher",
@@ -71,7 +83,7 @@
                              "fork":  false,
                              "localPath":  "E:\\MyWorkspace\\sandbox\\forgecity-launcher",
                              "description":  "ForgeCity ΓÇö story-driven isometric Android launcher for Realme P2 Pro",
-                             "updatedAt":  "2026-07-19T17:21:38Z"
+                             "updatedAt":  "2026-07-21T12:55:53Z"
                          },
                          {
                              "name":  "git-backup",
@@ -131,7 +143,7 @@
                              "fork":  false,
                              "localPath":  "E:\\MyWorkspace\\sandbox\\mindmap",
                              "description":  "Offline interactive mind map of this machine\u0027s AI operating model (rules, workflow, environments)",
-                             "updatedAt":  "2026-07-19T17:45:30Z"
+                             "updatedAt":  "2026-07-19T18:37:57Z"
                          },
                          {
                              "name":  "mt5-dev",
@@ -155,7 +167,7 @@
                              "fork":  false,
                              "localPath":  "E:\\MyAgent",
                              "description":  "Machine standing orders, env promote workflow, and agent registries (Cursor + Antigravity)",
-                             "updatedAt":  "2026-07-19T17:45:26Z"
+                             "updatedAt":  "2026-07-21T14:47:12Z"
                          },
                          {
                              "name":  "MyMachine",
@@ -167,7 +179,7 @@
                              "fork":  false,
                              "localPath":  "E:\\MyWorkspace\\MyMachine",
                              "description":  "MyMachine archive: Cursor/Antigravity agent traces, machine docs, and project markdown from DEV/PREPROD/PROD/RELEASES drives.",
-                             "updatedAt":  "2026-07-19T17:45:31Z"
+                             "updatedAt":  "2026-07-19T18:38:00Z"
                          },
                          {
                              "name":  "persistent-agent-platform",
@@ -215,7 +227,7 @@
                              "fork":  false,
                              "localPath":  "E:\\Source\\stack-pilot",
                              "description":  "Powershell Manager with Logs Web Application",
-                             "updatedAt":  "2026-07-11T18:09:19Z"
+                             "updatedAt":  "2026-07-21T14:50:02Z"
                          },
                          {
                              "name":  "stack-pilot-android",
