@@ -1,16 +1,16 @@
 ﻿{
     "schemaVersion":  1,
-    "generatedAt":  "2026-07-21T16:56:53Z",
+    "generatedAt":  "2026-07-22T09:14:29Z",
     "owner":  "sivaram311",
     "source":  "gh repo list",
-    "total":  21,
+    "total":  22,
     "counts":  {
-                   "public":  19,
+                   "public":  20,
                    "private":  2,
                    "internal":  0,
                    "archived":  0,
                    "forks":  0,
-                   "local":  18
+                   "local":  19
                },
     "repositories":  [
                          {
@@ -23,7 +23,7 @@
                              "fork":  false,
                              "localPath":  "E:\\MyWorkspace\\agent-portal",
                              "description":  "Spring Boot + Angular dual-provider AI agent portal (Cursor ACP \u0026 Antigravity) with responsive UI and Playwright mobile e2e",
-                             "updatedAt":  "2026-07-19T06:08:34Z"
+                             "updatedAt":  "2026-07-22T04:45:03Z"
                          },
                          {
                              "name":  "agentverse-project",
@@ -71,7 +71,7 @@
                              "fork":  false,
                              "localPath":  "E:\\Source\\Deployment",
                              "description":  "delena.buzz fleet ops: nginx config + Windows Session-0 durable runtime scripts (no secrets)",
-                             "updatedAt":  "2026-07-21T16:56:36Z"
+                             "updatedAt":  "2026-07-21T16:58:09Z"
                          },
                          {
                              "name":  "forgecity-launcher",
@@ -167,7 +167,7 @@
                              "fork":  false,
                              "localPath":  "E:\\MyAgent",
                              "description":  "Machine standing orders, env promote workflow, and agent registries (Cursor + Antigravity)",
-                             "updatedAt":  "2026-07-21T14:47:12Z"
+                             "updatedAt":  "2026-07-22T04:45:35Z"
                          },
                          {
                              "name":  "MyMachine",
@@ -179,7 +179,7 @@
                              "fork":  false,
                              "localPath":  "E:\\MyWorkspace\\MyMachine",
                              "description":  "MyMachine archive: Cursor/Antigravity agent traces, machine docs, and project markdown from DEV/PREPROD/PROD/RELEASES drives.",
-                             "updatedAt":  "2026-07-19T18:38:00Z"
+                             "updatedAt":  "2026-07-22T04:45:31Z"
                          },
                          {
                              "name":  "persistent-agent-platform",
@@ -204,6 +204,18 @@
                              "localPath":  "E:\\MyWorkspace\\sandbox\\proddeck",
                              "description":  "ProdDeck ΓÇö CSS-gated production launcher with Keepers Quay 3D world",
                              "updatedAt":  "2026-07-16T22:12:37Z"
+                         },
+                         {
+                             "name":  "production-house",
+                             "owner":  "sivaram311",
+                             "url":  "https://github.com/sivaram311/production-house",
+                             "visibility":  "PUBLIC",
+                             "defaultBranch":  "main",
+                             "archived":  false,
+                             "fork":  false,
+                             "localPath":  "E:\\MyWorkspace\\sandbox\\production-house",
+                             "description":  "Production House ΓÇö React+R3F film-lot experience (delena machine sandbox)",
+                             "updatedAt":  "2026-07-22T09:10:32Z"
                          },
                          {
                              "name":  "rd-center-project",
@@ -239,7 +251,7 @@
                              "fork":  false,
                              "localPath":  "E:\\Source\\stack-pilot-android",
                              "description":  "",
-                             "updatedAt":  "2026-07-02T19:42:09Z"
+                             "updatedAt":  "2026-07-22T04:45:21Z"
                          },
                          {
                              "name":  "Street-Photography",
