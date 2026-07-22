@@ -47,7 +47,7 @@ Exactly the 4 intended files are staged; none of MyAgent's many unrelated in-fli
 - Registry counts arithmetic checks out (+1 public repo, +1 local path); `deployment` fields match the deployment SIGN-OFF (PUBLIC / main / `E:\Source\Deployment`).
 
 **Informational (non-blocking):**
-- The new activity row contains the literal origin IP `103.118.183.185` (in the "Redacted origin IP …→`<ORIGIN_IP>`" note). This IP is **already pre-existing** in MyAgent's tracked files (ACTIVITY-LOG rows for 2026-07-16/07-14, `workflow/ports/REGISTRY.md`), so this push introduces **no new exposure**. Worth noting only that MyAgent (itself PUBLIC) records the same origin IP that the `deployment` repo deliberately redacts — a pre-existing convention, out of scope for this gate. Not blocking.
+- The new activity row contains the literal origin IP `<ORIGIN_IP>` (in the "Redacted origin IP …→`<ORIGIN_IP>`" note). This IP is **already pre-existing** in MyAgent's tracked files (ACTIVITY-LOG rows for 2026-07-16/07-14, `workflow/ports/REGISTRY.md`), so this push introduces **no new exposure**. Worth noting only that MyAgent (itself PUBLIC) records the same origin IP that the `deployment` repo deliberately redacts — a pre-existing convention, out of scope for this gate. Not blocking.
 - Other repos' `updatedAt` timestamps refreshed by the rule-20 `refresh-repository-registry.ps1` run (forgecity, mindmap, MyAgent, MyMachine, stack-pilot) — expected script output, no visibility/branch/path changes.
 
 ---

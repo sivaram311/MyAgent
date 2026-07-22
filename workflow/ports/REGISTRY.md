@@ -1,4 +1,4 @@
-﻿# Port registry (source of truth)
+# Port registry (source of truth)
 
 **Mandatory:** update this file **before** binding a new port.  
 Mirror every change in `registry.json`.
@@ -46,7 +46,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 |------|--------|------|--------|----------------|-------|
 | 4010 | h-drive-server | http | active | F:\apps\h-drive-server | Staging expose of H:\; open CORS |
 | 4080 | agent-portal | http | active | F:\apps\agent-portal | API; UI static via nginx; https://agent-portal-staging.delena.buzz |
-| 4081 | agent-portal | http | retired | nginx (disabled) | Was PREPROD public-IP edge `103.118.183.185:4081`; disabled 2026-07-16 — hostname only |
+| 4081 | agent-portal | http | retired | nginx (disabled) | Was PREPROD public-IP edge `<ORIGIN_IP>:4081`; disabled 2026-07-16 — hostname only |
 | 4310 | agentverse | http | reserved | F:\apps\agentverse | Classic densify PREPROD rollback tree; **not** public SoT. Hostname `agentverse-staging.delena.buzz` nginx → **`:4312`** (upgrade) since 2026-07-15 |
 | 4311 | agentverse-v2 | http | active | F:\apps\agentverse-v2 | stable-v2 side PREPROD; https://agentverse-v2-staging.delena.buzz (must NOT use 4310) |
 | 4312 | agentverse-upgrade | http | active | F:\apps\agentverse-upgrade | upgradation PREPROD SoT; https://agentverse-upgrade-staging.delena.buzz **and** nginx alias https://agentverse-staging.delena.buzz |

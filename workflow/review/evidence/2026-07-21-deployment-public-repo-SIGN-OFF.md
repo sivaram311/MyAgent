@@ -20,7 +20,7 @@ _MyAgent standing rule #17: Reviewer SIGN-OFF before any git push. READ-ONLY rev
 ## Checklist
 
 - [x] **No secrets in tracked files** — no passwords, tokens, API keys, private keys, JWT secrets, DB passwords, or Cloudflare tokens. All `PASSWORD`/`TOKEN`/`SECRET`/`KEY` hits are env-var **NAME** references (e.g. `%CSS_DB_PASSWORD%`, `if defined CSS_DB_PASSWORD`), `.gitignore` rules, or "do not put secrets here" comments. No literal secret values found.
-- [x] **Origin IP redacted** — `git grep -n "103.118.183.185"` returns **no hits**. Only the placeholder `<ORIGIN_IP>` appears (README, SETUP-GUIDE, nginx-setup, disabled confs).
+- [x] **Origin IP redacted** — `git grep -n "<ORIGIN_IP>"` returns **no hits**. Only the placeholder `<ORIGIN_IP>` appears (README, SETUP-GUIDE, nginx-setup, disabled confs).
 - [x] **No runtime logs / env files tracked** — `git ls-files` contains nothing under `logs/` and no `*.env`, `*.log`, `*.token`, `*.key`, `*.pem`, `.htpasswd`.
 - [x] **.gitignore covers sensitive artifacts** — ignores `logs/`, `*.log`, `.env`, `*.env`, `*.token`, `*.pem`, `*.key`, `*.htpasswd`, `.htpasswd*`, `secrets/`.
 - [x] **Docs present & accurate** — `README.md` states "Public repo. No secrets are stored here" and that credentials live in git-ignored `.env`. Ports (css-next `:5910`, proddeck `:5320`), task names (`StackPilot-Fleet-Session0`, `StackPilot-S0-*`), and layout are consistent across README / configs / scripts.
