@@ -7,7 +7,7 @@ _MyAgent standing rule #17: Reviewer SIGN-OFF before any git push. READ-ONLY rev
 | Session | `origin-ip-scrub-2026-07-22` |
 | Reviewer | Reviewer (git push gate) |
 | Provider | cursor |
-| Scope | Tip working-tree scrub of VPS origin IP `103.118.183.185` (Cloudflare-bypass risk) |
+| Scope | Tip working-tree scrub of VPS origin IP `<ORIGIN_IP>` (Cloudflare-bypass risk) |
 | Repos | MyAgent `E:\MyAgent` @ `1307685`; MyMachine `E:\MyWorkspace\MyMachine` @ `33d232e`; agent-portal `E:\MyWorkspace\agent-portal` @ `69e0bc7`; stack-pilot-android `E:\Source\stack-pilot-android` @ `f316791` |
 | When | 2026-07-22 10:12 (UTC+5:30) — **re-review after blocker fix** |
 | Prior verdict | NO-GO (REGISTRY.md sweep-in + agent-portal `CURSOR_MODEL` hunk) |
