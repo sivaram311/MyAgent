@@ -2,8 +2,8 @@
 
 Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) — including **Cursor**, **Antigravity**, and any other provider (Agent Portal or local).
 
-**Last updated:** 2026-07-19  
-**Session that recorded this:** Cloudflare Workers AI env (#19) · prior: E2E (#14–#16) · Reviewer-before-push (#17) · DEV-domain-login-E2E (#18)
+**Last updated:** 2026-07-31  
+**Session that recorded this:** AI-DLC + autonomous-ops decision lock (#23) · prior: OpenRouter API env (#22) · DeepSeek (#21) · Cloudflare Workers AI (#19) · repo inventory (#20)
 
 **Provider note:** `.cursor/rules` and `.cursor/skills` help Cursor discover policy. Antigravity and others must still follow this file and `AGENTS.md`. Activity logging and promote evidence are **provider-agnostic**.
 
@@ -122,6 +122,36 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
     Refresh with `workflow/repos/refresh-repository-registry.ps1` after create/import/rename/transfer/delete, visibility changes, archive changes, or default-branch changes.
     Visibility must come from authenticated GitHub metadata (`gh repo list`), never inference from a clone URL. Never record credentials or collaborator secrets.
 
+21. **DeepSeek API credentials via env (never commit)** (user-directed 2026-07-25 — **keep**)  
+    DeepSeek API key lives in **Windows User env** and `workflow/secrets/deepseek.env` (gitignored).  
+    Var: **`DEEPSEEK_API_KEY`**.  
+    SoT how-to: `workflow/deepseek.md` (+ `.env.example`) — includes **models list** (`GET /models`) and a sample **chat/completions** call (`https://api.deepseek.com`, OpenAI-compatible).  
+    Keep DeepSeek key **separate** from Cloudflare Workers AI / Zone Edit / xAI and other provider secrets.  
+    Never commit keys; redact in ACTIVITY-LOG. Verify with `/models` then a sample chat call before relying on inference.  
+    Mindmap must keep an awareness node for this standing order.
+
+22. **OpenRouter API credentials via env (never commit)** (user-directed 2026-07-25 — **keep**)  
+    OpenRouter API key lives in **Windows User env** and `workflow/secrets/openrouter.env` (gitignored).  
+    Var: **`OPENROUTER_API_KEY`**.  
+    SoT how-to: `workflow/openrouter.md` (+ `.env.example`) — includes **key/credits** (`GET /api/v1/key`), **models** (`GET /api/v1/models`), free catalog (`:free` / zero pricing), and free-tier RPM/RPD quotas.  
+    Keep OpenRouter key **separate** from DeepSeek / Cloudflare / xAI and other provider secrets.  
+    Never commit keys; redact in ACTIVITY-LOG. Verify with `/key` then a sample chat call before relying on inference.  
+    Mindmap must keep an awareness node for this standing order.
+
+23. **AI-DLC + autonomous operations decision lock** (user-directed 2026-07-31 — **keep**)  
+    The user's goal ("make this machine completely AI-managed," "build every app — existing and new — on AI-DLC") is governed by `workflow/aidlc/README.md`, authored after independent consultation with `agy`, Cursor CLI, and Grok, not by ad hoc interpretation.  
+    Precise goal: AI runs routine work end-to-end; a **permanent, technically-enforced** exception list (deletes, partitioning, DNS delete, `G:\apps\<app>` overwrite outside promote, Q2 GO, secret resets, **trading-portal live execution**) stays human-only forever and is never revisited by trust-based gate narrowing.  
+    Phase 0 (decision lock) done. **Phase 1 (read-only observe/drift-reconcile)** started 2026-07-31, scheduled daily 03:15 — `workflow/aidlc/phase1/drift-reconcile.ps1`; queue is at 0 open findings as of 2026-08-01 after a full triage pass. **Phase 2 (scoped write autonomy)** started 2026-08-01 on explicit user go-ahead with three hard constraints: mandatory human sign-off before any write is applied, agents never receive trade-execution/secret-reset credentials, and auto-deploy (tier 4) stays locked behind a now-quantified Phase 1 metrics bar (`workflow/aidlc/phase2/README.md`) not close to met yet (~1 day of track record vs. the 14+ day bar). v0 = a propose→sign-off→apply pipeline, technically enforced (mirrors the `pre-push` hook's SIGN-OFF pattern). **Extended same day** to five role workers total (repo-registry, docs, qa, security, review — all tested with real runs, all report/propose-only, no auto-apply). `machine-gateway` was researched, not built from scratch — its real implementation already exists live inside `agent-portal` (`/api/machine/*`). `stack-pilot` wiring was designed but deliberately not implemented (live Spring Boot service, needs its own build/test/review pass). **No auto-deploy code of any kind exists** — this is a deliberate, documented decision (see `phase2/README.md`), not an oversight; the trigger condition for building it is recorded there. A **read-only readiness-check script** (`workflow/aidlc/phase4/check-readiness.ps1`) was built 2026-08-01 to report status against that bar — it cannot enable or build anything, only tell you whether the bar is cleared. First real check: **NOT READY**, 1/14 consecutive scheduled Phase 1 days. The `pre-push` sign-off gate (`workflow/aidlc/hooks/`) is **live on `E:\MyAgent` only**; the `F:`/`G:` ACL agent-account model is a **reviewed design, not applied** (`workflow/aidlc/acl-account-model-proposal.md`). AI-DLC Inception baselines for existing apps land **opportunistically** (next real work on that app), never as a simultaneous fleet-wide sprint.  
+    Do not build orchestrator/gateway/cockpit infrastructure, grant Q1 auto-deploy, or start a multi-app AI-DLC retrofit sprint without re-reading `workflow/aidlc/README.md`'s current phase first — it is the SoT for this initiative and will be updated as phases complete.
+
+24. **App name + version must be clearly displayed** (user-directed 2026-08-04 — **keep**)  
+    Every app that is built and deployed — DEV, PREPROD, and PROD alike — must clearly display its **application name and version**, both:  
+    - **In the UI** — human-visible without dev tools (footer, header, or an About/Settings screen).  
+    - **Via API** — a `/api/health` or `/api/version`-style endpoint reporting `name` + `version` machine-readably.  
+    Applies to every provider (Cursor, Antigravity, Grok, Claude Code) — not a Claude-only preference.  
+    **Enforced as a Q1/Q2 promote gate** (same tier as rule #13 dependency versions): missing or unclear name/version on either surface → **NO-GO**. SoT: `workflow/promote/gates.md`.  
+    **Not retroactive on its own** — existing apps are not required to stop and add this today. It becomes mandatory the next time that app has a real Q1/Q2 promote, same opportunistic pattern as the AI-DLC baseline rollout (rule #23). New builds from today onward must have it from first DEV deploy.
+
 ---
 
 ## Allowed without extra confirmation
@@ -237,6 +267,24 @@ Updating **how-to / ops / product docs** after meaningful changes is mandatory �
 | How-to | `workflow/cloudflare-workers-ai.md` |
 | DNS/Zone token | separate — `workflow/secrets/cloudflare.token` / agent-portal `.env` |
 
+### DeepSeek API (rule 21)
+
+| Item | Value |
+|------|-------|
+| Key env | `DEEPSEEK_API_KEY` |
+| Secret file | `workflow/secrets/deepseek.env` (gitignored) |
+| How-to | `workflow/deepseek.md` |
+| Base URL | `https://api.deepseek.com` |
+
+### OpenRouter API (rule 22)
+
+| Item | Value |
+|------|-------|
+| Key env | `OPENROUTER_API_KEY` |
+| Secret file | `workflow/secrets/openrouter.env` (gitignored) |
+| How-to | `workflow/openrouter.md` |
+| Base URL | `https://openrouter.ai/api/v1` |
+
 ---
 
 ## Environment layout status
@@ -273,3 +321,6 @@ Note: F/G/H are logical partitions inside one MBR extended partition on Disk 0 (
 - Activity log: `workflow/activity/README.md`
 - Activity rule: `.cursor/rules/activity-documentation.mdc`
 - Cloudflare Workers AI: `workflow/cloudflare-workers-ai.md`
+- DeepSeek API: `workflow/deepseek.md`
+- OpenRouter API: `workflow/openrouter.md`
+- AI-DLC + autonomous ops: `workflow/aidlc/README.md`

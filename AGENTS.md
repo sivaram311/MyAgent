@@ -26,6 +26,9 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 | [`workflow/prod-deploy.md`](workflow/prod-deploy.md) | Prod DNS + nginx wrapper |
 | [`workflow/cloudflare-workers-ai.md`](workflow/cloudflare-workers-ai.md) | **Workers AI** env (`CLOUDFLARE_ACCOUNT_ID` / `CLOUDFLARE_WORKERS_AI_TOKEN`) — CONSCIOUS #19 |
 | [`workflow/repos/`](workflow/repos/) | **Repository visibility inventory** — CONSCIOUS #20 |
+| [`workflow/deepseek.md`](workflow/deepseek.md) | **DeepSeek API** env (`DEEPSEEK_API_KEY`) — CONSCIOUS #21 |
+| [`workflow/openrouter.md`](workflow/openrouter.md) | **OpenRouter API** env (`OPENROUTER_API_KEY`) — CONSCIOUS #22 |
+| [`workflow/aidlc/README.md`](workflow/aidlc/README.md) | **AI-DLC + autonomous ops decision lock** — CONSCIOUS #23; currently Phase 0, no write-autonomy exists |
 
 ## Before any work
 
@@ -44,14 +47,25 @@ Provider-specific folders (`.cursor/rules`, skills) are conveniences. The **sour
 13. **Login E2E on DEV domain** — CONSCIOUS rule **18**: Playwright login/SSO must use the app’s DEV public hostname when it exists (e.g. `https://home-dev.delena.buzz`), not only `127.0.0.1` — SoT `workflow/testing/DEV-HOST-E2E.md`.
 14. **Cloudflare Workers AI** — CONSCIOUS rule **19**: use User env / `workflow/secrets/cloudflare-workers-ai.env` for `CLOUDFLARE_ACCOUNT_ID` + `CLOUDFLARE_WORKERS_AI_TOKEN`; never commit; keep separate from Zone Edit DNS token. Fetch models via `ai/models/search`; check neuron quota per `workflow/cloudflare-workers-ai.md` (header / GraphQL / dashboard).
 15. **Repository inventory** — CONSCIOUS rule **20**: refresh `workflow/repos/` whenever repository visibility, lifecycle, ownership, or default branch changes.
+16. **DeepSeek API** — CONSCIOUS rule **21**: use User env / `workflow/secrets/deepseek.env` for `DEEPSEEK_API_KEY`; never commit; keep separate from Cloudflare / xAI tokens. Verify via `/models` + sample chat per `workflow/deepseek.md`.
+17. **OpenRouter API** — CONSCIOUS rule **22**: use User env / `workflow/secrets/openrouter.env` for `OPENROUTER_API_KEY`; never commit; keep separate from DeepSeek / Cloudflare / xAI. Check `/api/v1/key` + free models via `/api/v1/models` per `workflow/openrouter.md`.
+18. **AI-DLC / autonomous ops** — CONSCIOUS rule **23**: `workflow/aidlc/README.md` is the SoT for any "make this machine AI-managed" or "apply AI-DLC" work. Currently Phase 0 (decision lock) only — no orchestrator, `machine-gateway`, or write-autonomy exists. Re-read its current phase before building automation infrastructure, granting Q1 auto-deploy, or starting an AI-DLC retrofit on more than one app at a time.
+19. **App name + version must be displayed** — CONSCIOUS rule **24**: every app built and deployed (DEV/PREPROD/PROD) must clearly show its name + version, both in the UI (footer/header/about) and via API (`/api/health` or `/api/version`). Enforced as a Q1/Q2 promote gate (`workflow/promote/gates.md`) — missing on either surface → NO-GO. Not retroactive by itself: existing apps pick it up opportunistically at their next real Q1/Q2 promote, same pattern as rule #23's baseline rollout; new builds need it from first DEV deploy.
 
 ## Antigravity
 
 When Agent Portal prefixes rules/skills into the Antigravity prompt, still treat this file and `CONSCIOUS.md` as binding. Write the same evidence packs and activity log entries as Cursor agents. Do not skip documentation because the provider differs.
 
-Also load **`GEMINI.md`** in this folder (Antigravity/Gemini entry). Global copies:
+Also load **`GEMINI.md`** in this folder (Antigravity/Gemini entry).
 
-- Cursor user rule: `C:\Users\Administrator\.cursor\rules\myagent-machine.mdc` (`alwaysApply`)
+## Claude Code
+
+Provider `claude-code` in ACTIVITY-LOG. Same standing orders as Cursor/Antigravity — no provider-specific exemptions. When Claude Code hires Cursor/Grok CLI subagents (`agent -p ...`) for promote roles (qa/security/review/field-ops/ops) or a Reviewer sign-off, prefer `--permission-mode bypassPermissions` for headless multi-step hires and always verify the actual artifact on disk afterward — `acceptEdits`/`auto` have silently stopped short of the instructed deliverable while still exiting 0. Full detail: `workflow/promote/field-lessons.md` #10.
+
+## Global copies (all providers)
+
+- Cursor user rule: `C:\Users\Administrator\.cursor\rules\myagent-machine.mdc` (`alwaysApply`) — refreshed 2026-07-25, covers rules through #22
 - Antigravity knowledge: `C:\Users\Administrator\.gemini\antigravity-cli\knowledge\myagent-standing-orders.md`
 - Antigravity `settings.json` → `toolPermission: always-proceed` + trusted workspaces include MyAgent / MyWorkspace / portal apps
+- Claude Code global rule: `C:\Users\Administrator\.claude\CLAUDE.md` (`alwaysApply`) — added 2026-07-25, covers rules through #22 + the CLI-hiring and nginx/allowedHosts gotchas
 

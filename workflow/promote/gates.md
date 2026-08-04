@@ -10,6 +10,7 @@
 | CSS `clientId` registered; login + API JWT path works | yes |
 | **App git tag** (or commit) recorded in CHECKLIST + DEPENDENCIES.md | yes |
 | **Dependency versions** recorded (CSS version + **git tag** + release id; other upstreams as applicable) | yes |
+| **App name + version** visible in UI (footer/header/about) **and** via API (`/api/health` or `/api/version`) | yes |
 | Smoke: health + login + one core user flow | yes |
 | Security + review evidence present | yes |
 | Staging hostname **live** (`<app>-staging.delena.buzz` or agreed URL) + nginx → F: port | yes |
@@ -30,6 +31,7 @@ Destination smoke after Ops: repeat health + login + core flow on **PREPROD publ
 | Release folder on **H:** is the prod source | yes |
 | CSS CORS includes prod public URL (or waived-public-read documented) | yes |
 | **App git tag** + **dependency versions/tags** recorded (same bar as Q1; must match what PROD will run against) | yes |
+| **App name + version** visible in UI **and** via API (same bar as Q1; must match what PROD will run) | yes |
 | After GO + deploy: **DEPENDENCY-MATRIX.md** (+ JSON) updated to live G: pins | yes |
 | Smoke + **regression** on **PREPROD public URL** | yes |
 | Security + review evidence for Q2 | yes |
@@ -47,6 +49,7 @@ if any required CHECKLIST flag == false → NO-GO
 if evidence folders incomplete → NO-GO
 if app git tag/commit missing → NO-GO
 if dependency versions/tags missing (or CSS cited without version+tag) → NO-GO
+if app name/version missing from UI or API → NO-GO
 else EM may set GO → Ops may proceed
 ```
 
