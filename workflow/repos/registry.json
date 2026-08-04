@@ -1,16 +1,16 @@
 {
     "schemaVersion":  1,
-    "generatedAt":  "2026-08-02T21:50:04Z",
+    "generatedAt":  "2026-08-04T15:15:17Z",
     "owner":  "sivaram311",
     "source":  "gh repo list",
-    "total":  26,
+    "total":  28,
     "counts":  {
-                   "public":  24,
+                   "public":  26,
                    "private":  2,
                    "internal":  0,
                    "archived":  0,
                    "forks":  0,
-                   "local":  23
+                   "local":  25
                },
     "repositories":  [
                          {
@@ -48,6 +48,18 @@
                              "localPath":  "E:\\MyWorkspace\\agentverse-project",
                              "description":  "AgentVerse: Next.js + R3F 3D gaming portal migrating Agent Portal UX, reusing :8080 API and CSS auth",
                              "updatedAt":  "2026-07-14T22:28:20Z"
+                         },
+                         {
+                             "name":  "boopathy-portfolio",
+                             "owner":  "sivaram311",
+                             "url":  "https://github.com/sivaram311/boopathy-portfolio",
+                             "visibility":  "PUBLIC",
+                             "defaultBranch":  "master",
+                             "archived":  false,
+                             "fork":  false,
+                             "localPath":  "E:\\MyWorkspace\\boopathy-portfolio",
+                             "description":  "",
+                             "updatedAt":  "2026-08-04T15:15:11Z"
                          },
                          {
                              "name":  "breath-timer",
@@ -95,7 +107,7 @@
                              "fork":  false,
                              "localPath":  "E:\\Source\\Deployment",
                              "description":  "delena.buzz fleet ops: nginx config + Windows Session-0 durable runtime scripts (no secrets)",
-                             "updatedAt":  "2026-07-21T16:58:09Z"
+                             "updatedAt":  "2026-08-04T15:14:33Z"
                          },
                          {
                              "name":  "forgecity-launcher",
@@ -122,6 +134,18 @@
                              "updatedAt":  "2026-07-05T19:48:01Z"
                          },
                          {
+                             "name":  "h-drive-server",
+                             "owner":  "sivaram311",
+                             "url":  "https://github.com/sivaram311/h-drive-server",
+                             "visibility":  "PUBLIC",
+                             "defaultBranch":  "master",
+                             "archived":  false,
+                             "fork":  false,
+                             "localPath":  "E:\\MyWorkspace\\h-drive-server",
+                             "description":  "",
+                             "updatedAt":  "2026-08-04T15:13:59Z"
+                         },
+                         {
                              "name":  "library",
                              "owner":  "sivaram311",
                              "url":  "https://github.com/sivaram311/library",
@@ -143,7 +167,7 @@
                              "fork":  false,
                              "localPath":  "E:\\MyWorkspace\\machine-gateway",
                              "description":  "Host Consciousness API idea ΓÇö machine-aware chat/context gateway for the delena control plane (docs only)",
-                             "updatedAt":  "2026-07-16T12:11:01Z"
+                             "updatedAt":  "2026-08-04T15:14:35Z"
                          },
                          {
                              "name":  "machine-sentinel",
@@ -275,7 +299,7 @@
                              "fork":  false,
                              "localPath":  "E:\\Source\\stack-pilot",
                              "description":  "Powershell Manager with Logs Web Application",
-                             "updatedAt":  "2026-07-31T20:49:53Z"
+                             "updatedAt":  "2026-08-04T15:14:40Z"
                          },
                          {
                              "name":  "stack-pilot-android",

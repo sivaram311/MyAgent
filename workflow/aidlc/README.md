@@ -170,9 +170,13 @@ these projects started their AI-DLC lifecycle from Inception on day one —
   GitHub** (sandbox 4 pushed 2026-08-01 after Reviewer GO per CONSCIOUS #17,
   see `workflow\review\evidence\2026-08-01-sandbox-baselines-push-SIGN-OFF.md`).
   **Extended 2026-08-04**: `h-drive-server` and `boopathy-portfolio` (baseline
-  docs existed since 2026-08-01 but had no git repo at all) now have `git init`
-  + a first local commit — still no GitHub remote, blocked on a broken `gh auth`
-  token (see Phase 1 finding below), not pushed yet. Scope also widened past
+  docs existed since 2026-08-01 but had no git repo at all) got `git init` + a
+  first local commit, then — once the user fixed the broken `gh auth` token
+  (see Phase 1 finding below) — new public GitHub repos were created via
+  `gh repo create --source=. --push` and the baseline commits pushed
+  (`boopathy-portfolio`@`29f1394`, `h-drive-server`@`93513c1`), closing this
+  gap entirely: all apps with real content in `E:\MyWorkspace` now have both a
+  GitHub repo and a pushed Inception baseline. Scope also widened past
   `E:\MyWorkspace` for the first time: `E:\Source\stack-pilot` and
   `E:\Source\Deployment` are real active repos that were never in scope only
   because Phase 3 was originally worded as "every app in `E:\MyWorkspace`" —
