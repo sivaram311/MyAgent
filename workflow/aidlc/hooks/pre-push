@@ -1,0 +1,66 @@
+#!/bin/sh
+# MyAgent pre-push gate — technical enforcement of CONSCIOUS #17 (Reviewer
+# sign-off before push) and #23 (AI-DLC decision lock: policy must be
+# technically enforced, not just documented).
+#
+# Blocks push to protected refs (main/master, annotated tags v*) unless
+# either:
+#   (a) a SIGN-OFF*.md file in the repo contains this commit's SHA and a
+#       "GO" verdict, or
+#   (b) MYAGENT_PUSH_OVERRIDE is set to a non-empty justification — allowed,
+#       but logged (not a silent bypass) to workflow/aidlc/hooks/bypass-log.txt.
+#
+# Installed via `git config core.hooksPath workflow/aidlc/hooks` — see
+# ../README.md "Enforcement principle" table for rollout status per repo.
+
+protected_ref() {
+  case "$1" in
+    refs/heads/main|refs/heads/master) return 0 ;;
+    refs/tags/v*) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+
+repo_root=$(git rev-parse --show-toplevel)
+bypass_log="$repo_root/workflow/aidlc/hooks/bypass-log.txt"
+blocked=0
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "0000000000000000000000000000000000000000" ] && continue
+
+  if protected_ref "$remote_ref"; then
+    short_sha=$(git rev-parse --short "$local_sha" 2>/dev/null || echo "$local_sha")
+    signoff_hit=""
+    for f in $(find "$repo_root" -iname "*SIGN-OFF*.md" 2>/dev/null); do
+      # Verdict must be on a line by itself (matches workflow/review/REVIEWER-SIGNOFF.md's
+      # template: "**GO** | **NO-GO**", where a real sign-off deletes the option not
+      # chosen). Deliberately whole-line-anchored: a bare `\bGO\b` search would also
+      # match the "GO" inside "NO-GO" (word-boundary matches after the hyphen), which
+      # would have let an unedited template or a real NO-GO pass this gate.
+      if grep -qE '^[[:space:]]*\*{0,2}GO\*{0,2}[[:space:]]*$' "$f" 2>/dev/null && grep -q "$short_sha\|$local_sha" "$f" 2>/dev/null; then
+        signoff_hit="$f"
+        break
+      fi
+    done
+
+    if [ -n "$signoff_hit" ]; then
+      echo "pre-push: SIGN-OFF found for $short_sha ($signoff_hit) — allowing push to $remote_ref"
+      continue
+    fi
+
+    if [ -n "$MYAGENT_PUSH_OVERRIDE" ]; then
+      printf '%s | %s | %s | OVERRIDE | %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$remote_ref" "$local_sha" "$MYAGENT_PUSH_OVERRIDE" >> "$bypass_log"
+      echo "pre-push: no SIGN-OFF found, but MYAGENT_PUSH_OVERRIDE set — allowing and logging to $bypass_log"
+      continue
+    fi
+
+    echo "pre-push: BLOCKED — no SIGN-OFF*.md with a GO verdict for commit $short_sha found for protected ref $remote_ref."
+    echo "  CONSCIOUS #17 requires a Reviewer GO before pushing a branch tip or tag."
+    echo "  Either add a SIGN-OFF*.md referencing $short_sha with a GO verdict, or explicitly override:"
+    echo "    MYAGENT_PUSH_OVERRIDE=\"<who/when/why>\" git push ..."
+    echo "  (the override is logged, not silent — workflow/aidlc/hooks/bypass-log.txt)"
+    blocked=1
+  fi
+done
+
+exit $blocked
