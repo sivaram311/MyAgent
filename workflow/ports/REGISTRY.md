@@ -69,7 +69,7 @@ Status values: `active` | `reserved` | `legacy` | `retired`
 | 4340 | trading-portal | http | active | F:\apps\trading-portal | Spring Boot API PREPROD; ACTIVE 2026-07-15 health ok; paper-only |
 | 4341 | trading-portal | http | active | F:\apps\trading-portal | Angular UI static PREPROD; ACTIVE 2026-07-15 GET / 200 |
 | 4342 | trading-portal | worker | reserved | F:\apps\trading-portal\python | Python MT5 XAUUSD ingest worker PREPROD; not bound yet — GROK-DECISION-001 |
-| 4370 | production-house | http | active | F:\apps\production-house | Production House PREPROD vite preview; https://production-house-staging.delena.buzz |
+| 4370 | production-house | http | active | F:\apps\production-house | Production House PREPROD vite preview; https://production-house-staging.delena.buzz; durable via `StackPilot-S0-ProductionHouse-Preprod` AtStartup task (added 2026-08-06, same gap as PROD :5370 fixed 2026-08-05) |
 | 4380 | vibehub | http | active | F:\apps\vibehub | Blog/docs/pages site PREPROD; 0.1.2 (RSS) ACTIVE 2026-07-25, astro preview; https://vibehub-staging.delena.buzz → :4380 verified 200 all routes incl. /rss.xml; no DB/CSS |
 | 4360 | rd-center-project | http | reserved | F:\apps\rd-center-project | Not deployed yet; reserved per app README (`rd-center-staging.delena.buzz`); added 2026-08-01 alongside DEV :3360 during Phase 1 drift triage, not independently verified listening |
 
