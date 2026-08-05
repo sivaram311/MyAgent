@@ -64,8 +64,9 @@ Provider `claude-code` in ACTIVITY-LOG. Same standing orders as Cursor/Antigravi
 
 ## Global copies (all providers)
 
-- Cursor user rule: `C:\Users\Administrator\.cursor\rules\myagent-machine.mdc` (`alwaysApply`) — refreshed 2026-07-25, covers rules through #22
-- Antigravity knowledge: `C:\Users\Administrator\.gemini\antigravity-cli\knowledge\myagent-standing-orders.md`
+- Cursor user rule: `C:\Users\Administrator\.cursor\rules\myagent-machine.mdc` (`alwaysApply`) — refreshed 2026-08-05, covers rules through #24
+- Antigravity knowledge: `C:\Users\Administrator\.gemini\antigravity-cli\knowledge\myagent-standing-orders.md` — refreshed 2026-08-05, covers rules through #24 (had been stuck at #18)
 - Antigravity `settings.json` → `toolPermission: always-proceed` + trusted workspaces include MyAgent / MyWorkspace / portal apps
-- Claude Code global rule: `C:\Users\Administrator\.claude\CLAUDE.md` (`alwaysApply`) — added 2026-07-25, covers rules through #22 + the CLI-hiring and nginx/allowedHosts gotchas
+- Claude Code global rule: `C:\Users\Administrator\.claude\CLAUDE.md` (`alwaysApply`) — refreshed 2026-08-04, covers rules through #24 + the CLI-hiring and nginx/allowedHosts gotchas
+- Grok CLI: no separate cached mirror found on this machine — reads `AGENTS.md`/`CONSCIOUS.md` directly, always current
 
