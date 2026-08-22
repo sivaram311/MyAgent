@@ -11,6 +11,7 @@
 | **App git tag** (or commit) recorded in CHECKLIST + DEPENDENCIES.md | yes |
 | **Dependency versions** recorded (CSS version + **git tag** + release id; other upstreams as applicable) | yes |
 | **App name + version** visible in UI (footer/header/about) **and** via API (`/api/health` or `/api/version`) | yes |
+| **Lean standalone release bundle** (No raw dev `node_modules`; static apps built for NGINX or Next.js standalone) — Rule #25 | yes |
 | Smoke: health + login + one core user flow | yes |
 | Security + review evidence present | yes |
 | Staging hostname **live** (`<app>-staging.delena.buzz` or agreed URL) + nginx → F: port | yes |
@@ -32,6 +33,7 @@ Destination smoke after Ops: repeat health + login + core flow on **PREPROD publ
 | CSS CORS includes prod public URL (or waived-public-read documented) | yes |
 | **App git tag** + **dependency versions/tags** recorded (same bar as Q1; must match what PROD will run against) | yes |
 | **App name + version** visible in UI **and** via API (same bar as Q1; must match what PROD will run) | yes |
+| **Lean standalone release bundle / Git release artifact** verified (No raw dev `node_modules` on G:) — Rule #25 | yes |
 | After GO + deploy: **DEPENDENCY-MATRIX.md** (+ JSON) updated to live G: pins | yes |
 | Smoke + **regression** on **PREPROD public URL** | yes |
 | Security + review evidence for Q2 | yes |

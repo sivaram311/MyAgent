@@ -12,12 +12,13 @@
 |--------|--------|
 | Code history | App repo: `main` + short-lived `feature/*` |
 | “This bits = this version” | Annotated tag `vX.Y.Z` (or fleet-prefixed — see tagging) |
+| Release bundle / artifact | **GitHub Release asset** (`gh release create <tag> <bundle.zip>`) — lean standalone archive |
 | “What is live on F:/G:” | `workflow/deps/DEPENDENCY-MATRIX.md` (+ `DEPENDENCIES.json`) — **mutable SoT** |
 | Evidence / GO / smoke | `H:\releases\<app>-<ver>\` — **not** git history |
 | Deploy secrets / bakefile env | Outside git (env roots + local secrets) |
 | Promote event | ACTIVITY-LOG + pack CHECKLIST / SUMMARY |
 
-**One rule:** a tag never means “live on prod.” A matrix row does. A tag means “this tree was cut for a release pack.”
+**One rule:** a tag never means “live on prod.” A matrix row does. A tag means “this tree was cut for a release pack.” Deployments to F: (PREPROD) and G: (PROD) fetch the lean release bundle (built static files / standalone server without dev `node_modules`).
 
 Git owns **immutable release identity**. MyAgent + `H:\releases` own **what is live and how it got there**. Do **not** encode E / F / G in branches.
 

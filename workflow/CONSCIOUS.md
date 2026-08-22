@@ -152,6 +152,14 @@ Standing orders for **every AI agent** on this machine (`E:\MyAgent` workspace) 
     **Enforced as a Q1/Q2 promote gate** (same tier as rule #13 dependency versions): missing or unclear name/version on either surface → **NO-GO**. SoT: `workflow/promote/gates.md`.  
     **Not retroactive on its own** — existing apps are not required to stop and add this today. It becomes mandatory the next time that app has a real Q1/Q2 promote, same opportunistic pattern as the AI-DLC baseline rollout (rule #23). New builds from today onward must have it from first DEV deploy.
 
+25. **Lean standalone release bundles & Git release fetch (No raw node_modules on F:/G:)** (user-directed 2026-08-23 — **keep**)  
+    To protect machine storage and prevent disk exhaustion from duplicate `node_modules`, all production (G:) and preproduction (F:) deployments **must use lean, standalone runtime artifacts**:  
+    - **Static & SPA apps (Astro, Vite, React, Vue, HTML/JS):** Build to static output (`dist/` or `out/`) and serve **directly via NGINX** (`root <drive>:/apps/<app>/dist; try_files $uri $uri/ /index.html;`). **No runtime Node process, no `npx astro preview`, and zero `node_modules` permitted on F: or G:.**  
+    - **Next.js & Node SSR apps:** Must enable `output: 'standalone'` in `next.config.js` and deploy only `.next/standalone/` + `.next/static/` + `public/`. Run directly with `node server.js` without full dev `node_modules`.  
+    - **Java apps:** Self-contained executable JARs (`.jar`).  
+    - **Git Release Distribution:** When a release is cut and tagged, compiled release bundles/artifacts must be published to GitHub Releases (`gh release create <tag> <bundle.zip>`). Deployments to F: and G: fetch and extract the release bundle from Git rather than copying raw development working trees.  
+    - **Enforced as a Q1/Q2 promote gate:** Any deploy attempting to copy raw unpruned dev `node_modules` or running an unnecessary runtime Node server for static assets → **NO-GO**. SoT: `workflow/promote/gates.md` and `GIT-RELEASE-MANAGEMENT.md`.
+
 ---
 
 ## Allowed without extra confirmation

@@ -6,7 +6,7 @@
 #>
 param(
   [Parameter(Mandatory = $true)][string]$SessionId,
-  [ValidateSet("cursor", "antigravity", "other")][string]$Provider = "cursor",
+  [ValidateSet("cursor", "antigravity", "claude-code", "grok", "other")][string]$Provider = "cursor",
   [Parameter(Mandatory = $true)][string]$AppId,
   [string]$Project = "all",
   [string]$AgentRole = "e2e",
@@ -44,14 +44,25 @@ try {
     $claimedAt = $null
     try { $claimedAt = [DateTime]::Parse($slot.holder.claimedAt) } catch { $claimedAt = $now.AddHours(-2) }
     $ageMin = ($now - $claimedAt).TotalMinutes
-    $staleLimit = if ($slot.staleAfterMinutes) { [double]$slot.staleAfterMinutes } else { 45 }
+    $staleLimit = if ($slot.staleAfterMinutes) { [double]$slot.staleAfterMinutes } else { 15 }
     $isStale = $ageMin -ge $staleLimit
-    if (-not $isStale -and -not $ForceStale) {
-      Write-Output ("BUSY holder.sessionId={0} appId={1} project={2} role={3} claimedAt={4}" -f `
-        $slot.holder.sessionId, $slot.holder.appId, $slot.holder.project, $slot.holder.agentRole, $slot.holder.claimedAt)
+    
+    # PID liveness auto-heal: check if holding process has terminated
+    $pidDead = $false
+    if ($slot.holder.pid -and -not (Get-Process -Id $slot.holder.pid -ErrorAction SilentlyContinue)) {
+      $pidDead = $true
+    }
+
+    if (-not $isStale -and -not $pidDead -and -not $ForceStale) {
+      Write-Output ("BUSY holder.sessionId={0} appId={1} project={2} role={3} claimedAt={4} pid={5}" -f `
+        $slot.holder.sessionId, $slot.holder.appId, $slot.holder.project, $slot.holder.agentRole, $slot.holder.claimedAt, $slot.holder.pid)
       exit 2
     }
-    Write-Output ("STALE_OR_FORCE clearing previous holder sessionId={0}" -f $slot.holder.sessionId)
+    if ($pidDead) {
+      Write-Output ("PID_DEAD clearing orphaned holder sessionId={0} (pid={1} no longer running)" -f $slot.holder.sessionId, $slot.holder.pid)
+    } else {
+      Write-Output ("STALE_OR_FORCE clearing previous holder sessionId={0}" -f $slot.holder.sessionId)
+    }
   }
 
   $slot.status = "held"
