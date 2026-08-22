@@ -38,15 +38,22 @@ function Resolve-LocalRepositoryPath {
         if (-not (Test-Path -LiteralPath $candidate -PathType Container)) {
             continue
         }
-
-        $top = git -C $candidate rev-parse --show-toplevel 2>$null
-        if ($LASTEXITCODE -ne 0) {
+        if (-not (Test-Path -LiteralPath "$candidate\.git")) {
             continue
         }
 
-        $remote = git -C $candidate remote get-url origin 2>$null
-        if ($LASTEXITCODE -eq 0 -and $remote -match "/$([regex]::Escape($Name))(?:\.git)?$") {
-            return ($top -replace "/", "\")
+        try {
+            $top = git -C $candidate rev-parse --show-toplevel 2>$null
+            if ($LASTEXITCODE -ne 0 -or -not $top) {
+                continue
+            }
+
+            $remote = git -C $candidate remote get-url origin 2>$null
+            if ($LASTEXITCODE -eq 0 -and $remote -match "/$([regex]::Escape($Name))(?:\.git)?$") {
+                return ($top -replace "/", "\")
+            }
+        } catch {
+            continue
         }
     }
 
@@ -88,7 +95,12 @@ $snapshot = [ordered]@{
     repositories = $entries
 }
 
-$snapshot | ConvertTo-Json -Depth 6 | Set-Content -Path $jsonPath -Encoding utf8
+$jsonContent = $snapshot | ConvertTo-Json -Depth 6
+# -Encoding utf8 in Windows PowerShell 5.1 writes a UTF-8 BOM, which breaks
+# plain JSON.parse in Node and other BOM-naive JSON consumers - use .NET
+# directly for BOM-less UTF-8 instead (found 2026-08-01 while building the
+# Phase 2 propose/apply pipeline, which round-trips this file).
+[System.IO.File]::WriteAllText($jsonPath, $jsonContent, (New-Object System.Text.UTF8Encoding $false))
 
 $lines = [System.Collections.Generic.List[string]]::new()
 $lines.Add("# Repository registry")
@@ -119,7 +131,7 @@ $lines.Add("``````")
 $lines.Add("")
 $lines.Add("Review the diff, ensure no credentials are present, log the activity, then follow the reviewer-before-push rule.")
 
-$lines | Set-Content -Path $markdownPath -Encoding utf8
+[System.IO.File]::WriteAllLines($markdownPath, $lines)
 
 Write-Host "Updated $markdownPath and $jsonPath"
 Write-Host "Repositories: $($snapshot.total) (public=$($snapshot.counts.public), private=$($snapshot.counts.private), internal=$($snapshot.counts.internal))"
